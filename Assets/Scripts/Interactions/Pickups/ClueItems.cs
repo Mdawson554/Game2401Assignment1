@@ -9,6 +9,7 @@ namespace Interactions.Pickups
             //logic for what happens when I pick up a key
             //signal to UI manager and audio manager
             //maybe make an event
+            Debug.Log("clues interacted");
         }
 
         protected override void OnFullfiledRequirements()
@@ -17,6 +18,7 @@ namespace Interactions.Pickups
             //probably indicate to the player that they key is only used for the one room.
             //signal to UI manager and audio manager
             //maybe make an event
+            Debug.Log("clues FullfiledRequirements");
         }
     }
 }

@@ -6,8 +6,8 @@ public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private InputAction interactionInput;
 
-    private IInteractable _interactable;
-    private IInteractable _tempInteractable;
+    private InteractableObjects _interactable;
+    private InteractableObjects _tempInteractable;
 
     private void OnEnable()
     {
@@ -23,7 +23,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _tempInteractable = other.GetComponent<IInteractable>();
+        _tempInteractable = other.GetComponent<InteractableObjects>();
 
         if (_tempInteractable != null)
         {

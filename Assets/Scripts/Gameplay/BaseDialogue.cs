@@ -5,7 +5,7 @@ namespace Gameplay
 {
     public class BaseDialogue
     {
-        public string[] Dialogues;
+        public string Dialogue;
         public DialogueType Type;
         public Sprite DialogueSprite;
         public TMP_Text DialogueText;
