@@ -1,9 +1,11 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 namespace Gameplay
 {
-    public class BaseDialogue
+    [Serializable]
+    public struct DialogueStruct
     {
         public string Dialogue;
         public DialogueType Type;
@@ -15,7 +17,11 @@ namespace Gameplay
 
     public enum DialogueType
     {
-        Npc,
+        EssentialNPC,
+        
+        CommonNPC,
+        
+        DrunkNPC,
         
         Hints,
         

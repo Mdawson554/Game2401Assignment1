@@ -6,7 +6,9 @@ namespace Core
     {
         public static AudioManager Instance;
         public AudioSource sfxAudioSource;
-        public AudioSource[] bgAudioSource;
+        public AudioSource bgAudioSource;
+        public AudioClip[] bgMusic;
+        public int BgMusicIndex;
 
         //null check and functionality to play a one shot audio clip when authorized.
 
@@ -24,7 +26,14 @@ namespace Core
 
         public void PlayBGMusic()
         {
-        
+            bgAudioSource.PlayOneShot(bgMusic[BgMusicIndex]);
+            incrementBgMusic();
+        }
+
+        public void incrementBgMusic()
+        {
+            BgMusicIndex++;
+            if (BgMusicIndex >= bgMusic.Length) BgMusicIndex = 0;
         }
     }
 }
