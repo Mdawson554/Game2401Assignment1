@@ -7,7 +7,9 @@ namespace Core
     {
         public static UIManager Instance;
         [SerializeField] private GameObject toast;
-        [SerializeField] private TMP_Text text;
+        [SerializeField] private TMP_Text Toasttext;
+        [SerializeField] private GameObject clueHUD;
+        [SerializeField] private TMP_Text clueText;
         
         [SerializeField] private GameObject pauseMenu;
         [SerializeField] private GameObject winScreen;
@@ -21,8 +23,14 @@ namespace Core
 
         public void DisplayToast(string message)
         {
-            text.text = message;
+            Toasttext.text = message;
             toast.SetActive(true);
+        }
+
+        public void DisplayClueHUD(string message)
+        {
+            clueText.text = message;
+            clueHUD.SetActive(true);
         }
     }
 }

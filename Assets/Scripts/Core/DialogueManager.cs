@@ -1,5 +1,7 @@
 using System;
 using Gameplay;
+using Interactions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Core
@@ -30,16 +32,28 @@ namespace Core
             }
         }
 
-        public void setessentialNPCDialogue()
+        public void SetSequentialDialogue(DialogueSO dialogueSO, InteractableObjectTypes interactableObjectType)
         {
             //set the current dialogue in sequential order
+            currentdialogueSO = dialogueSO;
             _currentDialogueStruct = currentdialogueSO.DialogueArray [dialogueindex%currentdialogueSO.DialogueArray.Length];
-            DisplayDialogue();
+
+            switch (interactableObjectType)
+            {
+                case InteractableObjectTypes.NPC:
+                    DisplayDialogue();
+                    break;
+                case InteractableObjectTypes.Item:
+                    DisplayClues();
+                    break;
+            }
+            
         }
 
-        public void setstandardNPCDialogue()
+        public void SetRandomDialogue(DialogueSO dialogueSO)
         {
             //set the current dialogue in random order
+            currentdialogueSO = dialogueSO;
             int random = UnityEngine.Random.Range (0, currentdialogueSO.DialogueArray.Length);
             dialogueindex = random;
             _currentDialogueStruct = currentdialogueSO.DialogueArray [dialogueindex%currentdialogueSO.DialogueArray.Length];
@@ -49,6 +63,11 @@ namespace Core
         public void DisplayDialogue()
         {
             UIManager.Instance.DisplayToast(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
+        }
+
+        public void DisplayClues()
+        {
+            UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
     }
 }

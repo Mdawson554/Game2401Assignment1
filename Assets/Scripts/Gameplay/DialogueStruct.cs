@@ -23,10 +23,6 @@ namespace Gameplay
         
         DrunkNPC,
         
-        Hints,
-        
-        Clues,
-        
         Monologue,
     }
 }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
-  m_Name: EssentialNPCDialogue
+  m_Name: Monologue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
-  - Dialogue: I am so Important!!!! everyone should know this.
-    Type: 0
+  - Dialogue: Wow this looks important
+    Type: 3
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.9339623, g: 0.6330196, b: 0.12775902, a: 0}

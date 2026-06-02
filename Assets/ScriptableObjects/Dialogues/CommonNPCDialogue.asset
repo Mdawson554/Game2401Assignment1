@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
-  m_Name: DrunkNPCDialogue
+  m_Name: CommonNPCDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
-  - Dialogue: III Loooveee you MAAAANaaannNNann
+  - Dialogue: This is sooo cool
     Type: 0
-    DialogueSprite: {fileID: 0}
+    DialogueSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueFont: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    DialogueColor: {r: 0.7075472, g: 0.110137075, b: 0.32122433, a: 0}

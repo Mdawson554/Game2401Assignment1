@@ -11,19 +11,18 @@ namespace Interactions
 
         protected override void OnInteracted()
         { 
-            DialogueManager.Instance.currentdialogueSO = Dialogue;
             switch (dialogueType)
             {
                 case DialogueType.CommonNPC:
-                    DialogueManager.Instance.setstandardNPCDialogue();
+                    DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     Debug.Log("dialogue with common NPC");
                     break;
                 case DialogueType.DrunkNPC:
-                    DialogueManager.Instance.setstandardNPCDialogue();
+                    DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     Debug.Log("dialogue with drunk NPC");
                     break;
                 case DialogueType.EssentialNPC:
-                    DialogueManager.Instance.setessentialNPCDialogue();
+                    DialogueManager.Instance.SetSequentialDialogue(Dialogue, InteractableObjectTypes.NPC);
                     Debug.Log("dialogue with essential NPC");
                     break;
             }

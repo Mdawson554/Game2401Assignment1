@@ -7,6 +7,8 @@ namespace Interactions
     /// </summary>
     public class InteractableObjects : MonoBehaviour, IInteractable 
     {
+        public InteractableObjectTypes interactableObjectType;
+        
         protected virtual void OnInteracted()
         {
             //hey you turned me on and gav me attention? 
@@ -33,4 +35,16 @@ namespace Interactions
            Debug.Log("InteractableObjects OnHoveroff"); 
         }
     }
+    
+    public enum InteractableObjectTypes
+    {
+        Item,
+        NPC,
+    }
+    
+    
+    
+    
+    
+    
 }
