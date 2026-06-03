@@ -2,6 +2,7 @@ namespace Interactions
 {
     public interface ICollectible
     {
-        //things that only collectibles might do- particle effects etc...
+        void OnCollected();       // trigger collect animation / tween
+        void OnCollectEffect();   // trigger particle effect
     }
 }

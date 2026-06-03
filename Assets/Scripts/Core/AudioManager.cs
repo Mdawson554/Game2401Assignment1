@@ -7,8 +7,14 @@ namespace Core
         public static AudioManager Instance;
         public AudioSource sfxAudioSource;
         public AudioSource bgAudioSource;
+        public AudioSource ambientAudioSource;
+        
+        
         public AudioClip[] bgMusic;
+        public AudioClip[] ambientAudio;
+        
         public int BgMusicIndex;
+        public int AmbientAudioIndex;
 
         //null check and functionality to play a one shot audio clip when authorized.
 
@@ -34,6 +40,18 @@ namespace Core
         {
             BgMusicIndex++;
             if (BgMusicIndex >= bgMusic.Length) BgMusicIndex = 0;
+        }
+        
+        public void PlayAmbientAudio()
+        {
+            ambientAudioSource.PlayOneShot(ambientAudio[AmbientAudioIndex]);
+            incrementAmbientAudio();
+        }
+
+        public void incrementAmbientAudio()
+        {
+            AmbientAudioIndex++;
+            if (AmbientAudioIndex >= ambientAudio.Length) AmbientAudioIndex = 0;
         }
     }
 }

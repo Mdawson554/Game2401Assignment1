@@ -1,6 +1,8 @@
+using Core;
 using Interactions;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.WSA;
 
 public class PlayerInteractor : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerInteractor : MonoBehaviour
 
     private InteractableObjects _interactable;
     private InteractableObjects _tempInteractable;
+    
+    private Toast _toast;
 
     private void OnEnable()
     {
@@ -24,11 +28,12 @@ public class PlayerInteractor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         _tempInteractable = other.GetComponent<InteractableObjects>();
-
+        
         if (_tempInteractable != null)
         {
             _interactable = _tempInteractable;
             _interactable?.OnHoverIn();
+            UIManager.Instance.ShowToastPrompt();
         }
     }
 
@@ -36,11 +41,13 @@ public class PlayerInteractor : MonoBehaviour
     {
         _interactable?.OnHoverOff();
         _interactable = null;
+        UIManager.Instance.HideToastPrompt();
     }
 
     private void Interact(InputAction.CallbackContext context)
     {
         Debug.Log("Interact");
+        UIManager.Instance.HideToastPrompt();
         _interactable?.OnInteract();
     }
 }

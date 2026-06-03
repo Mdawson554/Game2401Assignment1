@@ -11,12 +11,12 @@ namespace Interactions
         
         protected virtual void OnInteracted()
         {
-            //hey you turned me on and gav me attention? 
+            
         }
 
         protected virtual void OnFullfiledRequirements()
         {
-            //I did everything for you
+            
         }
 
         public void OnHoverIn()

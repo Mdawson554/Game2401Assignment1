@@ -1,14 +1,18 @@
 using System;
+using TMPro;
 using Gameplay;
 using Interactions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Core
 {
     public class DialogueManager : MonoBehaviour
     {
         public static DialogueManager Instance;
+        
+        [SerializeField] private Button _nextButton;
         public int dialogueindex = 0;
         
         public DialogueSO currentdialogueSO;
@@ -68,6 +72,11 @@ namespace Core
         public void DisplayClues()
         {
             UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
+        }
+
+        private void OnNextButtonClicked()
+        {
+            UIManager.Instance.hideDialogue();
         }
     }
 }

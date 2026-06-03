@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Interactions.Pickups
 {
-    public class Keys : InteractableObjects //,ICollectible
+    public class Keys : InteractableObjects,ICollectible
     {
         protected override void OnInteracted()
         {
@@ -19,6 +19,18 @@ namespace Interactions.Pickups
             //signal to UI manager and audio manager
             //maybe make an event
             Debug.Log("Keys FullfiledRequirements");
+        }
+        
+        public void OnCollected()
+        {
+            // TODO: DOTween 
+            Debug.Log("ClueItem collected tween placeholder");
+        }
+        
+        public void OnCollectEffect()
+        {
+            // TODO: ParticleSystem
+            Debug.Log("ClueItem particle effect placeholder");
         }
     }
 }

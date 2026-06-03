@@ -1,4 +1,5 @@
 using System;
+using Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -48,6 +49,11 @@ public class PlayerController : MonoBehaviour
         float moveZ = Input.GetAxisRaw("Vertical");   // W/S or Up/Down
         Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
         rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
+    }
+    
+    public void OnPause(InputValue value)
+    {
+        GameManager.Instance.Pause();
     }
 
 }
