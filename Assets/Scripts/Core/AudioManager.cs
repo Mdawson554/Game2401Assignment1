@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Core
@@ -5,11 +6,12 @@ namespace Core
     public class AudioManager : MonoBehaviour
     {
         public static AudioManager Instance;
+        private float currentBGtrackLength;
+        private float  currentAmbientAudioLength;
+        
         public AudioSource sfxAudioSource;
         public AudioSource bgAudioSource;
         public AudioSource ambientAudioSource;
-        
-        
         public AudioClip[] bgMusic;
         public AudioClip[] ambientAudio;
         
@@ -32,8 +34,12 @@ namespace Core
 
         public void PlayBGMusic()
         {
-            bgAudioSource.PlayOneShot(bgMusic[BgMusicIndex]);
+            bgAudioSource.clip = bgMusic[BgMusicIndex];
+            bgAudioSource.Play();
+            
+            currentBGtrackLength = bgAudioSource.clip.length;
             incrementBgMusic();
+            StartCoroutine(NextBGMusicClip());
         }
 
         public void incrementBgMusic()
@@ -44,8 +50,12 @@ namespace Core
         
         public void PlayAmbientAudio()
         {
-            ambientAudioSource.PlayOneShot(ambientAudio[AmbientAudioIndex]);
+            ambientAudioSource.clip = ambientAudio[AmbientAudioIndex];
+            ambientAudioSource.Play();
+            
+            currentAmbientAudioLength = ambientAudioSource.clip.length;
             incrementAmbientAudio();
+            StartCoroutine(NextAmbientAudioClip());
         }
 
         public void incrementAmbientAudio()
@@ -53,5 +63,18 @@ namespace Core
             AmbientAudioIndex++;
             if (AmbientAudioIndex >= ambientAudio.Length) AmbientAudioIndex = 0;
         }
+
+        private IEnumerator NextAmbientAudioClip()
+        {
+            yield return new WaitForSeconds(currentAmbientAudioLength);
+            PlayAmbientAudio();
+        }
+
+        private IEnumerator NextBGMusicClip()
+        {
+            yield return new WaitForSeconds(currentBGtrackLength);
+            PlayBGMusic();
+        }
+        
     }
 }
