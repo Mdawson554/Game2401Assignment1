@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 
 namespace Interactions.Pickups
@@ -6,19 +7,13 @@ namespace Interactions.Pickups
     {
         protected override void OnInteracted()
         {
-            //logic for what happens when I pick up a key
-            //signal to UI manager and audio manager
-            //maybe make an event
             Debug.Log("Keys Interacted");
         }
 
         protected override void OnFullfiledRequirements()
         {
-            //logic for when I've used my key and stuff
-            //probably indicate to the player that they key is only used for the one room.
-            //signal to UI manager and audio manager
-            //maybe make an event
-            Debug.Log("Keys FullfiledRequirements");
+            InventoryManager.Instance.UnequipItem();
+            Debug.Log("Key used and unequipped");
         }
         
         public void OnCollected()

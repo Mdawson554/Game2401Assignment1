@@ -38,7 +38,9 @@ namespace Interactions
     
     public enum InteractableObjectTypes
     {
-        Item,
+        Clues,
+        Keys,
+        StandardItem,
         NPC,
     }
     

@@ -13,11 +13,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 200f;
     
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private InputAction _pauseInput;
     private Camera playerCamera;
-    
     private float mouseX;
     private float mouseY;
     
+    private void OnEnable()
+    {
+        _pauseInput.Enable();
+        _pauseInput.performed += OnPause;
+    }
+
+    private void OnDisable()
+    {
+        _pauseInput.Disable();
+        _pauseInput.performed -= OnPause;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -51,7 +63,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
     }
     
-    public void OnPause(InputValue value)
+    public void OnPause(InputAction.CallbackContext context)
     {
         GameManager.Instance.Pause();
     }

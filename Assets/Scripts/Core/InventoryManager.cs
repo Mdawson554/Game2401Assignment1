@@ -6,21 +6,64 @@ namespace Core
 {
     public class InventoryManager : MonoBehaviour
     {
-        public static InventoryManager Instance;
+         [SerializeField] private int TotalClues;
         
-        private Dictionary<GameObject, string> inventoryDictionary;
+        public static InventoryManager Instance;
+        private int _clueCount = 0;
+        
+        private Dictionary<InteractableObjects, string> inventoryDictionary;
+        
+        public GameObject EquippedItem;
+        
         private void Awake()
         {
             if (Instance != null && Instance != this) Destroy(this);
             Instance = this;
-            inventoryDictionary = new Dictionary<GameObject, string>();
+            inventoryDictionary = new Dictionary<InteractableObjects, string>();
         }
 
-        public void AddItemToInventory(GameObject interactableObject, string Item)
+        public void AddItemToInventory(InteractableObjects interactableObject, string Item)
         {
             if (interactableObject != null)
             {
                 inventoryDictionary.TryAdd(interactableObject, Item);
+                //instantiate inventory ui element matching item type
+                
+                if (inventoryDictionary.ContainsKey(interactableObject))
+                {
+                    switch (interactableObject.interactableObjectType)
+                    {
+                        case InteractableObjectTypes.Clues:
+                            IncrementClueCount();
+                            break;
+                        case InteractableObjectTypes.StandardItem:
+                            break;
+                    }
+                }
+            }
+        }
+        
+        public void EquipItem(GameObject item)
+        {
+            EquippedItem = item;
+        }
+
+        public void UnequipItem()
+        {
+            EquippedItem = null;
+        }
+        
+        private void IncrementClueCount()
+        {
+            _clueCount++;
+            CheckClueAmount();
+        }
+        
+        private void CheckClueAmount()
+        {
+            if (_clueCount == TotalClues)
+            {
+                GameManager.Instance.OnAllCluesCollected();
             }
         }
     }

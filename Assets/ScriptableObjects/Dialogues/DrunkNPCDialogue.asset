@@ -13,8 +13,38 @@ MonoBehaviour:
   m_Name: DrunkNPCDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
-  - Dialogue: III Loooveee you MAAAANaaannNNann
-    Type: 0
+  - Dialogue: ILOove YoU MaAn
+    Type: 2
+    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 0}
+  - Dialogue: You wanna go bro?
+    Type: 2
+    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 0}
+  - Dialogue: You wanna go bro?
+    Type: 2
+    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 0}
+  - Dialogue: My wife just left me last weekend.
+    Type: 2
+    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 0}
+  - Dialogue: I miss my childhood dog sparky?
+    Type: 2
+    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 0}
+  - Dialogue: HeEeeeY YouU WAanna Come HoMe WIIith Me Toniiight
+    Type: 2
     DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}

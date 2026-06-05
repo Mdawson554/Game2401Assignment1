@@ -28,6 +28,8 @@ namespace Core
             ShowMouse(false);
             _audioManager.PlayBGMusic();
             _audioManager.PlayAmbientAudio();
+            quitButton.onClick.AddListener(OnQuit);
+            resumeButton.onClick.AddListener(OnResume);
         }
         
         private void OnEnable()
@@ -42,6 +44,11 @@ namespace Core
             quitButton.onClick.RemoveListener(OnQuit);
         }
 
+        public void OnAllCluesCollected()
+        {
+            Debug.Log("OnAllCluesCollected");
+        }
+
         private void ShowMouse(bool value)
         {
             Cursor.visible = value;
@@ -50,6 +57,7 @@ namespace Core
         
         public void Pause()
         {
+            Debug.Log("Pause");
             ShowMouse(true);
             Time.timeScale = 0;
             UIManager.Instance.ShowPauseMenu(true);
@@ -68,26 +76,6 @@ namespace Core
             EditorApplication.isPlaying = false;
 #endif
             Application.Quit();
-        }
-
-        private void IncrementClueCount()
-        {
-            //add this to the inventory system to keep track of the players progress
-        }
-
-        private void IncrementkeyCount()
-        {
-            //add this to the inventory system to keep track of the players progress  
-        }
-
-        private void SetClueCount()
-        {
-           //possibly add this to a JSON save system like term one 
-        }
-        
-        private void SetKeyCount()
-        {
-            //possibly add this to a JSON save system like term one  
         }
     }
 }

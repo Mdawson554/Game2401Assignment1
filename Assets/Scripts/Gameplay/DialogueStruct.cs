@@ -24,5 +24,7 @@ namespace Gameplay
         DrunkNPC,
         
         Monologue,
+        
+        BouncerNPC,
     }
 }

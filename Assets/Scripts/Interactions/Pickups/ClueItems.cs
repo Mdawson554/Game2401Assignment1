@@ -11,13 +11,9 @@ namespace Interactions.Pickups
 
         protected override void OnInteracted()
         {
-            DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, InteractableObjectTypes.Item);
+            DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, InteractableObjectTypes.Clues);
+            Debug.Log("dialogue from item"); 
             
-            if (itemName != null)
-            {
-                InventoryManager.Instance.AddItemToInventory(this.gameObject, itemName);
-                Debug.Log("dialogue from item"); 
-            } 
         }
         
         protected override void OnFullfiledRequirements()
@@ -33,6 +29,7 @@ namespace Interactions.Pickups
         {
             // TODO: DOTween 
             Debug.Log("ClueItem collected tween placeholder");
+            InventoryManager.Instance.AddItemToInventory(this, itemName);
         }
         
         public void OnCollectEffect()

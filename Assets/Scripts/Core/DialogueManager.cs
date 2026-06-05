@@ -47,8 +47,13 @@ namespace Core
                 case InteractableObjectTypes.NPC:
                     DisplayDialogue();
                     break;
-                case InteractableObjectTypes.Item:
-                    DisplayClues();
+                case InteractableObjectTypes.Clues:
+                    DisplayItemDialogue();
+                    break;
+                case InteractableObjectTypes.Keys:
+                    DisplayItemDialogue();
+                    break;
+                case InteractableObjectTypes.StandardItem:
                     break;
             }
             
@@ -69,7 +74,7 @@ namespace Core
             UIManager.Instance.DisplayToast(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
 
-        public void DisplayClues()
+        public void DisplayItemDialogue()
         {
             UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }

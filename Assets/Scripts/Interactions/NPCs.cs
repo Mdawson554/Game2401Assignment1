@@ -21,6 +21,10 @@ namespace Interactions
                     DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     Debug.Log("dialogue with drunk NPC");
                     break;
+                case DialogueType.BouncerNPC:
+                    DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                    Debug.Log("dialogue with bouncer NPC");
+                    break;
                 case DialogueType.EssentialNPC:
                     DialogueManager.Instance.SetSequentialDialogue(Dialogue, InteractableObjectTypes.NPC);
                     Debug.Log("dialogue with essential NPC");
