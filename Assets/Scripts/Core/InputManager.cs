@@ -7,27 +7,32 @@ namespace Core
     public class InputManager : MonoBehaviour
     {
         private PlayerStateMachine _playerStateMachine;
-        private PlayerInputActions _playerInputActions;
+        private PlayerInputActions playerInputActions;
+        private PlayerController _playerController;
 
         private void Start()
         {
             _playerStateMachine = GameManager.Instance.playerStateMachine;
-            _playerInputActions = GetComponent<PlayerInputActions>();
+            _playerController = GetComponent<PlayerController>();
         }
 
         private void OnEnable()
         {
-        
-            _playerInputActions.Enable();
-            _playerInputActions.Player.Pause.performed += OnPause;
-            _playerInputActions.Player.Interact.performed += OnInteract;
+            playerInputActions = new  PlayerInputActions();
+            playerInputActions.Enable();
+            playerInputActions.Player.Move.started += OnMove;
+            playerInputActions.Player.Move.canceled += OnMove;
+            playerInputActions.Player.Pause.performed += OnPause;
+            playerInputActions.Player.Interact.performed += Interact;
         }
 
         private void OnDisable()
         {
-            _playerInputActions.Disable();
-            _playerInputActions.Player.Pause.performed -= OnPause;
-            _playerInputActions.Player.Interact.performed -= OnInteract;
+            playerInputActions.Disable();
+            playerInputActions.Player.Move.started -= OnMove;
+            playerInputActions.Player.Move.canceled -= OnMove;
+            playerInputActions.Player.Pause.performed -= OnPause;
+            playerInputActions.Player.Interact.performed -= Interact;
         }
     
         public void OnPause(InputAction.CallbackContext context)
@@ -38,9 +43,10 @@ namespace Core
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            _playerStateMachine.changeState(_playerStateMachine.walkstate);
+            _playerController.CalculateMovement(context.ReadValue<Vector2>());
         }
-        private void OnInteract(InputAction.CallbackContext context)
+        
+        private void Interact(InputAction.CallbackContext context)
         {
             Debug.Log("OnInteract");
             UIManager.Instance.HideToastPrompt();

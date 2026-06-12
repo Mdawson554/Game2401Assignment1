@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private Camera playerCamera;
     private float mouseX;
     private float mouseY;
+    private float moveX;
+    private float moveZ;
 
     private bool _canPlayerMove = true;
 
@@ -31,13 +33,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         PlayerMovement();
+        Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
+        rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
     }
 
     public virtual void PlayerMovement()
     {
         if (!_canPlayerMove) return;
         CalculateMouseAndCam();
-        CalculateMovement();
     }
 
     public void ToggleMovement(bool movementEnabled)
@@ -56,11 +59,10 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(-ClampedY, 0f, 0f);
     }
 
-    private void CalculateMovement()
+    public void CalculateMovement(Vector2 playerdirection)
     {
-        float moveX = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right
-        float moveZ = Input.GetAxisRaw("Vertical");   // W/S or Up/Down
-        Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
-        rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
+        moveX = playerdirection.x; // A/D or Left/Right
+        moveZ = playerdirection.y;   // W/S or Up/Down
     }
+    
 }

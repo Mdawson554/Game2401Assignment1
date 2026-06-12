@@ -926,6 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.GameManager
   resumeButton: {fileID: 1336597973}
   quitButton: {fileID: 316425732}
+  playerStateMachine: {fileID: 1489182946}
 --- !u!1 &506071542
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,23 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d1b5791da3ccf4985ac8b5ca549265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
-  interactionInput:
-    m_Name: Interaction Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: c9a5664c-ae50-471b-bbf5-20f8293d4c16
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: d7b2de0b-ecda-41b5-99bd-06ceb2f8fa44
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Interaction Input
-      m_Flags: 0
-    m_Flags: 0
+  Interactable: {fileID: 0}
 --- !u!135 &506071545
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1392,6 +1377,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 0}
   bgAudioSource: {fileID: 1742227776}
   ambientAudioSource: {fileID: 1998862555}
+  playerAudioSource: {fileID: 0}
   bgMusic:
   - {fileID: 8300000, guid: 45a9780f802d3be40b20ddc6e7d6c4d1, type: 3}
   - {fileID: 8300000, guid: 5fd3e32341c0fa1498dfe18529965c46, type: 3}
@@ -1986,7 +1972,8 @@ GameObject:
   - component: {fileID: 1489182942}
   - component: {fileID: 1489182941}
   - component: {fileID: 1489182943}
-  - component: {fileID: 1489182945}
+  - component: {fileID: 1489182947}
+  - component: {fileID: 1489182946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2055,24 +2042,7 @@ MonoBehaviour:
   moveSpeed: 2
   mouseSensitivity: 200
   rb: {fileID: 0}
-  _pauseInput:
-    m_Name: Pause Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: bd98a4ad-0d63-4ee9-a52a-9e6140ffb230
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: cf9ec8e6-756d-4467-ae53-eb69c03a287f
-      m_Path: <Keyboard>/p
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pause Input
-      m_Flags: 0
-    m_Flags: 0
---- !u!114 &1489182945
+--- !u!114 &1489182946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2081,27 +2051,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489182940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 0612ec5ecf6d3e44aa7069d88961f9b8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::States.PlayerStateMachine
+  playerInteractor: {fileID: 506071544}
+--- !u!114 &1489182947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489182940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68fbb63be35b3c43b2016fea510a346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Core.InputManager
 --- !u!1 &1505430077
 GameObject:
   m_ObjectHideFlags: 0
