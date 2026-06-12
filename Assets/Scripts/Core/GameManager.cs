@@ -1,3 +1,4 @@
+using States;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +11,9 @@ namespace Core
         
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
-        
         private AudioManager _audioManager;
         private UIManager _uiManager;
+        public PlayerStateMachine playerStateMachine;
         
         private void Awake()
         {
@@ -30,6 +31,7 @@ namespace Core
             _audioManager.PlayAmbientAudio();
             quitButton.onClick.AddListener(OnQuit);
             resumeButton.onClick.AddListener(OnResume);
+            playerStateMachine = FindFirstObjectByType<PlayerStateMachine>();
         }
         
         private void OnEnable()

@@ -1,29 +1,15 @@
 using Core;
 using Interactions;
+using States;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.WSA;
 
 public class PlayerInteractor : MonoBehaviour
 {
-    [SerializeField] private InputAction interactionInput;
-
-    private InteractableObjects _interactable;
+    public InteractableObjects Interactable;
     private InteractableObjects _tempInteractable;
-    
     private Toast _toast;
-
-    private void OnEnable()
-    {
-        interactionInput.Enable();
-        interactionInput.performed += Interact;
-    }
-
-    private void OnDisable()
-    {
-        interactionInput.Disable();
-        interactionInput.performed -= Interact;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,23 +17,16 @@ public class PlayerInteractor : MonoBehaviour
         
         if (_tempInteractable != null)
         {
-            _interactable = _tempInteractable;
-            _interactable?.OnHoverIn();
+            Interactable = _tempInteractable;
+            Interactable?.OnHoverIn();
             UIManager.Instance.ShowToastPrompt();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _interactable?.OnHoverOff();
-        _interactable = null;
+        Interactable?.OnHoverOff();
+        Interactable = null;
         UIManager.Instance.HideToastPrompt();
-    }
-
-    private void Interact(InputAction.CallbackContext context)
-    {
-        Debug.Log("Interact");
-        UIManager.Instance.HideToastPrompt();
-        _interactable?.OnInteract();
     }
 }

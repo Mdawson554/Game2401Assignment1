@@ -16,13 +16,13 @@ namespace Interactions
             }
             else
             {
-                Debug.logger.Log("nuh uh");
+                Debug.Log("You can't do that!");
             }
         }
         
         private void OpenDoor()
         {
-            Debug.logger.Log("Opening door");
+            Debug.Log("Opening door");
         }
 
     }

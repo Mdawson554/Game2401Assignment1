@@ -5,6 +5,9 @@ namespace Interactions.Pickups
 {
     public class Keys : InteractableObjects,ICollectible
     {
+        public int KeyValue;
+        
+        
         protected override void OnInteracted()
         {
             Debug.Log("Keys Interacted");

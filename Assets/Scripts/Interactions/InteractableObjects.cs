@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 
 namespace Interactions
@@ -16,7 +17,8 @@ namespace Interactions
 
         protected virtual void OnFullfiledRequirements()
         {
-            
+            Debug.Log("object fufilled");
+            GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
         }
 
         public void OnHoverIn()

@@ -1,5 +1,6 @@
 using System;
 using Core;
+using States;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -11,24 +12,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Mouse Look")]
     [SerializeField] private float mouseSensitivity = 200f;
-    
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private InputAction _pauseInput;
+    
     private Camera playerCamera;
     private float mouseX;
     private float mouseY;
-    
-    private void OnEnable()
-    {
-        _pauseInput.Enable();
-        _pauseInput.performed += OnPause;
-    }
 
-    private void OnDisable()
-    {
-        _pauseInput.Disable();
-        _pauseInput.performed -= OnPause;
-    }
+    private bool _canPlayerMove = true;
 
     private void Start()
     {
@@ -40,8 +30,19 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
+        PlayerMovement();
+    }
+
+    public virtual void PlayerMovement()
+    {
+        if (!_canPlayerMove) return;
         CalculateMouseAndCam();
         CalculateMovement();
+    }
+
+    public void ToggleMovement(bool movementEnabled)
+    {
+        _canPlayerMove = movementEnabled;
     }
 
     private void CalculateMouseAndCam()
@@ -62,10 +63,4 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
         rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
     }
-    
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        GameManager.Instance.Pause();
-    }
-
 }

@@ -12,6 +12,8 @@ namespace Core
         public AudioSource sfxAudioSource;
         public AudioSource bgAudioSource;
         public AudioSource ambientAudioSource;
+        public AudioSource playerAudioSource;
+        
         public AudioClip[] bgMusic;
         public AudioClip[] ambientAudio;
         
@@ -30,6 +32,12 @@ namespace Core
         {
             if (clip == null) return;
             sfxAudioSource.PlayOneShot(clip);
+        }
+
+        public void PlayplayerSound(AudioClip clip)
+        {
+            if (clip == null) return;
+            playerAudioSource.PlayOneShot(clip);
         }
 
         public void PlayBGMusic()

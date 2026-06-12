@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Interactions;
+using Interactions.Pickups;
 using UnityEngine;
 
 namespace Core
@@ -12,6 +13,7 @@ namespace Core
         private int _clueCount = 0;
         
         private Dictionary<InteractableObjects, string> inventoryDictionary;
+        private Dictionary<Keys, int> keyDictionary;
         
         public GameObject EquippedItem;
         
@@ -27,8 +29,6 @@ namespace Core
             if (interactableObject != null)
             {
                 inventoryDictionary.TryAdd(interactableObject, Item);
-                //instantiate inventory ui element matching item type
-                
                 if (inventoryDictionary.ContainsKey(interactableObject))
                 {
                     switch (interactableObject.interactableObjectType)
@@ -40,7 +40,17 @@ namespace Core
                             break;
                     }
                 }
+
+                if (interactableObject.interactableObjectType == InteractableObjectTypes.Keys)
+                {
+                    
+                }
             }
+        }
+
+        public void AddKeyToDictionary(Keys key, int keyValue)
+        {
+            keyDictionary.TryAdd(key, keyValue);
         }
         
         public void EquipItem(GameObject item)
