@@ -12,7 +12,7 @@ namespace Interactions.Pickups
         [SerializeField] private string itemName;
         
         [SerializeField] private Renderer _objectRenderer;
-        private ParticleSystem _clueParticleSystem;
+        [SerializeField] private ParticleSystem _clueParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
 
         protected override void OnInteracted()
@@ -21,7 +21,11 @@ namespace Interactions.Pickups
             InventoryManager.Instance.AddItemToInventory(this, itemName);
             OnCollectEffect();
             Debug.Log("dialogue from item"); 
-            
+        }
+        
+        private void Start()
+        {
+            _clueParticleSystem = GetComponentInChildren<ParticleSystem>();
         }
         
         protected override void OnFullfiledRequirements()

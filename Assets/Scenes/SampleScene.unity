@@ -284,7 +284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.Pickups.Keys
   interactableObjectType: 0
   KeyValue: 0
-  _objectRenderer: {fileID: 5529728576315155872, guid: f0f883c26098a6845b1b1cfef1086e8e, type: 3}
+  _objectRenderer: {fileID: 184060007}
+  _keyParticleSystem: {fileID: 1533434746}
   _secondsToWait: 0.2
 --- !u!1 &316425730
 GameObject:
@@ -695,7 +696,8 @@ MonoBehaviour:
   interactableObjectType: 0
   _cluedialogueSO: {fileID: 11400000, guid: 8b92e7fff6e6432488e825bc095e6877, type: 2}
   itemName: Joe
-  _objectRenderer: {fileID: 3350696147694112074, guid: 5a521c3b62dc42146a5759a10ad389e1, type: 3}
+  _objectRenderer: {fileID: 360657366}
+  _clueParticleSystem: {fileID: 0}
   _secondsToWait: 0.2
 --- !u!1 &410087039
 GameObject:
@@ -2438,6 +2440,11 @@ PrefabInstance:
 --- !u!4 &1533434744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6839783209304006599, guid: f0f883c26098a6845b1b1cfef1086e8e, type: 3}
+  m_PrefabInstance: {fileID: 1533434743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1533434746 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3043339285924306594, guid: f0f883c26098a6845b1b1cfef1086e8e, type: 3}
   m_PrefabInstance: {fileID: 1533434743}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1610312787
