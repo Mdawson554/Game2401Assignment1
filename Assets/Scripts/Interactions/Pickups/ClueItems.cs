@@ -18,7 +18,7 @@ namespace Interactions.Pickups
         protected override void OnInteracted()
         {
             DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, InteractableObjectTypes.Clues);
-            InventoryManager.Instance.AddItemToInventory(this, itemName);
+            InventoryManager.Instance.AddItemToInventory(this, interactableObjectType);
             OnCollectEffect();
             Debug.Log("dialogue from item"); 
         }
@@ -36,7 +36,9 @@ namespace Interactions.Pickups
             //maybe make an event
             Debug.Log("clues FullfiledRequirements");
         }
-        
+
+        public Sprite Icon { get; set; }
+
         public void OnCollectEffect()
         {
             // TODO: ParticleSystem

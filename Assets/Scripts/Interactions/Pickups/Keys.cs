@@ -18,6 +18,7 @@ namespace Interactions.Pickups
         protected override void OnInteracted()
         {
             OnCollectEffect();
+            InventoryManager.Instance.AddItemToInventory(this, interactableObjectType);
         }
 
         private void Start()
@@ -27,11 +28,12 @@ namespace Interactions.Pickups
 
         protected override void OnFullfiledRequirements()
         {
-            InventoryManager.Instance.UnequipItem();
             Debug.Log("Key used and unequipped");
         }
-        
-        
+
+
+        public Sprite Icon { get; set; }
+
         public void OnCollectEffect()
         {
             // TODO: ParticleSystem

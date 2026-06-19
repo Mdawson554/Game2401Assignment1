@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Interactions;
 using Interactions.Pickups;
@@ -12,61 +13,27 @@ namespace Core
         public static InventoryManager Instance;
         private int _clueCount = 0;
         
-        private Dictionary<InteractableObjects, string> inventoryDictionary;
-        private Dictionary<Keys, int> keyDictionary;
-        
+        private Dictionary<InteractableObjects,InteractableObjectTypes> _interactableObjects = new Dictionary<InteractableObjects, InteractableObjectTypes>();
         public GameObject EquippedItem;
         
         private void Awake()
         {
             if (Instance != null && Instance != this) Destroy(this);
             Instance = this;
-            inventoryDictionary = new Dictionary<InteractableObjects, string>();
+            
         }
 
-        public void AddItemToInventory(InteractableObjects interactableObject, string Item)
+        public void AddItemToInventory(InteractableObjects interactableObject, InteractableObjectTypes type)
         {
             if (interactableObject != null)
             {
-                inventoryDictionary.TryAdd(interactableObject, Item);
-                if (inventoryDictionary.ContainsKey(interactableObject))
+                _interactableObjects.TryAdd(interactableObject, type);
+                
+                if (_interactableObjects.ContainsKey(interactableObject))
                 {
-                    switch (interactableObject.interactableObjectType)
-                    {
-                        case InteractableObjectTypes.Clues:
-                            IncrementClueCount();
-                            break;
-                        case InteractableObjectTypes.StandardItem:
-                            break;
-                    }
-                }
-
-                if (interactableObject.interactableObjectType == InteractableObjectTypes.Keys)
-                {
-                    
+                    interactableObject.count++;
                 }
             }
-        }
-
-        public void AddKeyToDictionary(Keys key, int keyValue)
-        {
-            keyDictionary.TryAdd(key, keyValue);
-        }
-        
-        public void EquipItem(GameObject item)
-        {
-            EquippedItem = item;
-        }
-
-        public void UnequipItem()
-        {
-            EquippedItem = null;
-        }
-        
-        private void IncrementClueCount()
-        {
-            _clueCount++;
-            CheckClueAmount();
         }
         
         private void CheckClueAmount()
