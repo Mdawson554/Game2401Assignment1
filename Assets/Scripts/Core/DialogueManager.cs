@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using Gameplay;
 using Interactions;
+using States.StateTypes;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,9 +31,9 @@ namespace Core
             {
                 dialogueindex++;
             }
-            else
+            else if (dialogueindex >= currentdialogueSO.DialogueArray.Length)
             {
-                return;
+                OnDialogueFinished();
             }
         }
 
@@ -79,9 +80,15 @@ namespace Core
             UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
 
-        private void OnNextButtonClicked()
+        public void OnSkipButtonClicked()
         {
             UIManager.Instance.hideDialogue();
+            OnDialogueFinished();
+        }
+
+        private void OnDialogueFinished()
+        {
+            GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
         }
     }
 }

@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public void ToggleMovement(bool movementEnabled)
     {
         _canPlayerMove = movementEnabled;
+        Debug.Log(movementEnabled);
     }
 
     private void CalculateMouseAndCam()

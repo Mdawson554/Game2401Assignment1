@@ -24,6 +24,7 @@ namespace Core
             playerInputActions.Player.Move.canceled += OnMove;
             playerInputActions.Player.Pause.performed += OnPause;
             playerInputActions.Player.Interact.performed += Interact;
+            playerInputActions.Player.Skip.performed += OnSkip;
         }
 
         private void OnDisable()
@@ -33,6 +34,7 @@ namespace Core
             playerInputActions.Player.Move.canceled -= OnMove;
             playerInputActions.Player.Pause.performed -= OnPause;
             playerInputActions.Player.Interact.performed -= Interact;
+            playerInputActions.Player.Skip.performed -= OnSkip;
         }
     
         public void OnPause(InputAction.CallbackContext context)
@@ -44,6 +46,11 @@ namespace Core
         public void OnMove(InputAction.CallbackContext context)
         {
             _playerController.CalculateMovement(context.ReadValue<Vector2>());
+        }
+
+        public void OnSkip(InputAction.CallbackContext context)
+        {
+            DialogueManager.Instance.OnSkipButtonClicked();
         }
         
         private void Interact(InputAction.CallbackContext context)
