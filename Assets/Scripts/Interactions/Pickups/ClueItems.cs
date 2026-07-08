@@ -18,9 +18,8 @@ namespace Interactions.Pickups
         protected override void OnInteracted()
         {
             DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, InteractableObjectTypes.Clues);
-            InventoryManager.Instance.AddItemToInventory(this, interactableObjectType);
+            InventoryManager.Instance.AddClueToInventory(this, interactableObjectType);
             OnCollectEffect();
-            Debug.Log("dialogue from item"); 
         }
         
         private void Start()
@@ -28,28 +27,18 @@ namespace Interactions.Pickups
             _clueParticleSystem = GetComponentInChildren<ParticleSystem>();
         }
         
-        protected override void OnFullfiledRequirements()
-        {
-            //logic for when I've used my key and stuff
-            //probably indicate to the player that they key is only used for the one room.
-            //signal to UI manager and audio manager
-            //maybe make an event
-            Debug.Log("clues FullfiledRequirements");
-        }
-
+        
         public Sprite Icon { get; set; }
 
         public void OnCollectEffect()
         {
             // TODO: ParticleSystem
-            Debug.Log("ClueItem particle effect placeholder");
             StartCoroutine(CollectParticleSystem());
         }
         
         
         private IEnumerator CollectParticleSystem()
         {
-            //the coroutine for the particle system when the collectible is collided with 
             Color previousColor = _objectRenderer.material.color;
             var main = _clueParticleSystem.main;
             main.startColor = previousColor;

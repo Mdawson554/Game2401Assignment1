@@ -19,3 +19,15 @@ MonoBehaviour:
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     DialogueColor: {r: 0.9339623, g: 0.6330196, b: 0.12775902, a: 0}
+  - Dialogue: I should ask around about this
+    Type: 3
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.9339623, g: 0.6330196, b: 0.12775902, a: 0}
+  - Dialogue: how did this get here?
+    Type: 3
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.9339623, g: 0.6330196, b: 0.12775902, a: 0}

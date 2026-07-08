@@ -1,6 +1,7 @@
 using States;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Core
@@ -9,8 +10,12 @@ namespace Core
     {
         public static GameManager Instance;
         
+        public string SceneName;
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private Button continueButton;
+        
+        
         private AudioManager _audioManager;
         private UIManager _uiManager;
         public PlayerStateMachine playerStateMachine;
@@ -31,24 +36,31 @@ namespace Core
             _audioManager.PlayAmbientAudio();
             quitButton.onClick.AddListener(OnQuit);
             resumeButton.onClick.AddListener(OnResume);
+            continueButton.onClick.AddListener(OnContinue);
+            
             playerStateMachine = FindFirstObjectByType<PlayerStateMachine>();
         }
         
         private void OnEnable()
         {
             resumeButton.onClick.AddListener(OnResume);
+            continueButton.onClick.AddListener(OnContinue);
             quitButton.onClick.AddListener(OnQuit);
         }
 
         private void OnDisable()
         {
             resumeButton.onClick.RemoveListener(OnResume);
+            continueButton.onClick.AddListener(OnContinue);
             quitButton.onClick.RemoveListener(OnQuit);
         }
 
         public void OnAllCluesCollected()
         {
-            Debug.Log("OnAllCluesCollected");
+            Debug.Log("YOU WIN THE GAME!");
+            ShowMouse(true);
+            Time.timeScale = 0;
+            UIManager.Instance.ShowWinMenu(true);
         }
 
         private void ShowMouse(bool value)
@@ -70,6 +82,11 @@ namespace Core
             ShowMouse(false);
             Time.timeScale = 1;
             UIManager.Instance.ShowPauseMenu(false);
+        }
+        
+        private void OnContinue()
+        {
+            SceneManager.LoadScene(SceneName);
         }
 
         private void OnQuit()

@@ -8,34 +8,39 @@ namespace Core
 {
     public class InventoryManager : MonoBehaviour
     {
-         [SerializeField] private int TotalClues;
-        
+        [Header("Clues")] [SerializeField] private int TotalClues;
+        public int _clueCount = 0; //turn back to pruvate after testing
+
         public static InventoryManager Instance;
-        private int _clueCount = 0;
-        
-        private Dictionary<InteractableObjects,InteractableObjectTypes> _interactableObjects = new Dictionary<InteractableObjects, InteractableObjectTypes>();
+
+        private Dictionary<InteractableObjects, InteractableObjectTypes> _interactableObjects =
+            new Dictionary<InteractableObjects, InteractableObjectTypes>();
+
         public GameObject EquippedItem;
-        
+
         private void Awake()
         {
             if (Instance != null && Instance != this) Destroy(this);
             Instance = this;
-            
+
         }
 
-        public void AddItemToInventory(InteractableObjects interactableObject, InteractableObjectTypes type)
+        public void AddClueToInventory(InteractableObjects interactableObject, InteractableObjectTypes Type)
         {
             if (interactableObject != null)
             {
-                _interactableObjects.TryAdd(interactableObject, type);
-                
+                _interactableObjects.TryAdd(interactableObject, Type);
+
                 if (_interactableObjects.ContainsKey(interactableObject))
                 {
                     interactableObject.count++;
+                    _clueCount++;
+                    CheckClueAmount();
+                    Debug.Log("item added");
                 }
             }
         }
-        
+
         private void CheckClueAmount()
         {
             if (_clueCount == TotalClues)

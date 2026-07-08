@@ -12,10 +12,13 @@ namespace Core
         [SerializeField] private float _itemCollectedDisplaytime;
         [SerializeField] private float _DialogueDisplaytime;
         
+        [Header("text")]
         [SerializeField] private TMP_Text _toastText;
         [SerializeField] private TMP_Text _clueText;
         
+        [Header("panels")]
         [SerializeField] private GameObject _pauseMenu;
+        [SerializeField] private GameObject _winMenu;
         [SerializeField] private GameObject _clueHUD;
         [SerializeField] private GameObject _toast;
         
@@ -78,6 +81,11 @@ namespace Core
         public void ShowPauseMenu(bool show)
         {
             _pauseMenu.SetActive(show);
+        }
+        
+        public void ShowWinMenu(bool show)
+        {
+            _winMenu.SetActive(show);
         }
     }
 }

@@ -13,29 +13,22 @@ namespace Interactions
         
         protected virtual void OnInteracted()
         {
-            
-        }
-
-        protected virtual void OnFullfiledRequirements()
-        {
-            Debug.Log("object fufilled");
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
         }
-
+        
         public void OnHoverIn()
         {
-            Debug.Log("InteractableObjects OnHoverIn");
+            
         }
 
         public void OnInteract()
         {
-            Debug.Log("InteractableObjects Oninteract");
             OnInteracted();
         }
 
         public void OnHoverOff()
         {
-           Debug.Log("InteractableObjects OnHoveroff"); 
+            
         }
     }
     

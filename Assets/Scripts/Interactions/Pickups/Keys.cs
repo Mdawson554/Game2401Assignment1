@@ -7,37 +7,27 @@ namespace Interactions.Pickups
 {
     public class Keys : InteractableObjects,ICollectible
     {
-        public int KeyValue;
-        
-        //effects for pickup
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField]  private ParticleSystem _keyParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
-
+        public int KeyValue;
         
-        protected override void OnInteracted()
-        {
-            OnCollectEffect();
-            InventoryManager.Instance.AddItemToInventory(this, interactableObjectType);
-        }
-
+        
         private void Start()
         {
             _keyParticleSystem = GetComponentInChildren<ParticleSystem>();
         }
-
-        protected override void OnFullfiledRequirements()
+        
+        protected override void OnInteracted()
         {
-            Debug.Log("Key used and unequipped");
+            OnCollectEffect();
+           //InventoryManager.Instance.AddKeyToInventory(this, interactableObjectType);
         }
-
-
+        
         public Sprite Icon { get; set; }
 
         public void OnCollectEffect()
         {
-            // TODO: ParticleSystem
-            Debug.Log("ClueItem particle effect");
             StartCoroutine(CollectParticleSystem());
         }
         

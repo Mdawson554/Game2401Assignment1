@@ -9,8 +9,7 @@ public class InventoryUIManager : MonoBehaviour
    [SerializeField] private InventoryUIItem _inventoryUIPrefab;
    
    private Dictionary<InteractableObjects,InteractableObjectTypes> _interactableObjects = new Dictionary<InteractableObjects, InteractableObjectTypes>();
-
-
+   
    public void CreateInventoryItem(ICollectible collectible)
    {
       var tempItem = Instantiate(_inventoryUIPrefab,this.transform.position,Quaternion.identity);

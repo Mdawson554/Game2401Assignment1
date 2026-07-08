@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
         mouseY += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         transform.localRotation = Quaternion.Euler(0f, mouseX, 0f);
-        //clamp the y value between 90 and -90 so you cannot break your players neck
         var ClampedY = Mathf.Clamp(mouseY, -90f, 90f);
         playerCamera.transform.localRotation = Quaternion.Euler(-ClampedY, 0f, 0f);
     }
