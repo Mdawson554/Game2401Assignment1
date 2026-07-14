@@ -14,6 +14,7 @@ namespace Interactions.Pickups
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField] private ParticleSystem _clueParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
+        private Coroutine currentRoutine;
 
         protected override void OnInteracted()
         {
@@ -32,8 +33,9 @@ namespace Interactions.Pickups
 
         public void OnCollectEffect()
         {
+            if(currentRoutine != null )return;
             // TODO: ParticleSystem
-            StartCoroutine(CollectParticleSystem());
+            currentRoutine = StartCoroutine(CollectParticleSystem());
         }
         
         
@@ -49,6 +51,7 @@ namespace Interactions.Pickups
             yield return new WaitForSeconds(_secondsToWait);
             _objectRenderer.material.color = Color.black; 
             Destroy(gameObject);
+            yield return null;
         }
     }
 }

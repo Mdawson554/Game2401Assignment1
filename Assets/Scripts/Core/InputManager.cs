@@ -7,7 +7,7 @@ namespace Core
     public class InputManager : MonoBehaviour
     {
         private PlayerStateMachine _playerStateMachine;
-        private PlayerInputActions playerInputActions;
+        public PlayerInputActions playerInputActions;
         private PlayerController _playerController;
 
         private void Start()
@@ -36,16 +36,34 @@ namespace Core
             playerInputActions.Player.Interact.performed -= Interact;
             playerInputActions.Player.Skip.performed -= OnSkip;
         }
+
+        public void EnableMoveInput(bool isEnabled)
+        {
+            switch(isEnabled)
+            {
+                case true:
+                    playerInputActions.Player.Move.started += OnMove;
+                    playerInputActions.Player.Move.canceled += OnMove;
+                    break;
+                case false:
+                    playerInputActions.Player.Move.started -= OnMove;
+                    playerInputActions.Player.Move.canceled -= OnMove;
+                    break;
+            }
+        }
+        
+        
+        //make one for enable pauseinput,idle and dialogue states
     
         public void OnPause(InputAction.CallbackContext context)
         {
-            GameManager.Instance.Pause();
-            _playerStateMachine.changeState(_playerStateMachine.PauseState);
+           _playerStateMachine.Pause();
         }
 
         public void OnMove(InputAction.CallbackContext context)
         {
             _playerController.CalculateMovement(context.ReadValue<Vector2>());
+            //have another reference that calls the statemachine that calcules the movement but changes the state
         }
 
         public void OnSkip(InputAction.CallbackContext context)

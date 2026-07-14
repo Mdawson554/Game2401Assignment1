@@ -4,15 +4,15 @@ namespace States.StateTypes
 {
     public class WalkingState : IStates
     {
-        private PlayerController playerController;
-        public WalkingState(PlayerController player)
+        private PlayerStateMachine playerStateMachine;
+        public WalkingState(PlayerStateMachine stateMachine)
         {
-            playerController = player;
+            playerStateMachine = stateMachine;
         }
 
         public void EnterState()
         {
-            playerController.ToggleMovement(true);
+            playerStateMachine.playerController.ToggleMovement(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

@@ -1,20 +1,20 @@
+using Core;
 using UnityEngine;
 
 namespace States.StateTypes
 {
     public class PauseState : IStates
     {
-        private PlayerController playerController;
-        private IStates statesImplementation;
-
-        public PauseState(PlayerController player)
+        private PlayerStateMachine playerStateMachine;
+        public PauseState(PlayerStateMachine stateMachine)
         {
-            playerController = player;
+            playerStateMachine = stateMachine;
         }
 
         public void EnterState()
         {
-            playerController.ToggleMovement(false);
+            GameManager.Instance.Pause();
+            playerStateMachine.playerController.InputManager.EnableMoveInput(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }

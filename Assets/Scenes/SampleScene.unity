@@ -2441,6 +2441,7 @@ MonoBehaviour:
   moveSpeed: 4
   mouseSensitivity: 300
   rb: {fileID: 0}
+  InputManager: {fileID: 0}
 --- !u!114 &1489182946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2453,6 +2454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0612ec5ecf6d3e44aa7069d88961f9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::States.PlayerStateMachine
+  playerController: {fileID: 0}
   current: 
   playerInteractor: {fileID: 506071544}
 --- !u!114 &1489182947

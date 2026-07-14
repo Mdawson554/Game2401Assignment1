@@ -74,6 +74,7 @@ namespace Core
 
         public void DisplayItemDialogue()
         {
+            dialogueindex = 0;
             UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
 

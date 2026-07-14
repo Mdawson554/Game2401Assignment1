@@ -13,7 +13,7 @@ namespace States
             public IdleState idlestate;
             public DialogueState dialoguestate;
             public PauseState PauseState;
-            private PlayerController playerController;
+            public  PlayerController playerController;
             public string current;
             
             public PlayerInteractor playerInteractor;
@@ -21,12 +21,6 @@ namespace States
             public void IntializeState(IStates startingState)
             {
                 changeState(startingState);
-            }
-
-            public override void changeState(IStates newState)
-            {
-                current = newState.ToString();
-                base.changeState(newState);
             }
             public void TransitionState(IStates nextState)
             {
@@ -40,17 +34,22 @@ namespace States
                 }
             }
 
+            public void Pause()
+            {
+                changeState(PauseState);
+            }
+
             public void Start()
             {
                 playerController = GetComponent<PlayerController>();
             }
 
-            public PlayerStateMachine(PlayerController playerController)
+            public PlayerStateMachine(PlayerStateMachine playerStateMachine)
             {
-                this.walkstate = new WalkingState(playerController);
-                this.idlestate = new IdleState(playerController);
-                this.dialoguestate = new DialogueState(playerController);
-                this.PauseState = new PauseState(playerController);
+                walkstate = new WalkingState(this);
+                idlestate = new IdleState(this);
+                dialoguestate = new DialogueState(this);
+                PauseState = new PauseState(this);
             }
     }
 }

@@ -13,7 +13,7 @@ namespace Interactions
         
         protected virtual void OnInteracted()
         {
-            GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
+            
         }
         
         public void OnHoverIn()

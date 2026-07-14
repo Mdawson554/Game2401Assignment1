@@ -3,16 +3,15 @@ using UnityEngine;
 namespace States.StateTypes
 {
     public class DialogueState : IStates
-    {
-        private PlayerController playerController;
-        public DialogueState(PlayerController player)
+    {private PlayerStateMachine playerStateMachine;
+        public DialogueState(PlayerStateMachine stateMachine)
         {
-            playerController = player;
+            playerStateMachine = stateMachine;
         }
 
         public void EnterState()
         {
-            playerController.ToggleMovement(false);
+            playerStateMachine.playerController.ToggleMovement(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
