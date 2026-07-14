@@ -58,7 +58,6 @@ namespace Core
             Debug.Log("OnInteract");
             UIManager.Instance.HideToastPrompt();
             _playerStateMachine.playerInteractor.Interactable?.OnInteract();
-            _playerStateMachine.changeState(_playerStateMachine.dialoguestate);
         }
     }
 }

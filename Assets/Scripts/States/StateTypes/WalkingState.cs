@@ -1,17 +1,22 @@
+using UnityEngine;
+
 namespace States.StateTypes
 {
     public class WalkingState : IStates
     {
-        private PlayerController player;
+        private PlayerController playerController;
         public WalkingState(PlayerController player)
         {
-            this.player = player;
+            playerController = player;
         }
-        
+
         public void EnterState()
         {
-            player.ToggleMovement(true);
+            playerController.ToggleMovement(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
+        
         public void ExecuteState()
         {
             

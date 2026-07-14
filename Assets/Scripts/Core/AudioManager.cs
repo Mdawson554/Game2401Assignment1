@@ -12,16 +12,14 @@ namespace Core
         public AudioSource sfxAudioSource;
         public AudioSource bgAudioSource;
         public AudioSource ambientAudioSource;
-        public AudioSource playerAudioSource;
+        /*public AudioSource playerAudioSource;*/
         
         public AudioClip[] bgMusic;
         public AudioClip[] ambientAudio;
         
         public int BgMusicIndex;
         public int AmbientAudioIndex;
-
-        //null check and functionality to play a one shot audio clip when authorized.
-
+        
         private void Awake()
         {
             if (Instance != null && Instance != this) Destroy(this);
@@ -34,11 +32,11 @@ namespace Core
             sfxAudioSource.PlayOneShot(clip);
         }
 
-        public void PlayplayerSound(AudioClip clip)
+        /*public void PlayplayerSound(AudioClip clip)
         {
             if (clip == null) return;
             playerAudioSource.PlayOneShot(clip);
-        }
+        }*/
 
         public void PlayBGMusic()
         {

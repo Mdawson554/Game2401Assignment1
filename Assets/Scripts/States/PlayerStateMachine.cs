@@ -43,15 +43,14 @@ namespace States
             public void Start()
             {
                 playerController = GetComponent<PlayerController>();
-                this.walkstate = new WalkingState(playerController);
-                this.idlestate = new IdleState(playerController);
-                this.dialoguestate = new DialogueState(playerController);
-                this.PauseState = new PauseState(playerController);
             }
 
             public PlayerStateMachine(PlayerController playerController)
             {
-                
+                this.walkstate = new WalkingState(playerController);
+                this.idlestate = new IdleState(playerController);
+                this.dialoguestate = new DialogueState(playerController);
+                this.PauseState = new PauseState(playerController);
             }
     }
 }

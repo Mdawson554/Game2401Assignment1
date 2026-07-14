@@ -1,17 +1,22 @@
+using UnityEngine;
+
 namespace States.StateTypes
 {
     public class DialogueState : IStates
     {
-        private PlayerController player;
+        private PlayerController playerController;
         public DialogueState(PlayerController player)
         {
-            this.player = player;
+            playerController = player;
         }
-        
+
         public void EnterState()
         {
-            player.ToggleMovement(false);
+            playerController.ToggleMovement(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
+
         public void ExecuteState()
         {
             

@@ -17,7 +17,6 @@ namespace Core
         public int dialogueindex = 0;
         
         public DialogueSO currentdialogueSO;
-        private DialogueStruct _currentDialogueStruct ;
     
         private void Awake()
         {
@@ -41,7 +40,6 @@ namespace Core
         {
             //set the current dialogue in sequential order
             currentdialogueSO = dialogueSO;
-            _currentDialogueStruct = currentdialogueSO.DialogueArray [dialogueindex%currentdialogueSO.DialogueArray.Length];
 
             switch (interactableObjectType)
             {
@@ -66,7 +64,6 @@ namespace Core
             currentdialogueSO = dialogueSO;
             int random = UnityEngine.Random.Range (0, currentdialogueSO.DialogueArray.Length);
             dialogueindex = random;
-            _currentDialogueStruct = currentdialogueSO.DialogueArray [dialogueindex%currentdialogueSO.DialogueArray.Length];
             DisplayDialogue();
         }
         

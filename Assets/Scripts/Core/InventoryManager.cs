@@ -35,8 +35,8 @@ namespace Core
                 {
                     interactableObject.count++;
                     _clueCount++;
-                    CheckClueAmount();
                     Debug.Log("item added");
+                    CheckClueAmount();
                 }
             }
         }
