@@ -82,6 +82,7 @@ namespace Core
             ShowMouse(false);
             Time.timeScale = 1;
             UIManager.Instance.ShowPauseMenu(false);
+            playerStateMachine.Resume();
         }
         
         private void OnContinue()

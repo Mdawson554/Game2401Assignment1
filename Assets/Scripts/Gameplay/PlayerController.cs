@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float moveZ;
 
     private bool _canPlayerMove = true;
-    public InputManager InputManager;
+    
 
     private void Start()
     {

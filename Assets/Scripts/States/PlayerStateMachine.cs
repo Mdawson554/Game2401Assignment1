@@ -14,9 +14,15 @@ namespace States
             public DialogueState dialoguestate;
             public PauseState PauseState;
             public  PlayerController playerController;
+            public InputManager inputManager;
             public string current;
             
             public PlayerInteractor playerInteractor;
+            
+            public PlayerStateMachine(PlayerStateMachine playerStateMachine)
+            {
+                
+            }
         
             public void IntializeState(IStates startingState)
             {
@@ -37,19 +43,25 @@ namespace States
             public void Pause()
             {
                 changeState(PauseState);
+                Debug.Log("game paused");
+            }
+
+            public void Resume()
+            {
+                changeState(idlestate);
+                Debug.Log("game resumed");
             }
 
             public void Start()
             {
                 playerController = GetComponent<PlayerController>();
-            }
-
-            public PlayerStateMachine(PlayerStateMachine playerStateMachine)
-            {
+                inputManager = GetComponent<InputManager>();
                 walkstate = new WalkingState(this);
                 idlestate = new IdleState(this);
                 dialoguestate = new DialogueState(this);
                 PauseState = new PauseState(this);
             }
+
+            
     }
 }

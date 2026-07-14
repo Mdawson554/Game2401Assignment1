@@ -17,13 +17,9 @@ namespace States.StateTypes
         
         public void EnterState()
         {
-            playerStateMachine.playerController.InputManager.EnableMoveInput(true);
+            playerStateMachine.inputManager.EnableMoveInput(true);
+            
             //enable pause input, dialogue input through interact and pause input.
-        }
-
-        private void InternalStateChange(InputAction.CallbackContext obj)
-        {
-            playerStateMachine.changeState(playerStateMachine.walkstate);
         }
         
         public void ExecuteState()
@@ -37,7 +33,6 @@ namespace States.StateTypes
         
         public void ExitState()
         {
-            playerStateMachine.playerController.InputManager.playerInputActions.Player.Move.started -= InternalStateChange;
             //transition out of this state into another
         }
     }

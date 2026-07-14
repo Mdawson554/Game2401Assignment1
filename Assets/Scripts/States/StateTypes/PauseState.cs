@@ -14,7 +14,8 @@ namespace States.StateTypes
         public void EnterState()
         {
             GameManager.Instance.Pause();
-            playerStateMachine.playerController.InputManager.EnableMoveInput(false);
+            Debug.Log("Pause");
+            playerStateMachine.inputManager.EnableMoveInput(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
