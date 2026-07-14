@@ -78,12 +78,6 @@ namespace Core
             UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
 
-        public void OnSkipButtonClicked()
-        {
-            UIManager.Instance.hideDialogue();
-            OnDialogueFinished();
-        }
-
         private void OnDialogueFinished()
         {
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);

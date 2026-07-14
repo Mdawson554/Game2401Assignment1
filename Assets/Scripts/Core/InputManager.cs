@@ -24,7 +24,6 @@ namespace Core
             playerInputActions.Player.Move.canceled += OnMove;
             playerInputActions.Player.Pause.performed += OnPause;
             playerInputActions.Player.Interact.performed += Interact;
-            playerInputActions.Player.Skip.performed += OnSkip;
         }
 
         private void OnDisable()
@@ -34,7 +33,6 @@ namespace Core
             playerInputActions.Player.Move.canceled -= OnMove;
             playerInputActions.Player.Pause.performed -= OnPause;
             playerInputActions.Player.Interact.performed -= Interact;
-            playerInputActions.Player.Skip.performed -= OnSkip;
         }
 
         public void EnableMoveInput(bool isEnabled)
@@ -52,8 +50,6 @@ namespace Core
             }
         }
         
-        
-        //make one for enable pauseinput,idle and dialogue states
     
         public void OnPause(InputAction.CallbackContext context)
         {
@@ -63,12 +59,6 @@ namespace Core
         public void OnMove(InputAction.CallbackContext context)
         {
             _playerController.CalculateMovement(context.ReadValue<Vector2>());
-            //have another reference that calls the statemachine that calcules the movement but changes the state
-        }
-
-        public void OnSkip(InputAction.CallbackContext context)
-        {
-            DialogueManager.Instance.OnSkipButtonClicked();
         }
         
         private void Interact(InputAction.CallbackContext context)

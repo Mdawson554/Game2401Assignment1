@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
     public void CalculateMovement(Vector2 playerdirection)
     {
+        
         moveX = playerdirection.x; // A/D or Left/Right
         moveZ = playerdirection.y;   // W/S or Up/Down
     }

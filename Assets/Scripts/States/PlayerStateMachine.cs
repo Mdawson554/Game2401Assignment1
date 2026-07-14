@@ -52,6 +52,18 @@ namespace States
                 Debug.Log("game resumed");
             }
 
+            public void Interact()
+            {
+                changeState(dialoguestate);
+                Debug.Log("dialogue interacted");
+            }
+
+            public void InteractComplete()
+            {
+                changeState(idlestate);
+                Debug.Log("dialogue complete");
+            }
+
             public void Start()
             {
                 playerController = GetComponent<PlayerController>();
