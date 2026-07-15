@@ -11,8 +11,6 @@ namespace Interactions.Pickups
         [SerializeField]  private ParticleSystem _keyParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
         public int KeyValue;
-        
-        
         private void Start()
         {
             _keyParticleSystem = GetComponentInChildren<ParticleSystem>();
@@ -20,6 +18,7 @@ namespace Interactions.Pickups
         
         protected override void OnInteracted()
         {
+            InventoryManager.Instance.EquippedItem = gameObject;
             OnCollectEffect();
            //InventoryManager.Instance.AddKeyToInventory(this, interactableObjectType);
         }
@@ -47,3 +46,4 @@ namespace Interactions.Pickups
         }
     }
 }
+

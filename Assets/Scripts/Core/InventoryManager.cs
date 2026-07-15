@@ -8,8 +8,9 @@ namespace Core
 {
     public class InventoryManager : MonoBehaviour
     {
-        [Header("Clues")] [SerializeField] private int TotalClues;
-        public int _clueCount = 0; //turn back to pruvate after testing
+        [Header("Clues")] 
+        [SerializeField] private int TotalClues;
+        public int _clueCount = 0; //turn back to private after testing
 
         public static InventoryManager Instance;
 
@@ -25,7 +26,7 @@ namespace Core
 
         }
 
-        public void AddClueToInventory(InteractableObjects interactableObject, InteractableObjectTypes Type)
+        /*public void AddClueToInventory(InteractableObjects interactableObject, InteractableObjectTypes Type) ////OLD METHOD
         {
             if (interactableObject != null)
             {
@@ -34,10 +35,23 @@ namespace Core
                 if (_interactableObjects.ContainsKey(interactableObject))
                 {
                     interactableObject.count++;
+                    //obj.count++;
                     _clueCount++;
                     Debug.Log("item added");
                     CheckClueAmount();
                 }
+            }
+        }*/
+        
+        public void AddClueToInventory(InteractableObjects obj, InteractableObjectTypes type)
+        {
+            if (obj == null) return;
+
+            if (_interactableObjects.TryAdd(obj, type))
+            {
+                obj.count++;
+                _clueCount++;
+                CheckClueAmount();
             }
         }
 
@@ -50,3 +64,4 @@ namespace Core
         }
     }
 }
+

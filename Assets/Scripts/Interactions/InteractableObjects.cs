@@ -16,20 +16,21 @@ namespace Interactions
             
         }
         
-        public void OnHoverIn()
-        {
-            
-        }
-
         public void OnInteract()
         {
             OnInteracted();
         }
-
+        
+        public void OnHoverIn()
+        {
+            
+        }
+        
         public void OnHoverOff()
         {
             
         }
+        
     }
     
     public enum InteractableObjectTypes
@@ -38,11 +39,7 @@ namespace Interactions
         Keys,
         StandardItem,
         NPC,
+        Door,
     }
-    
-    
-    
-    
-    
-    
 }
+
