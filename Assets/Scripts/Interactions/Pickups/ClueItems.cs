@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using EventSystem;
 using Gameplay;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Interactions.Pickups
     {
         [SerializeField] private DialogueSO _cluedialogueSO;
         [SerializeField] private string itemName;
+        [SerializeField] private InventoryUIItem _inventoryUIItem;
 
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField] private ParticleSystem _clueParticleSystem;
@@ -20,8 +22,9 @@ namespace Interactions.Pickups
 
         private void OnInteracted()
         {
-            DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, InteractableObjectTypes.Clues);
-            //InventoryManager.Instance.AddClueToInventory(this, interactableObjectType);
+            EventManager.instance.Publish(new PickupEvent(CollectibleTypes.Clues, _inventoryUIItem));
+            DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, CollectibleTypes.Clues);
+            InventoryManager.Instance.IncrementClueCount();
             OnCollectEffect();
         }
 

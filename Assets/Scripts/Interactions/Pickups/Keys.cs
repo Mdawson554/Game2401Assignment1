@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Core;
+using EventSystem;
 using UnityEngine;
 
 namespace Interactions.Pickups
@@ -10,6 +11,8 @@ namespace Interactions.Pickups
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField]  private ParticleSystem _keyParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
+        [SerializeField] private InventoryUIItem _inventoryUIItem;
+        
         public int KeyValue;
         private void Start()
         {
@@ -18,6 +21,7 @@ namespace Interactions.Pickups
         
         private void OnInteracted()
         {
+            EventManager.instance.Publish(new PickupEvent(CollectibleTypes.Keys, _inventoryUIItem));
             InventoryManager.Instance.EquippedItem = gameObject;
             OnCollectEffect();
            //InventoryManager.Instance.AddKeyToInventory(this, interactableObjectType);

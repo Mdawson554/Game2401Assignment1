@@ -8,7 +8,6 @@ namespace Interactions
     /// </summary>
     public class InteractableObjects : MonoBehaviour, IInteractable 
     {
-        public InteractableObjectTypes interactableObjectType;
         public int count;
         
         protected virtual void OnInteracted()
@@ -20,14 +19,6 @@ namespace Interactions
         {
             OnInteracted();
         }
-    }
-    
-    public enum InteractableObjectTypes
-    {
-        Clues,
-        Keys,
-        NPC,
-        Door,
     }
 }
 

@@ -36,20 +36,17 @@ namespace Core
             }
         }
 
-        public void SetSequentialDialogue(DialogueSO dialogueSO, InteractableObjectTypes interactableObjectType)
+        public void SetSequentialDialogue(DialogueSO dialogueSO, CollectibleTypes interactableObjectType)
         {
             //set the current dialogue in sequential order
             currentdialogueSO = dialogueSO;
 
             switch (interactableObjectType)
             {
-                case InteractableObjectTypes.NPC:
-                    DisplayDialogue();
-                    break;
-                case InteractableObjectTypes.Clues:
+                case CollectibleTypes.Clues :
                     DisplayItemDialogue();
                     break;
-                case InteractableObjectTypes.Keys:
+                case CollectibleTypes.Keys :
                     DisplayItemDialogue();
                     break;
             }

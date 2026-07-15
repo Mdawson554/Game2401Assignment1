@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using EventSystem;
 using Interactions;
 using Interactions.Pickups;
 using UnityEngine;
@@ -9,50 +10,46 @@ namespace Core
     public class InventoryManager : MonoBehaviour
     {
         [Header("Clues")] 
-        [SerializeField] private int TotalClues;
-        public int _clueCount = 0; //turn back to private after testing
+        public int TotalClues;
+        public int _clueCount = 0;
 
         public static InventoryManager Instance;
-
-        private Dictionary<InteractableObjects, InteractableObjectTypes> _interactableObjects =
-            new Dictionary<InteractableObjects, InteractableObjectTypes>();
-
         public GameObject EquippedItem;
+        
+        public Dictionary<CollectibleTypes, InventoryUIItem> _items = new Dictionary<CollectibleTypes, InventoryUIItem>();
+        
 
         private void Awake()
         {
             if (Instance != null && Instance != this) Destroy(this);
             Instance = this;
-
         }
 
-        /*public void AddClueToInventory(InteractableObjects interactableObject, InteractableObjectTypes Type) ////OLD METHOD
+        private void OnEnable()
         {
-            if (interactableObject != null)
-            {
-                _interactableObjects.TryAdd(interactableObject, Type);
+            EventManager.instance.Subscribe<PickupEvent>(AddToInventory);
+        }
 
-                if (_interactableObjects.ContainsKey(interactableObject))
-                {
-                    interactableObject.count++;
-                    //obj.count++;
-                    _clueCount++;
-                    Debug.Log("item added");
-                    CheckClueAmount();
-                }
-            }
-        }*/
-        
-        public void AddClueToInventory(InteractableObjects obj, InteractableObjectTypes type)
+        private void OnDisable()
         {
-            if (obj == null) return;
+            EventManager.instance.Unsubscribe<PickupEvent>(AddToInventory);
+        }
 
-            if (_interactableObjects.TryAdd(obj, type))
+        private void AddToInventory(PickupEvent obj)
+        {
+            var type = obj.assignedCollectibleType;
+            var uIItem = obj.assignedinventoryUIItem;
+            
+            if ( _items.TryAdd(type, uIItem))
             {
-                obj.count++;
-                _clueCount++;
-                CheckClueAmount();
+                InventoryUIManager.Instance.CreateInventoryItem(uIItem);
             }
+        }
+
+        public void IncrementClueCount()
+        {
+            _clueCount++;
+            CheckClueAmount();
         }
 
         private void CheckClueAmount()

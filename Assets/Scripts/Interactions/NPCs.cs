@@ -25,9 +25,8 @@ namespace Interactions
                 case DialogueType.BouncerNPC:
                     DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     break;
-                case DialogueType.EssentialNPC:
-                    DialogueManager.Instance.SetSequentialDialogue(Dialogue, InteractableObjectTypes.NPC);
-                    break;
+                /*case DialogueType.EssentialNPC:
+                    DialogueManager.Instance.SetSequentialDialogue(Dialogue, InteractableObjectTypes.NPC);*/
             }
         }
 

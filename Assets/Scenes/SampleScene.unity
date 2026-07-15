@@ -1073,7 +1073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d1b5791da3ccf4985ac8b5ca549265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
-  Interactable: {fileID: 0}
 --- !u!135 &506071545
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2060,8 +2059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  interactableObjectType: 1
-  count: 0
   Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
   dialogueType: 4
 --- !u!136 &948653861
@@ -3181,7 +3178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1636794250}
-  - component: {fileID: 1636794251}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -3205,25 +3201,6 @@ Transform:
   - {fileID: 1303443268}
   m_Father: {fileID: 707950620}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1636794251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636794249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 284022c3444847e46964757a7f0f94d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LockedDoor
-  interactableObjectType: 4
-  count: 0
-  anim: {fileID: 1303443269}
-  requiredKey: {fileID: 1785715982}
-  doorLocked: {fileID: 8300000, guid: c965af878cddc4b4e9805fc05c923815, type: 3}
-  doorOpen: {fileID: 8300000, guid: 0e1235845d6f8d04db2bc1c5ec9fb162, type: 3}
-  doorClose: {fileID: 8300000, guid: 7ae98f9381a33ed4a9c55cb12062a9c1, type: 3}
 --- !u!1001 &1653439249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3632,11 +3609,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1489182942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1785715982 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3968838617339251170, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
-  m_PrefabInstance: {fileID: 602378368}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809848941
 GameObject:
   m_ObjectHideFlags: 0
