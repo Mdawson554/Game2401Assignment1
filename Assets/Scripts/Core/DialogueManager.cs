@@ -52,8 +52,6 @@ namespace Core
                 case InteractableObjectTypes.Keys:
                     DisplayItemDialogue();
                     break;
-                case InteractableObjectTypes.StandardItem:
-                    break;
             }
             
         }

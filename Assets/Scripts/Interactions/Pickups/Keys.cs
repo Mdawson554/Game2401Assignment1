@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Interactions.Pickups
 {
-    public class Keys : InteractableObjects,ICollectible
+    public class Keys : MonoBehaviour, IInteractable,ICollectible
     {
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField]  private ParticleSystem _keyParticleSystem;
@@ -16,7 +16,7 @@ namespace Interactions.Pickups
             _keyParticleSystem = GetComponentInChildren<ParticleSystem>();
         }
         
-        protected override void OnInteracted()
+        private void OnInteracted()
         {
             InventoryManager.Instance.EquippedItem = gameObject;
             OnCollectEffect();
@@ -43,6 +43,11 @@ namespace Interactions.Pickups
             yield return new WaitForSeconds(_secondsToWait);
             _objectRenderer.material.color = Color.white; 
             Destroy(gameObject);
+        }
+
+        public void OnInteract()
+        {
+            OnInteracted();
         }
     }
 }

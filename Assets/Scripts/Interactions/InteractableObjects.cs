@@ -20,24 +20,12 @@ namespace Interactions
         {
             OnInteracted();
         }
-        
-        public void OnHoverIn()
-        {
-            
-        }
-        
-        public void OnHoverOff()
-        {
-            
-        }
-        
     }
     
     public enum InteractableObjectTypes
     {
         Clues,
         Keys,
-        StandardItem,
         NPC,
         Door,
     }

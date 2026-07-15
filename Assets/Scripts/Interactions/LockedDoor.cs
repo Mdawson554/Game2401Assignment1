@@ -2,7 +2,7 @@ using UnityEngine;
 using Interactions;
 using Core;
 
-public class LockedDoor : InteractableObjects, IConditional
+public class LockedDoor : MonoBehaviour, IConditional, IInteractable
 {
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject requiredKey;
@@ -37,20 +37,7 @@ public class LockedDoor : InteractableObjects, IConditional
         audioManager.PlaySound(doorLocked);
     }
 
-    public void OnHoverIn()
-    {
-        if (!_isOpen)
-        {
-            UIManager.Instance.ShowToastPrompt();
-        }
-    }
-
-    public void OnHoverOff()
-    {
-        UIManager.Instance.HideToastPrompt();
-    }
-
-    protected override void OnInteracted()
+    private void OnInteracted()
     {
         if (_isOpen)
         {
@@ -71,5 +58,10 @@ public class LockedDoor : InteractableObjects, IConditional
             anim.SetBool(isOpenHash, true);
         }
         audioManager.PlaySound(doorOpen);
+    }
+
+    public void OnInteract()
+    {
+        OnInteracted();
     }
 }

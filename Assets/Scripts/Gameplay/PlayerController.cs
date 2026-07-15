@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(-mouseY, 0f, 0f);
     }
     
-    public void CalculatePlayerMovement(Vector2 playerdirection)
+    public void CalculatePlayerMovement(Vector2   playerdirection)
     {
         moveX = playerdirection.x; // A/D or Left/Right
         moveZ = playerdirection.y; // W/S or Up/Down

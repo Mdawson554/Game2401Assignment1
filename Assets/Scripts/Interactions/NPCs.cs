@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace Interactions
 {
-    public class NPCs : InteractableObjects
+    public class NPCs : MonoBehaviour, IInteractable
     {
         public DialogueSO Dialogue;
         public DialogueType dialogueType;
 
-        protected override void OnInteracted()
+        private void OnInteracted()
         { 
             EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
             switch (dialogueType)   
@@ -29,6 +29,21 @@ namespace Interactions
                     DialogueManager.Instance.SetSequentialDialogue(Dialogue, InteractableObjectTypes.NPC);
                     break;
             }
+        }
+
+        public void OnHoverIn()
+        {
+            
+        }
+
+        public void OnInteract()
+        {
+            OnInteracted();
+        }
+
+        public void OnHoverOff()
+        {
+            
         }
     }
 }
