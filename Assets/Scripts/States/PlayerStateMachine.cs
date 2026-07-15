@@ -1,5 +1,6 @@
 using System;
 using Core;
+using EventSystem;
 using Gameplay;
 using States.StateTypes;
 using UnityEngine;
@@ -13,14 +14,16 @@ namespace States
             public IdleState idlestate;
             public DialogueState dialoguestate;
             public PauseState PauseState;
-            public  PlayerController playerController;
+            public PlayerController playerController;
             public InputManager inputManager;
             public string current;
             
             public PlayerInteractor playerInteractor;
-            
+        
+                
             public PlayerStateMachine(PlayerStateMachine playerStateMachine)
             {
+                
             }
 
             public void Pause()
@@ -47,6 +50,13 @@ namespace States
                 Debug.Log("dialogue complete");
             }
 
+
+            public void HandleStateChange(StateChangeEvent stateChangeEvent)
+            {
+                changeState(stateChangeEvent.assignedState);
+            }
+            
+            
             public void Start()
             {
                 playerController = GetComponent<PlayerController>();
@@ -56,9 +66,8 @@ namespace States
                 dialoguestate = new DialogueState(this);
                 PauseState = new PauseState(this);
                 changeState(idlestate);
-
+                EventManager.instance.Subscribe<StateChangeEvent>(HandleStateChange);
             }
-
-            
+        
     }
 }

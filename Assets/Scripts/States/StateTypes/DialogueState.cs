@@ -3,7 +3,8 @@ using UnityEngine;
 namespace States.StateTypes
 {
     public class DialogueState : IStates
-    {private PlayerStateMachine playerStateMachine;
+    {
+        private PlayerStateMachine playerStateMachine;
         public DialogueState(PlayerStateMachine stateMachine)
         {
             playerStateMachine = stateMachine;

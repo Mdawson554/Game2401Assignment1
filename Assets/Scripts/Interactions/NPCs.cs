@@ -1,5 +1,7 @@
 using Core;
+using EventSystem;
 using Gameplay;
+using States;
 using UnityEngine;
 
 namespace Interactions
@@ -11,7 +13,8 @@ namespace Interactions
 
         protected override void OnInteracted()
         { 
-            switch (dialogueType)
+            EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
+            switch (dialogueType)   
             {
                 case DialogueType.CommonNPC:
                     DialogueManager.Instance.SetRandomDialogue(Dialogue);

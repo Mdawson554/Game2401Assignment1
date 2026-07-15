@@ -18,22 +18,11 @@ namespace States.StateTypes
         public void EnterState()
         {
             playerStateMachine.inputManager.EnableMoveInput(true);
-            
-            //enable pause input, dialogue input through interact and pause input.
         }
-        
-        public void ExecuteState()
-        {
-            //listen for inp
-            //if (movement) go to movement state
-            //if interact go to the dialogue state
-            //if pause go to the pause state
-        }
-        
         
         public void ExitState()
         {
-            //transition out of this state into another
+           
         }
         public void Update()
         {
