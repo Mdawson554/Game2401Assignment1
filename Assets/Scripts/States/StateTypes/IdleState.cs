@@ -35,5 +35,10 @@ namespace States.StateTypes
         {
             //transition out of this state into another
         }
+        public void Update()
+        {
+            playerStateMachine.playerController.PlayerMovement();
+            playerStateMachine.playerController.CalculateMouseAndCam();
+        }
     }
 }

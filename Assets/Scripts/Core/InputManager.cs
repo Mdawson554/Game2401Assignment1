@@ -58,7 +58,7 @@ namespace Core
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            _playerController.CalculateMovement(context.ReadValue<Vector2>());
+            _playerController.CalculatePlayerMovement(context.ReadValue<Vector2>());
         }
         
         private void Interact(InputAction.CallbackContext context)

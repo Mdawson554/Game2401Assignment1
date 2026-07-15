@@ -29,5 +29,9 @@ namespace States.StateTypes
         {
            
         }
+        public void Update()
+        {
+            
+        }
     }
 }

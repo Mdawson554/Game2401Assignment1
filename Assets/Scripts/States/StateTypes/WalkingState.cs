@@ -12,7 +12,6 @@ namespace States.StateTypes
 
         public void EnterState()
         {
-            playerStateMachine.playerController.ToggleMovement(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -24,6 +23,11 @@ namespace States.StateTypes
         public void ExitState()
         {
             
+        }
+        public void Update()
+        {
+            playerStateMachine.playerController.PlayerMovement();
+            playerStateMachine.playerController.CalculateMouseAndCam();
         }
     }
 }

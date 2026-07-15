@@ -21,23 +21,6 @@ namespace States
             
             public PlayerStateMachine(PlayerStateMachine playerStateMachine)
             {
-                
-            }
-        
-            public void IntializeState(IStates startingState)
-            {
-                changeState(startingState);
-            }
-            public void TransitionState(IStates nextState)
-            {
-                changeState(nextState);
-            }
-            public void ExecuteState()
-            {
-                if (currentState != null)
-                {
-                    currentState.ExecuteState();
-                }
             }
 
             public void Pause()
@@ -72,6 +55,8 @@ namespace States
                 idlestate = new IdleState(this);
                 dialoguestate = new DialogueState(this);
                 PauseState = new PauseState(this);
+                changeState(idlestate);
+
             }
 
             

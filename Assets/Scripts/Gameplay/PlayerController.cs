@@ -32,24 +32,17 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        PlayerMovement();
-        Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
-        rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
+       
     }
     
     public virtual void PlayerMovement()
     {
-        if (!_canPlayerMove) return;
-        CalculateMouseAndCam();
+        Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
+        rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
+        //CalculateMouseAndCam();
     }
     
-    public void ToggleMovement(bool movementEnabled)
-    {
-        _canPlayerMove = movementEnabled;
-        Debug.Log(movementEnabled);
-    }
-    
-    private void CalculateMouseAndCam()
+    public void CalculateMouseAndCam()
     {
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
         mouseY += Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -58,7 +51,7 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(-mouseY, 0f, 0f);
     }
     
-    public void CalculateMovement(Vector2 playerdirection)
+    public void CalculatePlayerMovement(Vector2 playerdirection)
     {
         moveX = playerdirection.x; // A/D or Left/Right
         moveZ = playerdirection.y; // W/S or Up/Down
