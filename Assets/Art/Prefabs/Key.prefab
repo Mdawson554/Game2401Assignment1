@@ -126,11 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d2239d5cc715f4badc4e62b75d6680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.Pickups.Keys
-  interactableObjectType: 0
-  count: 0
   _objectRenderer: {fileID: 4981815746789387752}
   _keyParticleSystem: {fileID: 548055599214042133}
   _secondsToWait: 0.2
+  _inventoryUIItem: {fileID: 2960678325676081919, guid: f510072f59f108b4c93eb665be9ecace, type: 3}
   KeyValue: 0
 --- !u!1001 &3289608348404761271
 PrefabInstance:

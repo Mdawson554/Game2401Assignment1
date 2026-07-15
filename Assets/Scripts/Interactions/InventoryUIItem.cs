@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class InventoryUIItem : MonoBehaviour
 { 
    public Image ItemImage;
-   public TMP_Text ItemCount;
+   public int ItemCount;
+   public TMP_Text ItemCountText;
    public TMP_Text Itemname;
    public Sprite Icon;
+   
 }

@@ -42,7 +42,14 @@ namespace Core
             
             if ( _items.TryAdd(type, uIItem))
             {
-                InventoryUIManager.Instance.CreateInventoryItem(uIItem);
+                InventoryUIManager.Instance.CreateInventoryItem(uIItem, type);
+                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, type);
+                uIItem.ItemCount = 1;
+
+            }
+            else
+            {
+                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, type);
             }
         }
 
