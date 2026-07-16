@@ -10,13 +10,12 @@ using UnityEngine.UI;
 namespace Core
 {
     public class DialogueManager : MonoBehaviour
-    {
-        public static DialogueManager Instance;
-        
+    { 
         [SerializeField] private Button _nextButton;
-        public int dialogueindex = 0;
         
-        public DialogueSO currentdialogueSO;
+        public static DialogueManager Instance;
+        public int dialogueindex = 0;
+        public DialogueSO currentdialogueSO; 
     
         private void Awake()
         {
@@ -26,9 +25,10 @@ namespace Core
         
         public void incrementDialogue()
         {
-            if (dialogueindex < currentdialogueSO.DialogueArray.Length - 1)
+            if (dialogueindex <= currentdialogueSO.DialogueArray.Length - 1)
             {
                 dialogueindex++;
+                DisplayDialogue();
             }
             else if (dialogueindex >= currentdialogueSO.DialogueArray.Length)
             {
@@ -36,26 +36,38 @@ namespace Core
             }
         }
 
-        public void SetSequentialDialogue(DialogueSO dialogueSO, CollectibleTypes interactableObjectType)
+        public void NextDialogue()
         {
-            //set the current dialogue in sequential order
-            currentdialogueSO = dialogueSO;
-
-            switch (interactableObjectType)
+            if (currentdialogueSO.assignedType == DialogueType.SequentialDialogue)
             {
-                case CollectibleTypes.Clues :
+                incrementDialogue();
+            }
+            else
+            {
+                GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
+            }
+        }
+
+        public void SetSequentialDialogue(DialogueSO dialogueSO)
+        {
+            currentdialogueSO = dialogueSO;
+            var tempDialogue = currentdialogueSO.assignedType;
+            switch (tempDialogue)
+            {
+                case DialogueType.ItemDialogue :
                     DisplayItemDialogue();
                     break;
-                case CollectibleTypes.Keys :
-                    DisplayItemDialogue();
+                case DialogueType.SequentialDialogue :
+                    DisplayDialogue();
+                    break;
+                default:
+                    DisplayDialogue();
                     break;
             }
-            
         }
 
         public void SetRandomDialogue(DialogueSO dialogueSO)
         {
-            //set the current dialogue in random order
             currentdialogueSO = dialogueSO;
             int random = UnityEngine.Random.Range (0, currentdialogueSO.DialogueArray.Length);
             dialogueindex = random;
@@ -64,6 +76,7 @@ namespace Core
         
         public void DisplayDialogue()
         {
+            Debug.Log("WHY");
             UIManager.Instance.DisplayToast(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
 

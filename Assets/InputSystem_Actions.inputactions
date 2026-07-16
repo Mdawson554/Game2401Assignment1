@@ -43,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Skip",
+                    "name": "Next",
                     "type": "Button",
                     "id": "84528e28-1096-44bb-8667-21aa2c2b90a0",
                     "expectedControlType": "",
@@ -258,7 +258,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Skip",
+                    "action": "Next",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

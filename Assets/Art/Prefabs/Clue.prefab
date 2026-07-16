@@ -126,9 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474ce9247a7b5df409a5d1975b060dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.Pickups.ClueItems
+  assignedCollectibleType: 0
+  assignedinventoryUIItem: {fileID: 4880192623675393052, guid: 8d9acf1b4ed092f42a4e077f6406e3cd, type: 3}
+  KeyValue: 0
   _cluedialogueSO: {fileID: 11400000, guid: 8b92e7fff6e6432488e825bc095e6877, type: 2}
   itemName: Joe
-  _inventoryUIItem: {fileID: 4880192623675393052, guid: 8d9acf1b4ed092f42a4e077f6406e3cd, type: 3}
   _objectRenderer: {fileID: 2145754245095619765}
   _clueParticleSystem: {fileID: 0}
   _secondsToWait: 0.2

@@ -21,7 +21,7 @@ namespace Interactions.Pickups
         private void OnInteracted()
         {
             EventManager.instance.Publish(new PickupEvent(this));
-            DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, CollectibleTypes.Clues);
+            DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO);
             InventoryManager.Instance.IncrementClueCount();
             OnCollectEffect();
         }

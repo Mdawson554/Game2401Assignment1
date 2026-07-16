@@ -129,7 +129,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Skip"",
+                    ""name"": ""Next"",
                     ""type"": ""Button"",
                     ""id"": ""84528e28-1096-44bb-8667-21aa2c2b90a0"",
                     ""expectedControlType"": """",
@@ -344,7 +344,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Skip"",
+                    ""action"": ""Next"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -936,7 +936,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
-        m_Player_Skip = m_Player.FindAction("Skip", throwIfNotFound: true);
+        m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1034,7 +1034,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Pause;
-    private readonly InputAction m_Player_Skip;
+    private readonly InputAction m_Player_Next;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1063,9 +1063,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Skip".
+        /// Provides access to the underlying input action "Player/Next".
         /// </summary>
-        public InputAction @Skip => m_Wrapper.m_Player_Skip;
+        public InputAction @Next => m_Wrapper.m_Player_Next;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1104,9 +1104,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @Skip.started += instance.OnSkip;
-            @Skip.performed += instance.OnSkip;
-            @Skip.canceled += instance.OnSkip;
+            @Next.started += instance.OnNext;
+            @Next.performed += instance.OnNext;
+            @Next.canceled += instance.OnNext;
         }
 
         /// <summary>
@@ -1130,9 +1130,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @Skip.started -= instance.OnSkip;
-            @Skip.performed -= instance.OnSkip;
-            @Skip.canceled -= instance.OnSkip;
+            @Next.started -= instance.OnNext;
+            @Next.performed -= instance.OnNext;
+            @Next.canceled -= instance.OnNext;
         }
 
         /// <summary>
@@ -1462,12 +1462,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Skip" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Next" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSkip(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

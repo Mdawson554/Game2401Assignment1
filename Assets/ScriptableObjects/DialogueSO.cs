@@ -5,4 +5,14 @@ using UnityEngine;
 public class DialogueSO : ScriptableObject
 {
     public DialogueStruct []DialogueArray;
+    public DialogueType assignedType;
+
+
+}
+
+public enum DialogueType
+{
+    RandomDialogue,
+    SequentialDialogue,
+    ItemDialogue,
 }

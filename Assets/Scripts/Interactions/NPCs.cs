@@ -9,24 +9,25 @@ namespace Interactions
     public class NPCs : MonoBehaviour, IInteractable
     {
         public DialogueSO Dialogue;
-        public DialogueType dialogueType;
+        public NPCType npcType;
 
         private void OnInteracted()
         { 
             EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
-            switch (dialogueType)   
+            switch (npcType)   
             {
-                case DialogueType.CommonNPC:
+                case NPCType.CommonNPC:
                     DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     break;
-                case DialogueType.DrunkNPC:
+                case NPCType.DrunkNPC:
                     DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     break;
-                case DialogueType.BouncerNPC:
+                case NPCType.BouncerNPC:
                     DialogueManager.Instance.SetRandomDialogue(Dialogue);
                     break;
-                /*case DialogueType.EssentialNPC:
-                    DialogueManager.Instance.SetSequentialDialogue(Dialogue, InteractableObjectTypes.NPC);*/
+                case NPCType.EssentialNPC:
+                    DialogueManager.Instance.SetSequentialDialogue(Dialogue);
+                    break;
             }
         }
 

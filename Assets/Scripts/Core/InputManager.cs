@@ -24,6 +24,7 @@ namespace Core
             playerInputActions.Player.Move.canceled += OnMove;
             playerInputActions.Player.Pause.performed += OnPause;
             playerInputActions.Player.Interact.performed += Interact;
+            playerInputActions.Player.Next.performed += OnNext;
         }
 
         private void OnDisable()
@@ -33,6 +34,7 @@ namespace Core
             playerInputActions.Player.Move.canceled -= OnMove;
             playerInputActions.Player.Pause.performed -= OnPause;
             playerInputActions.Player.Interact.performed -= Interact;
+            playerInputActions.Player.Next.performed -= OnNext;
         }
 
         public void EnableMoveInput(bool isEnabled)
@@ -59,6 +61,12 @@ namespace Core
         public void OnMove(InputAction.CallbackContext context)
         {
             _playerController.CalculatePlayerMovement(context.ReadValue<Vector2>());
+        }
+
+        public void OnNext(InputAction.CallbackContext context)
+        {
+            Debug.Log("Next");
+            DialogueManager.Instance.NextDialogue();
         }
         
         private void Interact(InputAction.CallbackContext context)
