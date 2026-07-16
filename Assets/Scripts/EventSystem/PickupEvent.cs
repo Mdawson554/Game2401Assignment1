@@ -7,13 +7,12 @@ namespace EventSystem
 {
     public class PickupEvent : IEvent
     {
-        public CollectibleTypes assignedCollectibleType;
-        public InventoryUIItem assignedinventoryUIItem;
+        
+        public BaseItem assignedItem;
     
-        public PickupEvent(CollectibleTypes collectibles, InventoryUIItem inventoryUIItem)
+        public PickupEvent(BaseItem baseItem)
         {
-            assignedCollectibleType = collectibles;
-            assignedinventoryUIItem = inventoryUIItem;
+            assignedItem = baseItem;
         }
     }
 }

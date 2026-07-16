@@ -1,63 +1,65 @@
 using UnityEngine;
 using Interactions;
 using Core;
+using Interactions.Pickups;
+using Pickups;
+using UnityEngine.InputSystem;
 
 public class LockedDoor : MonoBehaviour, IConditional, IInteractable
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private GameObject requiredKey;
+    [SerializeField] private Keys requiredKey;
     [SerializeField] private AudioClip doorLocked;
     [SerializeField] private AudioClip doorOpen;
     [SerializeField] private AudioClip doorClose;
-
-    private AudioManager audioManager;
     private int isOpenHash;
     private bool _isOpen = false;
-
-    private void Start()
-    {
-        audioManager = AudioManager.Instance;
-
-        /*
-        if (anim != null)
-        {
-            isOpenHash = Animator.StringToHash("IsOpen");
-        }*/
-    }
-
-    public bool CanInteract()
-    {
-        if (_isOpen) return true;
-        // Player must have the correct key equipped
-        return InventoryManager.Instance.EquippedItem == requiredKey;
-    }
-
+    
     public void OnKeyNotPickedUp()
     {
-        audioManager.PlaySound(doorLocked);
+        AudioManager.Instance.PlaySound(doorLocked);
+    }
+    
+    public void OnTryOpen()
+    {
+        var items = InventoryManager.Instance.Keys;
+        Debug.Log(items.Count);
+        if (items.ContainsValue(requiredKey.KeyValue))
+        {
+            AudioManager.Instance.PlaySound(doorOpen);
+            Debug.Log("open");
+            OnDoorOpen();
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(doorClose);
+            Debug.Log("NUhUh");
+        }
     }
 
-    private void OnInteracted()
+    public void OnDoorOpen()
     {
         if (_isOpen)
         {
             if (anim != null)
             {
-                anim.SetBool(isOpenHash, false);
+                //anim.SetBool(isOpenHash, false);
             }
-            audioManager.PlaySound(doorClose);
             _isOpen = false;
             return;
         }
-
         // OPEN DOOR
         _isOpen = true;
         Debug.Log("door open");
         if (anim != null)
         {
-            anim.SetBool(isOpenHash, true);
+            //anim.SetBool(isOpenHash, true);
         }
-        audioManager.PlaySound(doorOpen);
+    }
+
+    private void OnInteracted()
+    {
+        OnTryOpen();
     }
 
     public void OnInteract()

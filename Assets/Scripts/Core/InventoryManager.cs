@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using EventSystem;
 using Interactions;
-using Interactions.Pickups;
+using Pickups;
 using UnityEngine;
 
 namespace Core
@@ -11,13 +10,13 @@ namespace Core
     {
         [Header("Clues")] 
         public int TotalClues;
-        public int _clueCount = 0;
-
+        public int ClueCount = 0;
         public static InventoryManager Instance;
         public GameObject EquippedItem;
         
-        public Dictionary<CollectibleTypes, InventoryUIItem> _items = new Dictionary<CollectibleTypes, InventoryUIItem>();
-        
+        public Dictionary<CollectibleTypes, InventoryUIItem> Items = new Dictionary<CollectibleTypes, InventoryUIItem>();
+        public Dictionary<CollectibleTypes, BaseItem>  BaseItems = new Dictionary<CollectibleTypes, BaseItem>();
+        public Dictionary<BaseItem, int> Keys = new Dictionary<BaseItem, int>();
 
         private void Awake()
         {
@@ -35,33 +34,46 @@ namespace Core
             EventManager.instance.Unsubscribe<PickupEvent>(AddToInventory);
         }
 
+        private void AddKey(BaseItem item)
+        {
+            Debug.Log("ahhhhhhh");
+            if (item.assignedCollectibleType == CollectibleTypes.Keys)
+            {
+                Keys.TryAdd(item, item.KeyValue);
+            }
+        }
+
         private void AddToInventory(PickupEvent obj)
         {
-            var type = obj.assignedCollectibleType;
-            var uIItem = obj.assignedinventoryUIItem;
-            
-            if ( _items.TryAdd(type, uIItem))
-            {
-                InventoryUIManager.Instance.CreateInventoryItem(uIItem, type);
-                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, type);
-                uIItem.ItemCount = 1;
+            var item = obj.assignedItem;
+            var uIItem = item.assignedinventoryUIItem;
+            var itemType = item.assignedCollectibleType;
 
+            AddKey(item);
+            
+            BaseItems.TryAdd(itemType, item);
+            
+            if ( Items.TryAdd(itemType, uIItem))
+            {
+                InventoryUIManager.Instance.CreateInventoryItem(uIItem, itemType);
+                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType);
+                uIItem.ItemCount = 1;
             }
             else
             {
-                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, type);
+                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType);
             }
         }
 
         public void IncrementClueCount()
         {
-            _clueCount++;
+            ClueCount++;
             CheckClueAmount();
         }
 
         private void CheckClueAmount()
         {
-            if (_clueCount == TotalClues)
+            if (ClueCount == TotalClues)
             {
                 GameManager.Instance.OnAllCluesCollected();
             }

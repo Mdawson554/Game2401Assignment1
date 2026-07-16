@@ -7,13 +7,11 @@ using UnityEngine;
 
 namespace Interactions.Pickups
 {
-    public class ClueItems : MonoBehaviour, ICollectible, IInteractable
+    public class ClueItems : BaseItem, ICollectible, IInteractable
 
     {
         [SerializeField] private DialogueSO _cluedialogueSO;
         [SerializeField] private string itemName;
-        [SerializeField] private InventoryUIItem _inventoryUIItem;
-
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField] private ParticleSystem _clueParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
@@ -22,7 +20,7 @@ namespace Interactions.Pickups
 
         private void OnInteracted()
         {
-            EventManager.instance.Publish(new PickupEvent(CollectibleTypes.Clues, _inventoryUIItem));
+            EventManager.instance.Publish(new PickupEvent(this));
             DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO, CollectibleTypes.Clues);
             InventoryManager.Instance.IncrementClueCount();
             OnCollectEffect();
@@ -32,8 +30,7 @@ namespace Interactions.Pickups
         {
             _clueParticleSystem = GetComponentInChildren<ParticleSystem>();
         }
-
-
+        
         public Sprite Icon { get; set; }
 
         public void OnCollectEffect()

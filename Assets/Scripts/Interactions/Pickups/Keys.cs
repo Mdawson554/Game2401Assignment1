@@ -1,19 +1,17 @@
-using System;
 using System.Collections;
 using Core;
 using EventSystem;
+using Interactions;
 using UnityEngine;
 
-namespace Interactions.Pickups
+namespace Pickups
 {
-    public class Keys : MonoBehaviour, IInteractable,ICollectible
+    public class Keys : BaseItem, IInteractable,ICollectible
     {
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField]  private ParticleSystem _keyParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
-        [SerializeField] private InventoryUIItem _inventoryUIItem;
         
-        public int KeyValue;
         private void Start()
         {
             _keyParticleSystem = GetComponentInChildren<ParticleSystem>();
@@ -21,10 +19,9 @@ namespace Interactions.Pickups
         
         private void OnInteracted()
         {
-            EventManager.instance.Publish(new PickupEvent(CollectibleTypes.Keys, _inventoryUIItem));
+            EventManager.instance.Publish(new PickupEvent(this));
             InventoryManager.Instance.EquippedItem = gameObject;
             OnCollectEffect();
-           //InventoryManager.Instance.AddKeyToInventory(this, interactableObjectType);
         }
         
         public Sprite Icon { get; set; }
