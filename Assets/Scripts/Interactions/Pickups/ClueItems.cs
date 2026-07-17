@@ -13,6 +13,7 @@ namespace Interactions.Pickups
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField] private ParticleSystem _clueParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
+        [SerializeField] private AudioClip pickupclue;
 
         private Coroutine currentRoutine;
 
@@ -20,7 +21,7 @@ namespace Interactions.Pickups
         {
             EventManager.instance.Publish(new PickupEvent(this));
             DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO);
-
+            AudioManager.Instance.PlaySound(pickupclue);
             InventoryManager.Instance.IncrementClueCount();
             OnCollectEffect();
         }

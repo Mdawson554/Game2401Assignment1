@@ -12,6 +12,7 @@ namespace Pickups
         [SerializeField]  private ParticleSystem _keyParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
         [SerializeField] private string keyName;
+        [SerializeField] private AudioClip keypickup;
         
         private void Start()
         {
@@ -22,6 +23,7 @@ namespace Pickups
         {
             EventManager.instance.Publish(new PickupEvent(this));
             InventoryManager.Instance.EquippedItem = gameObject;
+            AudioManager.Instance.PlaySound(keypickup);
             OnCollectEffect();
         }
         
