@@ -15,26 +15,27 @@ public class InventoryUIManager : MonoBehaviour
    {
       if (Instance != null && Instance != this) Destroy(this);
       Instance = this;
-
    }
    
    public void CreateInventoryItem(InventoryUIItem inventoryUIItem, CollectibleTypes collectibleType)
    {
-      var tempItem = Instantiate(inventoryUIItem,_inventoryCanvas.transform.position,Quaternion.identity);
+      var tempItem = Instantiate(inventoryUIItem, _inventoryCanvas.transform.position, Quaternion.identity);
       tempItem.transform.SetParent(_inventoryCanvas.transform);
       tempItem.ItemImage.sprite = inventoryUIItem.Icon;
       tempItem.Itemname.text = inventoryUIItem.name;
+      tempItem.ItemCount = 0; 
+      tempItem.ItemCountText.text = "0";
       _items.TryAdd(collectibleType, tempItem);
    }
-
-   public void IncrementInventoryUIItem(InventoryUIItem inventoryUIItem,  CollectibleTypes collectibleType)
+   
+   public void IncrementInventoryUIItem(InventoryUIItem inventoryUIItem, CollectibleTypes collectibleType)
    {
       var current = _items[collectibleType];
       current.ItemCount++;
       current.ItemCountText.text = current.ItemCount.ToString();
       StartCoroutine(HideInventoryUiElemement());
    }
-
+   
    IEnumerator HideInventoryUiElemement()
    {
       _inventoryCanvas.SetActive(true);

@@ -3,7 +3,6 @@ using EventSystem;
 using Interactions;
 using Pickups;
 using UnityEngine;
-
 namespace Core
 {
     public class InventoryManager : MonoBehaviour
@@ -17,23 +16,23 @@ namespace Core
         public Dictionary<CollectibleTypes, InventoryUIItem> Items = new Dictionary<CollectibleTypes, InventoryUIItem>();
         public Dictionary<CollectibleTypes, BaseItem>  BaseItems = new Dictionary<CollectibleTypes, BaseItem>();
         public Dictionary<BaseItem, int> Keys = new Dictionary<BaseItem, int>();
-
+        
         private void Awake()
         {
             if (Instance != null && Instance != this) Destroy(this);
             Instance = this;
         }
-
+        
         private void OnEnable()
         {
             EventManager.instance.Subscribe<PickupEvent>(AddToInventory);
         }
-
+        
         private void OnDisable()
         {
             EventManager.instance.Unsubscribe<PickupEvent>(AddToInventory);
         }
-
+        
         private void AddKey(BaseItem item)
         {
             Debug.Log("ahhhhhhh");
@@ -42,13 +41,12 @@ namespace Core
                 Keys.TryAdd(item, item.KeyValue);
             }
         }
-
+        
         private void AddToInventory(PickupEvent obj)
         {
             var item = obj.assignedItem;
             var uIItem = item.assignedinventoryUIItem;
             var itemType = item.assignedCollectibleType;
-
             AddKey(item);
             
             BaseItems.TryAdd(itemType, item);
@@ -57,20 +55,19 @@ namespace Core
             {
                 InventoryUIManager.Instance.CreateInventoryItem(uIItem, itemType);
                 InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType);
-                uIItem.ItemCount = 1;
             }
             else
             {
                 InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType);
             }
         }
-
+        
         public void IncrementClueCount()
         {
             ClueCount++;
             CheckClueAmount();
         }
-
+        
         private void CheckClueAmount()
         {
             if (ClueCount == TotalClues)
@@ -80,4 +77,3 @@ namespace Core
         }
     }
 }
-
