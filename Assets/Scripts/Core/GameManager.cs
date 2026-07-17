@@ -58,8 +58,8 @@ namespace Core
         public void OnAllCluesCollected()
         {
             Debug.Log("YOU WIN THE GAME!");
-            ShowMouse(true);
-            Time.timeScale = 0;
+            playerStateMachine.Pause();
+            UIManager.Instance.ShowPauseMenu(false);
             UIManager.Instance.ShowWinMenu(true);
         }
 
