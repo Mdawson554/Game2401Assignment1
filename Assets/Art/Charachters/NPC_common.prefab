@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1163634342410163612}
   - component: {fileID: 6087145212343176303}
   - component: {fileID: 1293456637755354240}
+  - component: {fileID: 2461090514398425793}
   m_Layer: 0
   m_Name: NPC_common
   m_TagString: Untagged
@@ -70,9 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  interactableObjectType: 1
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
-  dialogueType: 1
+  npcType: 0
 --- !u!65 &1293456637755354240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94,6 +94,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1.5, z: 0.25}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &2461090514398425793
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926129550433625399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 016d30461ae8ed44b8803a016343b4ac, type: 3}
+  m_Controller: {fileID: 9100000, guid: bf757ec2a457ae74ba0bdcc93202fab6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6137693406416787835
 PrefabInstance:
   m_ObjectHideFlags: 0
