@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using Core;
 using EventSystem;
 using Gameplay;
@@ -8,20 +7,20 @@ using UnityEngine;
 namespace Interactions.Pickups
 {
     public class ClueItems : BaseItem, ICollectible, IInteractable
-
     {
         [SerializeField] private DialogueSO _cluedialogueSO;
         [SerializeField] private string keyName;
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField] private ParticleSystem _clueParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
-        private Coroutine currentRoutine;
 
+        private Coroutine currentRoutine;
 
         private void OnInteracted()
         {
             EventManager.instance.Publish(new PickupEvent(this));
             DialogueManager.Instance.SetSequentialDialogue(_cluedialogueSO);
+
             InventoryManager.Instance.IncrementClueCount();
             OnCollectEffect();
         }
@@ -30,7 +29,7 @@ namespace Interactions.Pickups
         {
             _clueParticleSystem = GetComponentInChildren<ParticleSystem>();
         }
-        
+
         public Sprite Icon { get; set; }
 
         public void OnCollectEffect()
@@ -38,12 +37,11 @@ namespace Interactions.Pickups
             if (currentRoutine != null) return;
             currentRoutine = StartCoroutine(CollectParticleSystem());
         }
-        
+
         public override string GetItemName()
         {
             return keyName;
         }
-
 
         private IEnumerator CollectParticleSystem()
         {
@@ -57,7 +55,6 @@ namespace Interactions.Pickups
             yield return new WaitForSeconds(_secondsToWait);
             _objectRenderer.material.color = Color.black;
             Destroy(gameObject);
-            yield return null;
         }
 
         public void OnInteract()
