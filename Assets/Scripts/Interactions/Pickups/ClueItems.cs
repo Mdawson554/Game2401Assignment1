@@ -11,7 +11,7 @@ namespace Interactions.Pickups
 
     {
         [SerializeField] private DialogueSO _cluedialogueSO;
-        [SerializeField] private string itemName;
+        [SerializeField] private string keyName;
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField] private ParticleSystem _clueParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
@@ -37,6 +37,11 @@ namespace Interactions.Pickups
         {
             if (currentRoutine != null) return;
             currentRoutine = StartCoroutine(CollectParticleSystem());
+        }
+        
+        public override string GetItemName()
+        {
+            return keyName;
         }
 
 

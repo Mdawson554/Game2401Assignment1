@@ -48,17 +48,17 @@ namespace Core
             var uIItem = item.assignedinventoryUIItem;
             var itemType = item.assignedCollectibleType;
             AddKey(item);
-            
+    
             BaseItems.TryAdd(itemType, item);
-            
-            if ( Items.TryAdd(itemType, uIItem))
+    
+            if (Items.TryAdd(itemType, uIItem))
             {
                 InventoryUIManager.Instance.CreateInventoryItem(uIItem, itemType);
-                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType);
+                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType, item);  
             }
             else
             {
-                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType);
+                InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType, item);  
             }
         }
         

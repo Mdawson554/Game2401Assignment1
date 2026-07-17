@@ -11,6 +11,7 @@ namespace Pickups
         [SerializeField] private Renderer _objectRenderer;
         [SerializeField]  private ParticleSystem _keyParticleSystem;
         [SerializeField] private float _secondsToWait = 0.2f;
+        [SerializeField] private string keyName;
         
         private void Start()
         {
@@ -22,6 +23,11 @@ namespace Pickups
             EventManager.instance.Publish(new PickupEvent(this));
             InventoryManager.Instance.EquippedItem = gameObject;
             OnCollectEffect();
+        }
+        
+        public override string GetItemName() 
+        {
+            return keyName;
         }
         
         public Sprite Icon { get; set; }

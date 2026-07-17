@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     private float mouseY;
     private float moveX;
     private float moveZ;
-    private bool _canPlayerMove = true;
     
     private void Start()
     {
