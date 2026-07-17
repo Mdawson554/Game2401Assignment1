@@ -1,9 +1,7 @@
 using UnityEngine;
 using Interactions;
 using Core;
-using Interactions.Pickups;
 using Pickups;
-using UnityEngine.InputSystem;
 
 public class LockedDoor : MonoBehaviour, IConditional, IInteractable
 {
@@ -12,8 +10,14 @@ public class LockedDoor : MonoBehaviour, IConditional, IInteractable
     [SerializeField] private AudioClip doorLocked;
     [SerializeField] private AudioClip doorOpen;
     [SerializeField] private AudioClip doorClose;
+    
     private int isOpenHash;
     private bool _isOpen = false;
+    
+    private void Awake()
+    {
+        isOpenHash = Animator.StringToHash("isOpen");
+    }
     
     public void OnKeyNotPickedUp()
     {
@@ -23,45 +27,48 @@ public class LockedDoor : MonoBehaviour, IConditional, IInteractable
     public void OnTryOpen()
     {
         var items = InventoryManager.Instance.Keys;
-        Debug.Log(items.Count);
         if (items.ContainsValue(requiredKey.KeyValue))
         {
             AudioManager.Instance.PlaySound(doorOpen);
-            Debug.Log("open");
             OnDoorOpen();
         }
         else
         {
-            AudioManager.Instance.PlaySound(doorClose);
-            Debug.Log("NUhUh");
+            AudioManager.Instance.PlaySound(doorLocked);
+            Debug.Log("Player doesn't have the key");
         }
     }
-
+    
     public void OnDoorOpen()
     {
         if (_isOpen)
         {
+            _isOpen = false;
             if (anim != null)
             {
-                //anim.SetBool(isOpenHash, false);
+                anim.SetBool(isOpenHash, false);
             }
-            _isOpen = false;
             return;
         }
-        // OPEN DOOR
+        
+        // Open the door
         _isOpen = true;
         Debug.Log("door open");
         if (anim != null)
         {
-            //anim.SetBool(isOpenHash, true);
+            anim.SetBool(isOpenHash, true);
+        }
+        else
+        {
+            Debug.LogError("Animator is not assigned to LockedDoor!");
         }
     }
-
+    
     private void OnInteracted()
     {
         OnTryOpen();
     }
-
+    
     public void OnInteract()
     {
         OnInteracted();
