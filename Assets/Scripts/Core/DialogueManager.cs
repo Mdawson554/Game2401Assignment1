@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using Gameplay;
 using Interactions;
@@ -6,7 +5,6 @@ using States.StateTypes;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
 namespace Core
 {
     public class DialogueManager : MonoBehaviour
@@ -25,17 +23,19 @@ namespace Core
         
         public void incrementDialogue()
         {
-            if (dialogueindex <= currentdialogueSO.DialogueArray.Length - 1)
+            // Check if there's a NEXT dialogue before incrementing
+            if (dialogueindex < currentdialogueSO.DialogueArray.Length - 1)
             {
                 dialogueindex++;
                 DisplayDialogue();
             }
-            else if (dialogueindex >= currentdialogueSO.DialogueArray.Length)
+            else
             {
+                // We're at the last dialogue
                 OnDialogueFinished();
             }
         }
-
+        
         public void NextDialogue()
         {
             if (currentdialogueSO.assignedType == DialogueType.SequentialDialogue)
@@ -47,10 +47,11 @@ namespace Core
                 GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
             }
         }
-
+        
         public void SetSequentialDialogue(DialogueSO dialogueSO)
         {
             currentdialogueSO = dialogueSO;
+            dialogueindex = 0;
             var tempDialogue = currentdialogueSO.assignedType;
             switch (tempDialogue)
             {
@@ -65,7 +66,7 @@ namespace Core
                     break;
             }
         }
-
+        
         public void SetRandomDialogue(DialogueSO dialogueSO)
         {
             currentdialogueSO = dialogueSO;
@@ -76,19 +77,19 @@ namespace Core
         
         public void DisplayDialogue()
         {
-            Debug.Log("WHY");
             UIManager.Instance.DisplayToast(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
-
+        
         public void DisplayItemDialogue()
         {
             dialogueindex = 0;
             UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
         }
-
+        
         private void OnDialogueFinished()
         {
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
+            Debug.Log("this NPC Dialogue is done");
         }
     }
 }
