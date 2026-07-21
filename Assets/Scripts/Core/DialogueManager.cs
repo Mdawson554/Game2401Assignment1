@@ -1,8 +1,4 @@
-using TMPro;
-using Gameplay;
-using Interactions;
-using States.StateTypes;
-using Unity.VisualScripting;
+using EventSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -91,6 +87,7 @@ namespace Core
         {
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
             Debug.Log("this NPC Dialogue is done");
+            EventManager.instance.Publish(new DialogueFinishedEvent());
         }
     }
 }
