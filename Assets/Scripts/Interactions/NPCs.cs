@@ -2,93 +2,108 @@ using System.Collections.Generic;
 using Core;
 using EventSystem;
 using Gameplay;
-using States;
+using Interactions;
 using Story;
 using UnityEngine;
 
-namespace Interactions
+public class NPCs : MonoBehaviour, IInteractable
 {
-    public class NPCs : MonoBehaviour, IInteractable
+    public DialogueSO Dialogue;
+    public NPCType npcType;
+    public bool HasRequirement;
+        
+    [Header("Requirements")]
+    public List<StoryMarker> RequiredMarkers;
+
+    [Header("Unlocks")]
+    public List<StoryMarker> MarkersUnlocked;
+
+    private void OnInteracted()
     {
-        public DialogueSO Dialogue;
-        public NPCType npcType;
-        
-        [Header("Requirements")]
-        public List<StoryRequirement> Requirements;
-
-        [Header("Unlocks")]
-        public List<StoryMarker> UnlockMarkers;
-
-        private void OnInteracted()
-        { 
-            EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
-            switch (npcType)   
-            {
-                case NPCType.CommonNPC:
-                    DialogueManager.Instance.SetRandomDialogue(Dialogue);
-                    break;
-                case NPCType.DrunkNPC:
-                    DialogueManager.Instance.SetRandomDialogue(Dialogue);
-                    break;
-                case NPCType.BouncerNPC:
-                    DialogueManager.Instance.SetRandomDialogue(Dialogue);
-                    break;
-                case NPCType.EssentialNPC:
-                    DialogueManager.Instance.SetSequentialDialogue(Dialogue);
-                    break;
-            }
-            
-            EventManager.instance.Subscribe<DialogueFinishedEvent>(OnDialogueFinished);
-        }
-        
-        private void OnDestroy()
+        EventManager.instance.Subscribe<DialogueFinishedEvent>(OnDialogueFinished);
+        if (HasRequirement)
         {
-            if (EventManager.instance != null)
+            if (RequiredMarkers.Count <=0)
             {
-                EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+                DeliverDialogue();
+            }
+            else
+            {
+                Debug.Log("requirments unfufilled");
+                return;
             }
         }
-
-        public void OnHoverIn()
+        DeliverDialogue();
+    }
+        
+    private void OnDestroy()
+    {
+        if (EventManager.instance != null)
         {
+            EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+        }
+    }
+
+    public void OnHoverIn()
+    {
             
-        }
+    }
 
-        public void OnInteract()
-        {
-            OnInteracted();
-        }
+    public void OnInteract()
+    {
+        OnInteracted();
+    }
 
-        public void OnHoverOff()
+    public void OnHoverOff()
+    {
+            
+    }
+        
+    void UnlockMarker(StoryMarkerUnlockedEvent e)
+    {
+        EventManager.instance.Unsubscribe<DialogueFinishedEvent>(OnDialogueFinished);
+        if (RequiredMarkers.Contains(e.Marker))
         {
             
+            EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+            RequiredMarkers.Remove(e.Marker);
         }
+        Debug.Log($"Unlocked Story Marker : {e.Marker.name}");
+    }
         
-        void UnlockMarker(StoryMarkerUnlockedEvent e)
-        {
-            UnlockMarkers.Add(e.Marker);
-            Debug.Log($"Unlocked Story Marker : {e.Marker.name}");
-        }
+    private void Start()
+    {
+        
+    }
 
-        public bool HasMarker(StoryMarker marker)
+    public void OnDialogueFinished(DialogueFinishedEvent e)
+    {
+        if (EventManager.instance != null)
         {
-            return UnlockMarkers.Contains(marker);
-        }
-        
-        private void Start()
-        {
-            foreach (var requirement in Requirements)
+            foreach (var Marker in MarkersUnlocked)
             {
-                EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+                EventManager.instance.Publish(new StoryMarkerUnlockedEvent(Marker));
             }
         }
+    }
 
-        public void OnDialogueFinished(DialogueFinishedEvent e)
+    private void DeliverDialogue()
+    {
+        EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
+        switch (npcType)   
         {
-            if (EventManager.instance != null)
-            {
-                EventManager.instance.Unsubscribe<DialogueFinishedEvent>(OnDialogueFinished);
-            }
+            case NPCType.CommonNPC:
+                DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                break;
+            case NPCType.DrunkNPC:
+                DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                break;
+            case NPCType.BouncerNPC:
+                DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                break;
+            case NPCType.EssentialNPC:
+                DialogueManager.Instance.SetSequentialDialogue(Dialogue);
+                break;
         }
     }
 }

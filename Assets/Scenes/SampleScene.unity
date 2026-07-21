@@ -252,6 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &11742850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -412,6 +415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &48240730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -845,7 +851,7 @@ PrefabInstance:
       addedObject: {fileID: 179148421}
     - targetCorrespondingSourceObject: {fileID: 9158419398534810640, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 179148420}
+      addedObject: {fileID: 179148425}
   m_SourcePrefab: {fileID: 100100000, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
 --- !u!4 &179148418 stripped
 Transform:
@@ -857,24 +863,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9158419398534810640, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
   m_PrefabInstance: {fileID: 179148417}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &179148420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179148419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261da1702261eac46bc7dad426f8c32f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EssentialNPC
-  Requirements:
-  - Marker: {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-    LockedMonologue: 
-  UnlockMarkers:
-  - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
-  dialogue: {fileID: 11400000, guid: e67d405e02077914ca8efde7e31b1080, type: 2}
 --- !u!136 &179148421
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -898,6 +886,25 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.09, z: -0.82}
+--- !u!114 &179148425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179148419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
+  Dialogue: {fileID: 11400000, guid: e67d405e02077914ca8efde7e31b1080, type: 2}
+  npcType: 0
+  HasRequirement: 1
+  RequiredMarkers:
+  - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
+  MarkersUnlocked:
+  - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
 --- !u!1001 &188966174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1031,6 +1038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &188966179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2710,6 +2720,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
   npcType: 3
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &592631427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3249,50 +3262,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 463eb1f8e56f8704b838e920be8a1abe, type: 3}
   m_PrefabInstance: {fileID: 760992183}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &765691482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 765691483}
-  - component: {fileID: 765691484}
-  m_Layer: 0
-  m_Name: StoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &765691483
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765691482}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2114677411}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &765691484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765691482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c29c10580f9c894fa3a1ade6d903279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Story.StoryManager
 --- !u!1 &827804962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2efcf9949ebfcfd499e04845f3e0764e, type: 3}
@@ -3561,6 +3530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &878466747
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3802,6 +3774,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &920443993
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4181,6 +4156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
   npcType: 0
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!136 &948653861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4495,6 +4473,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!1001 &1013830793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4809,6 +4790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1043456215
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4999,7 +4983,7 @@ PrefabInstance:
       addedObject: {fileID: 1077474203}
     - targetCorrespondingSourceObject: {fileID: 9158419398534810640, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1077474202}
+      addedObject: {fileID: 1077474207}
   m_SourcePrefab: {fileID: 100100000, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
 --- !u!4 &1077474200 stripped
 Transform:
@@ -5011,24 +4995,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9158419398534810640, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
   m_PrefabInstance: {fileID: 1077474199}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1077474202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077474201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261da1702261eac46bc7dad426f8c32f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EssentialNPC
-  Requirements:
-  - Marker: {fileID: 0}
-    LockedMonologue: 
-  UnlockMarkers:
-  - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-  dialogue: {fileID: 11400000, guid: 566480b72a06bd048a06b011ea2c6125, type: 2}
 --- !u!136 &1077474203
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5052,6 +5018,24 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.09, z: -0.82}
+--- !u!114 &1077474207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077474201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
+  Dialogue: {fileID: 11400000, guid: 566480b72a06bd048a06b011ea2c6125, type: 2}
+  npcType: 0
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked:
+  - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
 --- !u!1 &1093279443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9ffb8aa15f5d37f4eb859b9cbdef5748, type: 3}
@@ -5925,6 +5909,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!1 &1350225729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 463eb1f8e56f8704b838e920be8a1abe, type: 3}
@@ -6063,6 +6050,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1369065917
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6359,6 +6349,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1408876188
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6486,6 +6479,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1424208875
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7713,6 +7709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1656081904
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7956,6 +7955,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1676251652
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7996,6 +7998,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
   npcType: 3
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1698823307
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8704,6 +8709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
   npcType: 3
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1799081104
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9326,6 +9334,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &1867838129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9892,6 +9903,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!135 &2007615659
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10086,6 +10100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
+  HasRequirement: 0
+  RequiredMarkers: []
+  MarkersUnlocked: []
 --- !u!1 &2031300138
 GameObject:
   m_ObjectHideFlags: 0
@@ -10610,7 +10627,6 @@ Transform:
   - {fileID: 2140949392}
   - {fileID: 962219425}
   - {fileID: 154486862}
-  - {fileID: 765691483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2133503668

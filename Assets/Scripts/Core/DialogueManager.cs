@@ -7,7 +7,6 @@ namespace Core
     public class DialogueManager : MonoBehaviour
     {
         [SerializeField] private Button _nextButton;
-
         public static DialogueManager Instance;
         public int dialogueindex = 0;
         public DialogueSO currentdialogueSO;
