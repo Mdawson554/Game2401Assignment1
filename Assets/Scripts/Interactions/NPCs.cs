@@ -20,8 +20,9 @@ public class NPCs : MonoBehaviour, IInteractable
     
     [Header("Feedback")]
     [TextArea(2, 3)]
-    public string LockedMessage = "They don't want to talk to me right now...";
-    private bool _isInteracting = false;
+    
+    [SerializeField] public string LockedMessage;
+    private bool _isInteracting;
     
     private void Start()
     {
@@ -40,22 +41,18 @@ public class NPCs : MonoBehaviour, IInteractable
     private void OnInteracted()
     {
         if (_isInteracting)
+            return;
+        if (HasRequirement && RequiredMarkers.Count > 0)
         {
-            Debug.LogWarning($"NPC '{gameObject.name}' is already in an interaction. Ignoring input.");
+            UIManager.Instance.DisplayToast(LockedMessage);
             return;
         }
-        
-        if (HasRequirement)
-        {
-            if (RequiredMarkers.Count > 0)
-            {
-                Debug.Log($"Requirements unfulfilled for {gameObject.name} ({RequiredMarkers.Count}). Missing {RequiredMarkers.Count} marker(s)");
-                UIManager.Instance.DisplayToast(LockedMessage);
-                return;
-            }
-        }
         _isInteracting = true;
-        EventManager.instance.Subscribe<DialogueFinishedEvent>(OnDialogueFinished);
+        if (npcType == NPCType.EssentialNPC)
+        {
+            EventManager.instance.Subscribe<DialogueFinishedEvent>(OnDialogueFinished);
+        }
+
         DeliverDialogue();
     }
     
@@ -74,31 +71,14 @@ public class NPCs : MonoBehaviour, IInteractable
     
     private void UnlockMarker(StoryMarkerUnlockedEvent e)
     {
-        if (e == null || e.Marker == null)
-        {
-            Debug.LogError($"NPC '{gameObject.name}': Received invalid StoryMarkerUnlockedEvent");
-            return;
-        }
-        
         if (RequiredMarkers.Contains(e.Marker))
         {
             RequiredMarkers.Remove(e.Marker);
-            Debug.Log($"NPC '{gameObject.name}' now has marker '{e.Marker.name}'. Remaining requirements: {RequiredMarkers.Count}");
-          
-            if (RequiredMarkers.Count == 0)
-            {
-                Debug.Log($"NPC '{gameObject.name}' is now unlocked!");
-            }
         }
     }
    
     public void OnDialogueFinished(DialogueFinishedEvent e)
     {
-        if (e == null)
-        {
-            Debug.LogError($"NPC '{gameObject.name}': Received null DialogueFinishedEvent");
-            return;
-        }
         EventManager.instance.Unsubscribe<DialogueFinishedEvent>(OnDialogueFinished);
         if (EventManager.instance != null)
         {
@@ -107,18 +87,25 @@ public class NPCs : MonoBehaviour, IInteractable
                 if (marker != null)
                 {
                     EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
-                    Debug.Log($"NPC '{gameObject.name}' unlocked marker '{marker.name}'");
                 }
-                else
-                {
-                    Debug.LogError($"NPC '{gameObject.name}': MarkersUnlocked contains null marker!");
-                }
+                
             }
         }
-        else
-        {
-            Debug.LogError($"NPC '{gameObject.name}': EventManager.instance is null during OnDialogueFinished");
-        }
+        _isInteracting = false;
+    }
+
+    private void setConversation()
+    {
+        DialogueManager.Instance.SetSequentialDialogue(Dialogue);
+        EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
+    }
+
+    private void setInteraction()
+    {
+        DialogueManager.Instance.SetRandomDialogue(Dialogue);
+
+        EventManager.instance.Publish(
+            new StateChangeEvent(GameManager.Instance.playerStateMachine.idlestate));
         _isInteracting = false;
     }
     
@@ -126,41 +113,35 @@ public class NPCs : MonoBehaviour, IInteractable
     {
         if (DialogueManager.Instance == null)
         {
-            Debug.LogError($"NPC '{gameObject.name}': DialogueManager.Instance is null");
             _isInteracting = false;
             return;
         }
         if (GameManager.Instance == null || GameManager.Instance.playerStateMachine == null)
         {
-            Debug.LogError($"NPC '{gameObject.name}': GameManager or playerStateMachine is null");
             _isInteracting = false;
             return;
         }
         if (Dialogue == null)
         {
-            Debug.LogError($"NPC '{gameObject.name}': Dialogue ScriptableObject is not assigned!");
             _isInteracting = false;
             return;
         }
         
-        EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
-        
         switch (npcType)
         {
             case NPCType.CommonNPC:
-                DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                setInteraction();
                 break;
             case NPCType.DrunkNPC:
-                DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                setInteraction();
                 break;
             case NPCType.BouncerNPC:
-                DialogueManager.Instance.SetRandomDialogue(Dialogue);
+                setInteraction();
                 break;
             case NPCType.EssentialNPC:
-                DialogueManager.Instance.SetSequentialDialogue(Dialogue);
+                setConversation();
                 break;
             default:
-                Debug.LogError($"NPC '{gameObject.name}': Unknown NPCType {npcType}");
                 _isInteracting = false;
                 break;
         }

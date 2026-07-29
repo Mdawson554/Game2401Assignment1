@@ -72,10 +72,6 @@ namespace Core
                 {
                     GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
                 }
-                else
-                {
-                    
-                }
                 _hasActiveDialogue = false;
             }
         }
@@ -203,10 +199,6 @@ namespace Core
             {
                 EventManager.instance.Publish(new DialogueFinishedEvent());
             }
-            else
-            {
-            }
-            
             _isTransitioning = false;
         }
     }
