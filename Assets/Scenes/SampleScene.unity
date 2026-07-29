@@ -255,6 +255,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &11742850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -418,6 +419,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &48240730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -907,6 +909,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
   MarkersUnlocked:
   - {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
+  LockedMessage: They don't want to talk to me right now...
 --- !u!1001 &188966174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,6 +1046,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &188966179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1110,7 +1114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: RequiredMarkers.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: 'MarkersUnlocked.Array.data[0]'
@@ -2749,6 +2753,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &592631427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3559,6 +3564,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &878466747
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3803,6 +3809,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &920443993
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4185,6 +4192,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!136 &948653861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4502,6 +4510,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!1001 &1013830793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4819,6 +4828,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1043456215
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5062,6 +5072,7 @@ MonoBehaviour:
   RequiredMarkers: []
   MarkersUnlocked:
   - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
+  LockedMessage: They don't want to talk to me right now...
 --- !u!1 &1093279443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9ffb8aa15f5d37f4eb859b9cbdef5748, type: 3}
@@ -5938,6 +5949,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!1 &1350225729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 463eb1f8e56f8704b838e920be8a1abe, type: 3}
@@ -6079,6 +6091,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1369065917
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6378,6 +6391,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1408876188
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6508,6 +6522,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1424208875
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6740,9 +6755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f410f23519dda45b0e269115fbc39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 4
-  mouseSensitivity: 10
-  rb: {fileID: 0}
+  moveSpeed: 5
+  mouseSensitivity: 20
 --- !u!114 &1489182946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7762,6 +7776,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1656081904
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8008,6 +8023,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1676251652
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8051,6 +8067,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1698823307
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8762,6 +8779,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1799081104
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9387,6 +9405,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1867838129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9956,6 +9975,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &2007615659
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10153,6 +10173,7 @@ MonoBehaviour:
   HasRequirement: 0
   RequiredMarkers: []
   MarkersUnlocked: []
+  LockedMessage: They don't want to talk to me right now...
 --- !u!1 &2031300138
 GameObject:
   m_ObjectHideFlags: 0

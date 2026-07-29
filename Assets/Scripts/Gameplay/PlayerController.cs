@@ -1,58 +1,60 @@
-using Core;
-using States;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
-    
+
     [Header("Mouse Look")]
-    [SerializeField] private float mouseSensitivity = 2f; 
-    [SerializeField] private Rigidbody rb;
-    
+    [SerializeField] private float mouseSensitivity = 2f;
+
+    private Rigidbody rb;
     private Camera playerCamera;
-    private float mouseX;
-    private float mouseY;
-    private float moveX;
-    private float moveZ;
-    
-    private void Start()
+
+    private Vector2 moveInput;
+    private Vector2 lookInput;
+
+    private float yaw;
+    private float pitch;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        mouseX = 0f;
-        mouseY = 0f;
     }
-    
-    private void Update()
+    public void SetMoveInput(Vector2 input)
     {
-       
+        moveInput = input;
     }
-    
-    public virtual void PlayerMovement()
+    public void SetLookInput(Vector2 input)
     {
-        Vector3 moveDirection = (transform.right * moveX + transform.forward * moveZ).normalized;
-        rb.linearVelocity = new Vector3(moveDirection.x * moveSpeed, rb.linearVelocity.y, moveDirection.z * moveSpeed);
-        //CalculateMouseAndCam();
+        lookInput = input;
     }
-    
+    public void PlayerMovement()
+    {
+        Vector3 movement =
+            transform.forward * moveInput.y +
+            transform.right * moveInput.x;
+
+        movement.Normalize();
+
+        Vector3 velocity = movement * moveSpeed;
+        velocity.y = rb.linearVelocity.y;
+
+        rb.linearVelocity = velocity;
+    }
     public void CalculateMouseAndCam()
     {
-        mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
-        mouseY += Input.GetAxis("Mouse Y") * mouseSensitivity;
-        mouseY = Mathf.Clamp(mouseY, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(0f, mouseX, 0f);
-        playerCamera.transform.localRotation = Quaternion.Euler(-mouseY, 0f, 0f);
-    }
-    
-    public void CalculatePlayerMovement(Vector2   playerdirection)
-    {
-        moveX = playerdirection.x; // A/D or Left/Right
-        moveZ = playerdirection.y; // W/S or Up/Down
+        yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
+        pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
+
+        pitch = Mathf.Clamp(pitch, -80f, 80f);
+
+        transform.rotation = Quaternion.Euler(0f, yaw, 0f);
+        playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
     }
 }

@@ -172,7 +172,6 @@ namespace Interactions.Pickups
         }
         private void UnlockMarker(StoryMarkerUnlockedEvent e)
         {
-            // Guard: Check if event is valid
             if (e == null || e.Marker == null)
             {
                 Debug.LogError($"Clue '{keyName}': Received invalid StoryMarkerUnlockedEvent");

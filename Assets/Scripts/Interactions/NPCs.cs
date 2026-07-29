@@ -21,13 +21,10 @@ public class NPCs : MonoBehaviour, IInteractable
     [Header("Feedback")]
     [TextArea(2, 3)]
     public string LockedMessage = "They don't want to talk to me right now...";
-    
-    // Guard against rapid interactions
     private bool _isInteracting = false;
     
     private void Start()
     {
-        // Subscribe to marker unlock events at start
         EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
     }
     

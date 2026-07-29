@@ -7,8 +7,14 @@ namespace Core
     public class InputManager : MonoBehaviour
     {
         private PlayerStateMachine _playerStateMachine;
-        public PlayerInputActions playerInputActions;
         private PlayerController _playerController;
+
+        public PlayerInputActions playerInputActions;
+
+        private void Awake()
+        {
+            playerInputActions = new PlayerInputActions();
+        }
 
         private void Start()
         {
@@ -18,10 +24,11 @@ namespace Core
 
         private void OnEnable()
         {
-            playerInputActions = new  PlayerInputActions();
             playerInputActions.Enable();
-            playerInputActions.Player.Move.started += OnMove;
+            playerInputActions.Player.Move.performed += OnMove;
             playerInputActions.Player.Move.canceled += OnMove;
+            playerInputActions.Player.Look.performed += OnLook;
+            playerInputActions.Player.Look.canceled += OnLook;
             playerInputActions.Player.Pause.performed += OnPause;
             playerInputActions.Player.Interact.performed += Interact;
             playerInputActions.Player.Next.performed += OnNext;
@@ -29,54 +36,70 @@ namespace Core
 
         private void OnDisable()
         {
-            playerInputActions.Disable();
-            playerInputActions.Player.Move.started -= OnMove;
+            playerInputActions.Player.Move.performed -= OnMove;
             playerInputActions.Player.Move.canceled -= OnMove;
+            playerInputActions.Player.Look.performed -= OnLook;
+            playerInputActions.Player.Look.canceled -= OnLook;
             playerInputActions.Player.Pause.performed -= OnPause;
             playerInputActions.Player.Interact.performed -= Interact;
             playerInputActions.Player.Next.performed -= OnNext;
-        }
 
-        public void EnableMoveInput(bool isEnabled)
+            playerInputActions.Disable();
+        }
+        
+        public void EnableMoveInput(bool enabled)
         {
-            switch(isEnabled)
+            if (enabled)
             {
-                case true:
-                    playerInputActions.Player.Move.started += OnMove;
-                    playerInputActions.Player.Move.canceled += OnMove;
-                    break;
-                case false:
-                    playerInputActions.Player.Move.started -= OnMove;
-                    playerInputActions.Player.Move.canceled -= OnMove;
-                    break;
+                playerInputActions.Player.Move.Enable();
+            }
+            else
+            {
+                playerInputActions.Player.Move.Disable();
+                _playerController.SetMoveInput(Vector2.zero);
             }
         }
-        
-    
-        public void OnPause(InputAction.CallbackContext context)
+
+        public void EnableLookInput(bool enabled)
         {
-           _playerStateMachine.Pause();
+            if (enabled)
+            {
+                playerInputActions.Player.Look.Enable();
+            }
+            else
+            {
+                playerInputActions.Player.Look.Disable();
+
+                _playerController.SetLookInput(Vector2.zero);
+            }
         }
 
-        public void OnMove(InputAction.CallbackContext context)
+        private void OnMove(InputAction.CallbackContext context)
         {
-            _playerController.CalculatePlayerMovement(context.ReadValue<Vector2>());
+            _playerController.SetMoveInput(context.ReadValue<Vector2>());
         }
 
-        public void OnNext(InputAction.CallbackContext context)
+        private void OnLook(InputAction.CallbackContext context)
         {
-            Debug.Log("Next");
+            _playerController.SetLookInput(context.ReadValue<Vector2>());
+        }
+
+        private void OnPause(InputAction.CallbackContext context)
+        {
+            _playerStateMachine.Pause();
+        }
+
+        private void OnNext(InputAction.CallbackContext context)
+        {
             DialogueManager.Instance.NextDialogue();
         }
-        
+
         private void Interact(InputAction.CallbackContext context)
         {
-            Debug.Log("OnInteract");
             UIManager.Instance.HideToastPrompt();
+
             _playerStateMachine.playerInteractor.CurrentInteractable?.OnInteract();
             _playerStateMachine.playerInteractor.CurrentInteractable = null;
-
         }
     }
 }
-
