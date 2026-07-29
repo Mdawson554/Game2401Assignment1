@@ -3,36 +3,39 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadScreen : MonoBehaviour
+namespace Core
 {
-    public string SceneName;
-    [SerializeField] private Button playGameButton;
-    [SerializeField] private Button quitButton;
-
-    private void OnEnable()
+    public class LoadScreen : MonoBehaviour
     {
-        if (playGameButton == null || quitButton == null) return;
-        playGameButton.onClick.AddListener(OnButtonClicked);
-        quitButton.onClick.AddListener(OnQuitButtonClicked);
-    }
+        public string sceneName;
+        [SerializeField] private Button playGameButton;
+        [SerializeField] private Button quitButton;
 
-    private void OnDisable()
-    {
-        if (playGameButton == null || quitButton == null) return;
-        playGameButton.onClick.RemoveListener(OnButtonClicked);
-        quitButton.onClick.RemoveListener(OnQuitButtonClicked);
-    }
+        private void OnEnable()
+        {
+            if (playGameButton == null || quitButton == null) return;
+            playGameButton.onClick.AddListener(OnButtonClicked);
+            quitButton.onClick.AddListener(OnQuitButtonClicked);
+        }
 
-    public void OnButtonClicked()
-    {
-        SceneManager.LoadScene(SceneName);
-    }
+        private void OnDisable()
+        {
+            if (playGameButton == null || quitButton == null) return;
+            playGameButton.onClick.RemoveListener(OnButtonClicked);
+            quitButton.onClick.RemoveListener(OnQuitButtonClicked);
+        }
 
-    private void OnQuitButtonClicked()
-    {
+        private void OnButtonClicked()
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+
+        private void OnQuitButtonClicked()
+        {
 #if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
+            EditorApplication.isPlaying = false;
 #endif
-        Application.Quit();
+            Application.Quit();
+        }
     }
 }

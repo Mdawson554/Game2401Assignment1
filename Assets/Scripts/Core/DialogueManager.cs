@@ -3,48 +3,37 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace Core
 {
-    public class DialogueManager : MonoBehaviour
+    public class DialogueManager : Singleton<DialogueManager>
     {
-        [SerializeField] private Button _nextButton;
-        public static DialogueManager Instance;
-        public int dialogueindex = 0;
-        public DialogueSO currentdialogueSO;
-        private bool _isTransitioning = false;
-        private bool _hasActiveDialogue = false;
+        [SerializeField] private Button nextButton;
+        public int dialogueIndex;
+        public DialogueSO currentDialogueSo;
+        private bool _isTransitioning;
+        private bool _hasActiveDialogue; 
         
-        private void Awake()
+        private void IncrementDialogue()
         {
-            if (Instance != null && Instance != this) Destroy(this);
-            Instance = this;
-        }
-        
-        public void incrementDialogue()
-        {
-            if (!_hasActiveDialogue || currentdialogueSO == null)
+            if (!_hasActiveDialogue || currentDialogueSo == null)
             {
-                Debug.LogWarning("[DialogueManager] incrementDialogue called but no active dialogue. Ignoring.");
                 return;
             }
-            if (currentdialogueSO == null)
+            if (currentDialogueSo == null)
             {
-                Debug.LogError("[DialogueManager] currentdialogueSO is null during incrementDialogue");
                 return;
             }
-            if (currentdialogueSO.DialogueArray == null || currentdialogueSO.DialogueArray.Length == 0)
+            if (currentDialogueSo.DialogueArray == null || currentDialogueSo.DialogueArray.Length == 0)
             {
-                Debug.LogError("[DialogueManager] DialogueArray is null or empty");
                 OnDialogueFinished();
                 return;
             }
-            if (dialogueindex < 0 || dialogueindex >= currentdialogueSO.DialogueArray.Length)
+            if (dialogueIndex < 0 || dialogueIndex >= currentDialogueSo.DialogueArray.Length)
             {
-                Debug.LogError($"[DialogueManager] dialogueindex {dialogueindex} is out of bounds for DialogueArray (length: {currentdialogueSO.DialogueArray.Length})");
                 OnDialogueFinished();
                 return;
             }
-            if (dialogueindex < currentdialogueSO.DialogueArray.Length - 1)
+            if (dialogueIndex < currentDialogueSo.DialogueArray.Length - 1)
             {
-                dialogueindex++;
+                dialogueIndex++;
                 DisplayDialogue();
             }
             else
@@ -57,26 +46,23 @@ namespace Core
         {
             if (!_hasActiveDialogue)
             {
-                Debug.LogWarning("[DialogueManager] NextDialogue pressed but no active dialogue. Ignoring.");
                 return;
             }
             if (_isTransitioning)
             {
-                Debug.LogWarning("[DialogueManager] Ignoring NextDialogue - already transitioning");
                 return;
             }
-            if (currentdialogueSO == null)
+            if (currentDialogueSo == null)
             {
-                Debug.LogError("[DialogueManager] currentdialogueSO is null during NextDialogue");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            if (currentdialogueSO.assignedType == DialogueType.SequentialDialogue)
+            if (currentDialogueSo.assignedType == DialogueType.SequentialDialogue)
             {
-                incrementDialogue();
+                IncrementDialogue();
             }
-            else if (currentdialogueSO.assignedType == DialogueType.ItemDialogue)
+            else if (currentDialogueSo.assignedType == DialogueType.ItemDialogue)
             {
                 OnDialogueFinished();
             }
@@ -88,124 +74,113 @@ namespace Core
                 }
                 else
                 {
-                    Debug.LogError("[DialogueManager] GameManager or playerStateMachine is null");
+                    
                 }
                 _hasActiveDialogue = false;
             }
         }
         
-        public void SetSequentialDialogue(DialogueSO dialogueSO)
+        public void SetSequentialDialogue(DialogueSO dialogueSo)
         {
-            if (dialogueSO == null)
+            if (dialogueSo == null)
             {
-                Debug.LogError("[DialogueManager] Attempted to set null DialogueSO as sequential");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            currentdialogueSO = dialogueSO;
+            currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;  
-            if (dialogueSO.DialogueArray == null || dialogueSO.DialogueArray.Length == 0)
+            if (dialogueSo.DialogueArray == null || dialogueSo.DialogueArray.Length == 0)
             {
-                Debug.LogError($"[DialogueManager] DialogueSO '{dialogueSO.name}' has null or empty DialogueArray");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            if (dialogueSO.assignedType == DialogueType.ItemDialogue)
+            if (dialogueSo.assignedType == DialogueType.ItemDialogue)
             {
                 DisplayClueSequential();
                 return;
             }
             
-            dialogueindex = 0;
+            dialogueIndex = 0;
             DisplayDialogue();
         }
         
-        public void SetRandomDialogue(DialogueSO dialogueSO)
+        public void SetRandomDialogue(DialogueSO dialogueSo)
         {
-            if (dialogueSO == null)
+            if (dialogueSo == null)
             {
-                Debug.LogError("[DialogueManager] Attempted to set null DialogueSO as random");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            currentdialogueSO = dialogueSO;
+            currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;  
-            if (dialogueSO.DialogueArray == null || dialogueSO.DialogueArray.Length == 0)
+            if (dialogueSo.DialogueArray == null || dialogueSo.DialogueArray.Length == 0)
             {
-                Debug.LogError($"[DialogueManager] DialogueSO '{dialogueSO.name}' has null or empty DialogueArray");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            int random = Random.Range(0, currentdialogueSO.DialogueArray.Length);
-            dialogueindex = random;
+            int random = Random.Range(0, currentDialogueSo.DialogueArray.Length);
+            dialogueIndex = random;
             DisplayDialogue();
         }
         
-        public void DisplayDialogue()
+        private void DisplayDialogue()
         {
-            if (currentdialogueSO == null)
+            if (currentDialogueSo == null)
             {
-                Debug.LogError("[DialogueManager] currentdialogueSO is null during DisplayDialogue");
                 _hasActiveDialogue = false;
                 return;
             }
-            if (currentdialogueSO.DialogueArray == null || currentdialogueSO.DialogueArray.Length == 0)
+            if (currentDialogueSo.DialogueArray == null || currentDialogueSo.DialogueArray.Length == 0)
             {
-                Debug.LogError("[DialogueManager] DialogueArray is null or empty");
                 _hasActiveDialogue = false;
                 return;
             }
-            if (dialogueindex < 0 || dialogueindex >= currentdialogueSO.DialogueArray.Length)
+            if (dialogueIndex < 0 || dialogueIndex >= currentDialogueSo.DialogueArray.Length)
             {
-                Debug.LogError($"[DialogueManager] dialogueindex {dialogueindex} is out of bounds (array length: {currentdialogueSO.DialogueArray.Length})");
-                dialogueindex = Mathf.Clamp(dialogueindex, 0, currentdialogueSO.DialogueArray.Length - 1);
+                dialogueIndex = Mathf.Clamp(dialogueIndex, 0, currentDialogueSo.DialogueArray.Length - 1);
             }
             if (UIManager.Instance == null)
             {
-                Debug.LogError("[DialogueManager] UIManager.Instance is null");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            UIManager.Instance.DisplayToast(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
+            UIManager.Instance.DisplayToast(currentDialogueSo.DialogueArray[dialogueIndex].Dialogue);
         }
         
         private void DisplayClueSequential()
         {
-            if (currentdialogueSO == null)
+            if (currentDialogueSo == null)
             {
-                Debug.LogError("[DialogueManager] currentdialogueSO is null during DisplayClueSequential");
                 _hasActiveDialogue = false;
                 return;
             }
-            if (currentdialogueSO.DialogueArray == null || currentdialogueSO.DialogueArray.Length == 0)
+            if (currentDialogueSo.DialogueArray == null || currentDialogueSo.DialogueArray.Length == 0)
             {
-                Debug.LogError("[DialogueManager] DialogueArray is null or empty in DisplayClueSequential");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            if (dialogueindex < currentdialogueSO.DialogueArray.Length - 1)
+            if (dialogueIndex < currentDialogueSo.DialogueArray.Length - 1)
             {
-                dialogueindex++;
+                dialogueIndex++;
             }
             else
             {
-                dialogueindex = 0;
+                dialogueIndex = 0;
             }
-            dialogueindex = Mathf.Clamp(dialogueindex, 0, currentdialogueSO.DialogueArray.Length - 1);
+            dialogueIndex = Mathf.Clamp(dialogueIndex, 0, currentDialogueSo.DialogueArray.Length - 1);
             if (UIManager.Instance == null)
             {
-                Debug.LogError("[DialogueManager] UIManager.Instance is null");
                 _hasActiveDialogue = false;
                 return;
             }
             
-            UIManager.Instance.DisplayClueHUD(currentdialogueSO.DialogueArray[dialogueindex].Dialogue);
+            UIManager.Instance.DisplayClueHUD(currentDialogueSo.DialogueArray[dialogueIndex].Dialogue);
         }
         
         private void OnDialogueFinished()
@@ -214,26 +189,22 @@ namespace Core
             _hasActiveDialogue = false;  
             if (GameManager.Instance == null)
             {
-                Debug.LogError("[DialogueManager] GameManager.Instance is null during OnDialogueFinished");
                 _isTransitioning = false;
                 return;
             }
             if (GameManager.Instance.playerStateMachine == null)
             {
-                Debug.LogError("[DialogueManager] playerStateMachine is null during OnDialogueFinished");
                 _isTransitioning = false;
                 return;
             }
             
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
-            Debug.Log("[DialogueManager] Dialogue finished - returning to idle state");
             if (EventManager.instance != null)
             {
                 EventManager.instance.Publish(new DialogueFinishedEvent());
             }
             else
             {
-                Debug.LogError("[DialogueManager] EventManager.instance is null");
             }
             
             _isTransitioning = false;

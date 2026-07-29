@@ -1,27 +1,19 @@
 using System.Collections.Generic;
 using EventSystem;
 using Interactions;
-using Pickups;
 using UnityEngine;
 namespace Core
 {
-    public class InventoryManager : MonoBehaviour
+    public class InventoryManager : Singleton<InventoryManager>
     {
         [Header("Clues")] 
         public int TotalClues;
         public int ClueCount = 0;
-        public static InventoryManager Instance;
         public GameObject EquippedItem;
         
-        public Dictionary<CollectibleTypes, InventoryUIItem> Items = new Dictionary<CollectibleTypes, InventoryUIItem>();
-        public Dictionary<CollectibleTypes, BaseItem>  BaseItems = new Dictionary<CollectibleTypes, BaseItem>();
+        private Dictionary<CollectibleTypes, InventoryUIItem> items = new Dictionary<CollectibleTypes, InventoryUIItem>();
+        private Dictionary<CollectibleTypes, BaseItem>  BaseItems = new Dictionary<CollectibleTypes, BaseItem>();
         public Dictionary<BaseItem, int> Keys = new Dictionary<BaseItem, int>();
-        
-        private void Awake()
-        {
-            if (Instance != null && Instance != this) Destroy(this);
-            Instance = this;
-        }
         
         private void OnEnable()
         {
@@ -51,7 +43,7 @@ namespace Core
     
             BaseItems.TryAdd(itemType, item);
     
-            if (Items.TryAdd(itemType, uIItem))
+            if (items.TryAdd(itemType, uIItem))
             {
                 InventoryUIManager.Instance.CreateInventoryItem(uIItem, itemType);
                 InventoryUIManager.Instance.IncrementInventoryUIItem(uIItem, itemType, item);  

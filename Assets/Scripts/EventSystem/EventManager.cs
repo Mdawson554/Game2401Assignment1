@@ -7,7 +7,6 @@ namespace EventSystem
     public class EventManager : MonoBehaviour
     {
         public static EventManager instance;
-        // Dictionary to hold lists of subscribers for each event type
         private readonly Dictionary<Type, Delegate> _subscribers = new Dictionary<Type, Delegate>();
 
         private void Awake()
@@ -23,7 +22,6 @@ namespace EventSystem
             Type type = typeof(T);
             if (_subscribers.TryGetValue(type, out Delegate del))
             {
-                // Cast the delegate to Action<T> and invoke it
                 (del as Action<T>)?.Invoke(eventData);
             }
         }
@@ -35,7 +33,6 @@ namespace EventSystem
             {
                 _subscribers[type] = null;
             }
-            // Combine the existing delegate with the new one
             _subscribers[type] = (Action<T>)_subscribers[type] + onEventTrigger;
         }
     

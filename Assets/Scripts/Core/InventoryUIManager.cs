@@ -5,23 +5,16 @@ using UnityEngine;
 
 namespace Core
 {
-   public class InventoryUIManager : MonoBehaviour
+   public class InventoryUIManager :  Singleton<InventoryUIManager>
    {
-      public static InventoryUIManager Instance;
-      [SerializeField] private GameObject _inventoryCanvas;
+      [SerializeField] private GameObject inventoryCanvas;
       [SerializeField] private float waitTime = 0.5f;
       private Dictionary<CollectibleTypes, InventoryUIItem> _items = new Dictionary<CollectibleTypes, InventoryUIItem>();
    
-      private void Awake()
-      {
-         if (Instance != null && Instance != this) Destroy(this);
-         Instance = this;
-      }
-   
       public void CreateInventoryItem(InventoryUIItem inventoryUIItem, CollectibleTypes collectibleType)
       {
-         var tempItem = Instantiate(inventoryUIItem, _inventoryCanvas.transform.position, Quaternion.identity);
-         tempItem.transform.SetParent(_inventoryCanvas.transform);
+         var tempItem = Instantiate(inventoryUIItem, inventoryCanvas.transform.position, Quaternion.identity);
+         tempItem.transform.SetParent(inventoryCanvas.transform);
          tempItem.ItemImage.sprite = inventoryUIItem.Icon;
          tempItem.Itemname.text = inventoryUIItem.name;  
          tempItem.ItemCount = 0; 
@@ -35,14 +28,14 @@ namespace Core
          current.ItemCount++;
          current.Itemname.text = baseItem.GetItemName();  
          current.ItemCountText.text = current.ItemCount.ToString();
-         StartCoroutine(HideInventoryUiElemement());
+         StartCoroutine(HideInventoryUiElement());
       }
    
-      IEnumerator HideInventoryUiElemement()
+      IEnumerator HideInventoryUiElement()
       {
-         _inventoryCanvas.SetActive(true);
+         inventoryCanvas.SetActive(true);
          yield return new WaitForSeconds(waitTime);
-         _inventoryCanvas.SetActive(false);
+         inventoryCanvas.SetActive(false);
          yield return null;
       }
    }

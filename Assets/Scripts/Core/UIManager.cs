@@ -1,91 +1,78 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Core
 {
-    public class UIManager : MonoBehaviour
+    public class UIManager : Singleton<UIManager>
     {
-        public static UIManager Instance;
-        [SerializeField] private float _itemCollectedDisplaytime;
-        [SerializeField] private float _DialogueDisplaytime;
+        [SerializeField] private float itemCollectedDisplaytime;
+        [SerializeField] private float dialogueDisplaytime;
         
         [Header("text")]
-        [SerializeField] private TMP_Text _toastText;
-        [SerializeField] private TMP_Text _clueText;
+        [SerializeField] private TMP_Text toastText;
+        [SerializeField] private TMP_Text clueText;
         
         [Header("panels")]
-        [SerializeField] private GameObject _pauseMenu;
-        [SerializeField] private GameObject _winMenu;
-        [SerializeField] private GameObject _clueHUD;
-        [SerializeField] private GameObject _toast;
+        [SerializeField] private GameObject pauseMenu;
+        [SerializeField] private GameObject winMenu;
+        [SerializeField] private GameObject clueHUD;
+        [SerializeField] private GameObject toast;
         
         private string _defaultToastText;
         
         private GameManager gameManager;
-
-        private void Awake()
-        {
-            if (Instance != null && Instance != this) Destroy(this);
-            Instance = this;
-        }
         
         private void Start()
         {
             gameManager = GameManager.Instance;
-            _defaultToastText = _toastText.text;
+            _defaultToastText = toastText.text;
         }
 
         public void DisplayToast(string message)
         {
-            _toast.SetActive(true);
-            _toastText.text = message;
+            toast.SetActive(true);
+            toastText.text = message;
         }
 
         public void DisplayClueHUD(string message)
         {
             StopAllCoroutines();
-            _clueHUD.SetActive(true);
-            _clueText.text = message;
+            clueHUD.SetActive(true);
+            clueText.text = message;
             StartCoroutine(HideClueAfterDelay());
         }
 
-        public IEnumerator HideClueAfterDelay()
+        private IEnumerator HideClueAfterDelay()
         {
-               yield return new WaitForSeconds(_itemCollectedDisplaytime);
-               _clueHUD.SetActive(false);
+               yield return new WaitForSeconds(itemCollectedDisplaytime);
+               clueHUD.SetActive(false);
         }
-
-        public void hideDialogue()
-        {
-            _toast.SetActive(false);
-        }
+        
         
         public void ShowToastPrompt()
         {
-            _toast.SetActive(true);
+            toast.SetActive(true);
         }
         
         public void HideToastPrompt()
         {
-            _toast.SetActive(false);
+            toast.SetActive(false);
             ResetToastText();
         }
 
-        public void ResetToastText()
+        private void ResetToastText()
         {
-            _toastText.text = _defaultToastText;
+            toastText.text = _defaultToastText;
         }
         public void ShowPauseMenu(bool show)
         {
-            _pauseMenu.SetActive(show);
+            pauseMenu.SetActive(show);
         }
         
         public void ShowWinMenu(bool show)
         {
-            _winMenu.SetActive(show);
+            winMenu.SetActive(show);
         }
     }
 }

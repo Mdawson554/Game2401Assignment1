@@ -8,12 +8,11 @@ namespace Core
     {
         private PlayerStateMachine _playerStateMachine;
         private PlayerController _playerController;
-
-        public PlayerInputActions playerInputActions;
+        private PlayerInputActions _playerInputActions;
 
         private void Awake()
         {
-            playerInputActions = new PlayerInputActions();
+            _playerInputActions = new PlayerInputActions();
         }
 
         private void Start()
@@ -24,53 +23,39 @@ namespace Core
 
         private void OnEnable()
         {
-            playerInputActions.Enable();
-            playerInputActions.Player.Move.performed += OnMove;
-            playerInputActions.Player.Move.canceled += OnMove;
-            playerInputActions.Player.Look.performed += OnLook;
-            playerInputActions.Player.Look.canceled += OnLook;
-            playerInputActions.Player.Pause.performed += OnPause;
-            playerInputActions.Player.Interact.performed += Interact;
-            playerInputActions.Player.Next.performed += OnNext;
+            _playerInputActions.Enable();
+            _playerInputActions.Player.Move.performed += OnMove;
+            _playerInputActions.Player.Move.canceled += OnMove;
+            _playerInputActions.Player.Look.performed += OnLook;
+            _playerInputActions.Player.Look.canceled += OnLook;
+            _playerInputActions.Player.Pause.performed += OnPause;
+            _playerInputActions.Player.Interact.performed += Interact;
+            _playerInputActions.Player.Next.performed += OnNext;
         }
 
         private void OnDisable()
         {
-            playerInputActions.Player.Move.performed -= OnMove;
-            playerInputActions.Player.Move.canceled -= OnMove;
-            playerInputActions.Player.Look.performed -= OnLook;
-            playerInputActions.Player.Look.canceled -= OnLook;
-            playerInputActions.Player.Pause.performed -= OnPause;
-            playerInputActions.Player.Interact.performed -= Interact;
-            playerInputActions.Player.Next.performed -= OnNext;
+            _playerInputActions.Player.Move.performed -= OnMove;
+            _playerInputActions.Player.Move.canceled -= OnMove;
+            _playerInputActions.Player.Look.performed -= OnLook;
+            _playerInputActions.Player.Look.canceled -= OnLook;
+            _playerInputActions.Player.Pause.performed -= OnPause;
+            _playerInputActions.Player.Interact.performed -= Interact;
+            _playerInputActions.Player.Next.performed -= OnNext;
 
-            playerInputActions.Disable();
+            _playerInputActions.Disable();
         }
         
         public void EnableMoveInput(bool enabled)
         {
             if (enabled)
             {
-                playerInputActions.Player.Move.Enable();
+                _playerInputActions.Player.Move.Enable();
             }
             else
             {
-                playerInputActions.Player.Move.Disable();
+                _playerInputActions.Player.Move.Disable();
                 _playerController.SetMoveInput(Vector2.zero);
-            }
-        }
-
-        public void EnableLookInput(bool enabled)
-        {
-            if (enabled)
-            {
-                playerInputActions.Player.Look.Enable();
-            }
-            else
-            {
-                playerInputActions.Player.Look.Disable();
-
-                _playerController.SetLookInput(Vector2.zero);
             }
         }
 

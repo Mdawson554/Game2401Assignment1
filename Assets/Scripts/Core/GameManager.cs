@@ -6,25 +6,16 @@ using UnityEngine.UI;
 
 namespace Core
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : Singleton<GameManager>
     {
-        public static GameManager Instance;
-        
         public string SceneName;
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private Button continueButton;
         
-        
         private AudioManager _audioManager;
         private UIManager _uiManager;
         public PlayerStateMachine playerStateMachine;
-        
-        private void Awake()
-        {
-            if (Instance != null && Instance != this) Destroy(this);
-            Instance = this;
-        }
         
         private void Start()
         {
@@ -32,12 +23,11 @@ namespace Core
             _audioManager = AudioManager.Instance;
             _uiManager = UIManager.Instance;
             ShowMouse(false);
-            _audioManager.PlayBGMusic();
+            _audioManager.PlayBgMusic();
             _audioManager.PlayAmbientAudio();
             quitButton.onClick.AddListener(OnQuit);
             resumeButton.onClick.AddListener(OnResume);
             continueButton.onClick.AddListener(OnContinue);
-            
             playerStateMachine = FindFirstObjectByType<PlayerStateMachine>();
         }
         

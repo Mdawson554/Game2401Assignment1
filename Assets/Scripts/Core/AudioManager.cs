@@ -2,28 +2,17 @@ using System.Collections;
 using UnityEngine;
 namespace Core
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : Singleton<AudioManager>
     {
-        public static AudioManager Instance;
-        
         public AudioSource sfxAudioSource;
         public AudioSource bgAudioSource;
         public AudioSource ambientAudioSource;
-        
         public AudioClip[] bgMusic;
         public AudioClip[] ambientAudio;
-        
         private int _bgMusicIndex;
         private int _ambientAudioIndex;
-        
         private Coroutine _bgMusicCoroutine;
         private Coroutine _ambientAudioCoroutine;
-        
-        private void Awake()
-        {
-            if (Instance != null && Instance != this) Destroy(this);
-            Instance = this;
-        }
         
         public void PlaySound(AudioClip clip)
         {
@@ -31,11 +20,11 @@ namespace Core
             sfxAudioSource.PlayOneShot(clip);
         }
         
-        public void PlayBGMusic()
+        public void PlayBgMusic()
         {
             if (_bgMusicCoroutine != null)
                 StopCoroutine(_bgMusicCoroutine);
-            _bgMusicCoroutine = StartCoroutine(BGMusicPlaylist());
+            _bgMusicCoroutine = StartCoroutine(BgMusicPlaylist());
         }
         
         public void PlayAmbientAudio()
@@ -45,7 +34,7 @@ namespace Core
             _ambientAudioCoroutine = StartCoroutine(AmbientAudioPlaylist());
         }
         
-        private IEnumerator BGMusicPlaylist()
+        private IEnumerator BgMusicPlaylist()
         {
             while (true)
             {
@@ -67,26 +56,6 @@ namespace Core
                 _ambientAudioIndex++;
                 if (_ambientAudioIndex >= ambientAudio.Length) _ambientAudioIndex = 0;
             }
-        }
-        
-        public void StopBGMusic()
-        {
-            if (_bgMusicCoroutine != null)
-            {
-                StopCoroutine(_bgMusicCoroutine);
-                _bgMusicCoroutine = null;
-            }
-            bgAudioSource.Stop();
-        }
-        
-        public void StopAmbientAudio()
-        {
-            if (_ambientAudioCoroutine != null)
-            {
-                StopCoroutine(_ambientAudioCoroutine);
-                _ambientAudioCoroutine = null;
-            }
-            ambientAudioSource.Stop();
         }
     }
 }
