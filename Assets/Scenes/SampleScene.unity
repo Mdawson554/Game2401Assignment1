@@ -250,12 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &11742850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -414,12 +411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &48240730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -519,6 +513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 3968838617339251170, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: keyName
       value: keyOne
@@ -600,6 +598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d2239d5cc715f4badc4e62b75d6680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.Pickups.Keys
+--- !u!198 &113748807 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 548055599214042133, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+  m_PrefabInstance: {fileID: 113748804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &125656939
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,16 +903,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: e67d405e02077914ca8efde7e31b1080, type: 2}
+  Dialogue: {fileID: 0}
+  stages:
+  - Requirements:
+    - {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
+    - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
+    LockedDialogue: {fileID: 11400000, guid: abda2984bdad68c47900d0e53da50a1f, type: 2}
+    UnlockedDialogue: {fileID: 11400000, guid: 508b45947d3b9e240814124e4b86a356, type: 2}
+    MarkersUnlocked:
+    - {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
+  - Requirements:
+    - {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
+    LockedDialogue: {fileID: 11400000, guid: 38264b02b8594ae459e07f0cc9b81499, type: 2}
+    UnlockedDialogue: {fileID: 11400000, guid: 53497b12e89eb3a4488a7e045824c49d, type: 2}
+    MarkersUnlocked:
+    - {fileID: 11400000, guid: 80c8882c0034101469167414454216b6, type: 2}
   npcType: 0
-  HasRequirement: 1
-  RequiredMarkers:
-  - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-  - {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
-  - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
-  MarkersUnlocked:
-  - {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
-  LockedMessage: they don't seem to like me yet
 --- !u!1001 &188966174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,12 +1050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &188966179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1093,6 +1099,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c99223675c5499844ad13154c97440ab, type: 3}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c99223675c5499844ad13154c97440ab, type: 3}
+    - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: LockedMessage
       value: This is too heavy!
       objectReference: {fileID: 0}
@@ -1101,9 +1111,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: objectRenderer
+      value: 
+      objectReference: {fileID: 238899816}
+    - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: _inventoryUIItem
       value: 
       objectReference: {fileID: 2960678325676081919, guid: f510072f59f108b4c93eb665be9ecace, type: 3}
+    - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: lockedDialogueSO
+      value: 
+      objectReference: {fileID: 11400000, guid: a3020ee5bf7e7724987b12cc61616625, type: 2}
+    - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: keyParticleSystem
+      value: 
+      objectReference: {fileID: 113748807}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: assignedCollectibleType
       value: 1
@@ -1184,6 +1206,11 @@ PrefabInstance:
 --- !u!4 &238899815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6550006069886898776, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+  m_PrefabInstance: {fileID: 238899814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &238899816 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4981815746789387752, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
   m_PrefabInstance: {fileID: 238899814}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &271077745
@@ -2225,6 +2252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clue
       objectReference: {fileID: 0}
+    - target: {fileID: 1081229643751756870, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2815260160706693841, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.63
@@ -2752,12 +2783,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 3
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &592631427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2888,6 +2916,10 @@ PrefabInstance:
     - target: {fileID: 3968838617339251170, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: m_Name
       value: Key (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968838617339251170, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: keyName
@@ -3532,12 +3564,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &878466747
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3777,12 +3806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &920443993
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4160,12 +4186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 0
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!136 &948653861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4478,12 +4501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!1001 &1013830793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4796,12 +4816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1043456215
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5039,13 +5056,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 566480b72a06bd048a06b011ea2c6125, type: 2}
+  Dialogue: {fileID: 0}
+  stages:
+  - Requirements: []
+    LockedDialogue: {fileID: 11400000, guid: 7c35ee8cd48766a47b6d3d5a28334eb1, type: 2}
+    UnlockedDialogue: {fileID: 11400000, guid: 10415f389fe36c9468205432be588741, type: 2}
+    MarkersUnlocked:
+    - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
+  - Requirements:
+    - {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
+    - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
+    - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
+    LockedDialogue: {fileID: 11400000, guid: b1f56b5fb48f32e4795bac3bac35206c, type: 2}
+    UnlockedDialogue: {fileID: 11400000, guid: 513cf725a924c164592c5e268760447a, type: 2}
+    MarkersUnlocked:
+    - {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
   npcType: 0
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked:
-  - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-  LockedMessage: They don't want to talk to me right now...
 --- !u!1 &1093279443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9ffb8aa15f5d37f4eb859b9cbdef5748, type: 3}
@@ -5917,12 +5943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!1 &1350225729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 463eb1f8e56f8704b838e920be8a1abe, type: 3}
@@ -6059,12 +6082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1369065917
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6359,12 +6379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1408876188
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6490,12 +6507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1424208875
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7637,13 +7651,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 0264b7838e5b3b546ba8285e6e6cab9b, type: 3}
     - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0264b7838e5b3b546ba8285e6e6cab9b, type: 3}
+    - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
       propertyPath: HasRequirement
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: clueDialogueSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b92e7fff6e6432488e825bc095e6877, type: 2}
+    - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: objectRenderer
+      value: 
+      objectReference: {fileID: 1653439251}
+    - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
       propertyPath: _inventoryUIItem
       value: 
       objectReference: {fileID: 4880192623675393052, guid: 8d9acf1b4ed092f42a4e077f6406e3cd, type: 3}
+    - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: lockedDialogueSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fb09df6b66b77540933f0f72b7b528d, type: 2}
+    - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: clueParticleSystem
+      value: 
+      objectReference: {fileID: 2077770520}
     - target: {fileID: 8557226360290736688, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
       propertyPath: _clueParticleSystem
       value: 
@@ -7676,6 +7710,11 @@ PrefabInstance:
 --- !u!4 &1653439250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2815260160706693841, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+  m_PrefabInstance: {fileID: 1653439249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1653439251 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2145754245095619765, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
   m_PrefabInstance: {fileID: 1653439249}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1656081900
@@ -7782,12 +7821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1656081904
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8029,12 +8065,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1676251652
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8073,12 +8106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 3
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1698823307
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8819,12 +8849,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 3
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1799081104
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9098,6 +9125,10 @@ PrefabInstance:
     - target: {fileID: 1081229643751756870, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
       propertyPath: m_Name
       value: Clue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081229643751756870, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2815260160706693841, guid: bbdd342248db0be4d83d3e271ea9b4c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9445,12 +9476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &1867838129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10015,12 +10043,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 2
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!135 &2007615659
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10213,12 +10238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
+  Dialogue: {fileID: 0}
+  stages: []
   npcType: 1
-  HasRequirement: 0
-  RequiredMarkers: []
-  MarkersUnlocked: []
-  LockedMessage: They don't want to talk to me right now...
 --- !u!1 &2031300138
 GameObject:
   m_ObjectHideFlags: 0

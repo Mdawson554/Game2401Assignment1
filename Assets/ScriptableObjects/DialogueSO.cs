@@ -6,8 +6,6 @@ public class DialogueSO : ScriptableObject
 {
     public DialogueStruct []DialogueArray;
     public DialogueType assignedType;
-
-
 }
 
 public enum DialogueType
@@ -16,3 +14,5 @@ public enum DialogueType
     SequentialDialogue,
     ItemDialogue,
 }
+
+

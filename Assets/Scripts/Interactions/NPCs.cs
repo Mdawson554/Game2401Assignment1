@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Core;
 using EventSystem;
@@ -8,46 +9,37 @@ using UnityEngine;
 
 public class NPCs : MonoBehaviour, IInteractable
 {
+    [Header("Fallback Dialogue (optional)")]
     public DialogueSO Dialogue;
+
+    [Header("Progressive Dialogue Stages")]
+    public List<DialogueStage> stages = new List<DialogueStage>();
+
     public NPCType npcType;
-    public bool HasRequirement;
-    
-    [Header("Requirements")]
-    public List<StoryMarker> RequiredMarkers;
-    
-    [Header("Unlocks")]
-    public List<StoryMarker> MarkersUnlocked;
-    
-    [Header("Feedback")]
-    [TextArea(2, 3)]
-    
-    [SerializeField] public string LockedMessage;
+
     private bool _isInteracting;
-    
+    private DialogueStage _activeStage;
+
     private void Start()
     {
-        EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+        EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(OnMarkerUnlocked);
     }
-    
+
     private void OnDestroy()
     {
         if (EventManager.instance != null)
         {
-            EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+            EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(OnMarkerUnlocked);
             EventManager.instance.Unsubscribe<DialogueFinishedEvent>(OnDialogueFinished);
         }
     }
-    
-    private void OnInteracted()
+
+    public void OnInteract()
     {
-        if (_isInteracting)
-            return;
-        if (HasRequirement && RequiredMarkers.Count > 0)
-        {
-            UIManager.Instance.DisplayToast(LockedMessage);
-            return;
-        }
+        if (_isInteracting) return;
+
         _isInteracting = true;
+
         if (npcType == NPCType.EssentialNPC)
         {
             EventManager.instance.Subscribe<DialogueFinishedEvent>(OnDialogueFinished);
@@ -55,95 +47,168 @@ public class NPCs : MonoBehaviour, IInteractable
 
         DeliverDialogue();
     }
-    
-    public void OnInteract()
+
+    private void OnMarkerUnlocked(StoryMarkerUnlockedEvent e)
     {
-        OnInteracted();
+        // StoryManager owns progression
     }
-    
-    public void OnHoverIn()
-    {
-    }
-    
-    public void OnHoverOff()
-    {
-    }
-    
-    private void UnlockMarker(StoryMarkerUnlockedEvent e)
-    {
-        if (RequiredMarkers.Contains(e.Marker))
-        {
-            RequiredMarkers.Remove(e.Marker);
-        }
-    }
-   
+
     public void OnDialogueFinished(DialogueFinishedEvent e)
     {
         EventManager.instance.Unsubscribe<DialogueFinishedEvent>(OnDialogueFinished);
-        if (EventManager.instance != null)
+
+        if (_activeStage != null && _activeStage.MarkersUnlocked != null)
         {
-            foreach (var marker in MarkersUnlocked)
+            foreach (var marker in _activeStage.MarkersUnlocked)
             {
-                if (marker != null)
+                if (marker != null && !StoryManager.Instance.HasMarker(marker))
                 {
                     EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
                 }
-                
             }
         }
+
+        _activeStage = null;
         _isInteracting = false;
     }
 
-    private void setConversation()
+    private bool HasMarker(StoryMarker marker)
     {
-        DialogueManager.Instance.SetSequentialDialogue(Dialogue);
-        EventManager.instance.Publish(new StateChangeEvent(GameManager.Instance.playerStateMachine.dialoguestate));
+        return StoryManager.Instance.HasMarker(marker);
     }
 
-    private void setInteraction()
+    private bool IsStageCompleted(DialogueStage stage)
     {
-        DialogueManager.Instance.SetRandomDialogue(Dialogue);
+        if (stage.MarkersUnlocked == null || stage.MarkersUnlocked.Count == 0)
+            return false;
 
-        EventManager.instance.Publish(
-            new StateChangeEvent(GameManager.Instance.playerStateMachine.idlestate));
-        _isInteracting = false;
+        foreach (var marker in stage.MarkersUnlocked)
+        {
+            if (marker != null && !HasMarker(marker))
+                return false;
+        }
+
+        return true;
     }
-    
-    private void DeliverDialogue()
+
+    private DialogueStage GetCurrentStage()
     {
-        if (DialogueManager.Instance == null)
+        DialogueStage lastUnlocked = null;
+
+        foreach (var stage in stages)
         {
-            _isInteracting = false;
-            return;
-        }
-        if (GameManager.Instance == null || GameManager.Instance.playerStateMachine == null)
-        {
-            _isInteracting = false;
-            return;
-        }
-        if (Dialogue == null)
-        {
-            _isInteracting = false;
-            return;
+            bool requirementsMet = stage.IsUnlocked(HasMarker);
+            bool isLocked = stage.HasRequirements && !requirementsMet;
+
+            // If stage is locked, return it (player sees locked dialogue)
+            if (isLocked)
+            {
+                return stage;
+            }
+
+            // If stage is unlocked but not completed, return it
+            if (!IsStageCompleted(stage))
+            {
+                return stage;
+            }
+
+            // Stage is completed, track it and continue
+            lastUnlocked = stage;
         }
         
+        return lastUnlocked;
+    }
+
+    private void DeliverDialogue()
+    {
+        var stage = GetCurrentStage();
+
+        if (stage == null)
+        {
+            _activeStage = null;
+
+            if (Dialogue != null)
+            {
+                PlayDialogueSO(Dialogue);
+            }
+            else
+            {
+                _isInteracting = false;
+            }
+            return;
+        }
+
+        bool requirementsMet = stage.IsUnlocked(HasMarker);
+        bool isLocked = stage.HasRequirements && !requirementsMet;
+
+        if (isLocked)
+        {
+            _activeStage = null;
+
+            if (stage.HasValidLocked)
+            {
+                PlayDialogueSO(stage.LockedDialogue);
+            }
+            else
+            {
+                _isInteracting = false;
+            }
+            return;
+        }
+
+        _activeStage = stage;
+
+        if (stage.HasValidUnlocked)
+        {
+            PlayDialogueSO(stage.UnlockedDialogue);
+        }
+        else if (stage.HasValidLocked)
+        {
+            PlayDialogueSO(stage.LockedDialogue);
+        }
+        else if (Dialogue != null)
+        {
+            PlayDialogueSO(Dialogue);
+        }
+        else
+        {
+            _isInteracting = false;
+        }
+    }
+
+    private void PlayDialogueSO(DialogueSO dialogueSo)
+    {
+        if (DialogueManager.Instance == null ||
+            GameManager.Instance == null ||
+            GameManager.Instance.playerStateMachine == null)
+        {
+            _isInteracting = false;
+            return;
+        }
+
         switch (npcType)
         {
             case NPCType.CommonNPC:
-                setInteraction();
-                break;
             case NPCType.DrunkNPC:
-                setInteraction();
-                break;
             case NPCType.BouncerNPC:
-                setInteraction();
+                DialogueManager.Instance.SetRandomDialogue(dialogueSo);
+                GameManager.Instance.playerStateMachine.changeState(
+                    GameManager.Instance.playerStateMachine.idlestate);
+                _isInteracting = false;
                 break;
+
             case NPCType.EssentialNPC:
-                setConversation();
+                DialogueManager.Instance.SetSequentialDialogue(dialogueSo);
+                GameManager.Instance.playerStateMachine.changeState(
+                    GameManager.Instance.playerStateMachine.dialoguestate);
                 break;
+
             default:
                 _isInteracting = false;
                 break;
         }
     }
+
+    public void OnHoverIn() { }
+    public void OnHoverOff() { }
 }

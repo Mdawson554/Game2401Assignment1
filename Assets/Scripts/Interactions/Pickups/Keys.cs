@@ -10,166 +10,133 @@ namespace Pickups
 {
     public class Keys : BaseItem, IInteractable, ICollectible
     {
-        [SerializeField] private Renderer _objectRenderer;
-        [SerializeField] private ParticleSystem _keyParticleSystem;
-        [SerializeField] private float _secondsToWait = 0.2f;
+        [Header("Dialogue")]
+        [SerializeField] private DialogueSO lockedDialogueSO;   // shown when requirements not met
+
+        [Header("Visuals")]
+        [SerializeField] private Renderer objectRenderer;
+        [SerializeField] private ParticleSystem keyParticleSystem;
+        [SerializeField] private float secondsToWait = 0.2f;
         [SerializeField] private string keyName;
-        [SerializeField] private AudioClip keypickup;
-        
+        [SerializeField] private AudioClip pickupSound;
+
         [Header("Requirements")]
         public bool HasRequirement;
         public List<StoryMarker> RequiredMarkers;
-        
+
         [Header("Unlocks")]
         public List<StoryMarker> MarkersUnlocked;
-        
-        [Header("Feedback")]
-        [TextArea(2, 3)]
-        public string LockedMessage = "I can't pick this up right now...";
-        
-        private bool _alreadyCollected = false;
-        
+
+        private bool alreadyCollected = false;
+
         private void Start()
         {
-            _keyParticleSystem = GetComponentInChildren<ParticleSystem>();
-            if (_keyParticleSystem == null)
-            {
-                Debug.LogWarning($"Key '{keyName}': ParticleSystem not found as child component");
-            }
-            if (_objectRenderer == null)
-            {
-                Debug.LogError($"Key '{keyName}': Renderer is not assigned in inspector!");
-            }
+            keyParticleSystem = GetComponentInChildren<ParticleSystem>();
+            if (keyParticleSystem == null)
+                Debug.LogWarning($"Key '{keyName}': ParticleSystem not found");
+
+            if (objectRenderer == null)
+                Debug.LogError($"Key '{keyName}': Renderer not assigned!");
+
             EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
         }
-        
+
         private void OnDestroy()
         {
             if (EventManager.instance != null)
-            {
                 EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
-            }
         }
-        
+
+        public void OnInteract()
+        {
+            OnInteracted();
+        }
+
         private void OnInteracted()
         {
-            if (_alreadyCollected)
+            if (alreadyCollected)
+                return;
+
+            // LOCKED PATH
+            if (HasRequirement && RequiredMarkers.Count > 0)
             {
-                Debug.LogWarning($"Key '{keyName}': Already collected. Ignoring duplicate interaction.");
+                PlayLockedDialogue();
                 return;
             }
-            if (HasRequirement)
-            {
-                if (RequiredMarkers.Count > 0)
-                {
-                    Debug.Log($"Key '{keyName}' is locked. Missing {RequiredMarkers.Count} marker(s)");
-                    UIManager.Instance.DisplayToast(LockedMessage);
-                    return;
-                }
-            }
-            _alreadyCollected = true;
-            if (InventoryManager.Instance == null)
-            {
-                Debug.LogError($"Key '{keyName}': InventoryManager.Instance is null");
-                _alreadyCollected = false;
-                return;
-            }
+
+            // UNLOCKED PATH
+            alreadyCollected = true;
+
             EventManager.instance.Publish(new PickupEvent(this));
             InventoryManager.Instance.EquippedItem = gameObject;
-            if (AudioManager.Instance != null && keypickup != null)
-            {
-                AudioManager.Instance.PlaySound(keypickup);
-            }
-            else if (keypickup == null)
-            {
-                Debug.LogWarning($"Key '{keyName}': keypickup AudioClip is not assigned");
-            }
-            
+
+            if (AudioManager.Instance != null && pickupSound != null)
+                AudioManager.Instance.PlaySound(pickupSound);
+
             OnCollectEffect();
-            if (EventManager.instance != null)
+
+            foreach (var marker in MarkersUnlocked)
             {
-                foreach (var marker in MarkersUnlocked)
-                {
-                    if (marker != null)
-                    {
-                        EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
-                        Debug.Log($"Key '{keyName}' unlocked marker '{marker.name}'");
-                    }
-                    else
-                    {
-                        Debug.LogError($"Key '{keyName}': MarkersUnlocked contains null marker!");
-                    }
-                }
+                if (marker != null && !StoryManager.Instance.HasMarker(marker))
+                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
             }
         }
-        
+
+        private void PlayLockedDialogue()
+        {
+            if (lockedDialogueSO == null)
+            {
+                Debug.LogWarning($"Key '{keyName}': LockedDialogueSO not assigned!");
+                return;
+            }
+
+            DialogueManager.Instance.SetSequentialDialogue(lockedDialogueSO);
+        }
+
         public override string GetItemName()
         {
             return keyName;
         }
-        
+
         public Sprite Icon { get; set; }
-        
+
         public void OnCollectEffect()
         {
             StartCoroutine(CollectParticleSystem());
         }
-        
+
         private IEnumerator CollectParticleSystem()
         {
-            if (_objectRenderer == null)
-            {
-                Debug.LogError($"Key '{keyName}': Renderer is null during CollectParticleSystem");
+            if (objectRenderer == null)
                 yield break;
-            }
-            
-            Color previousColor = _objectRenderer.material.color;
-            if (_keyParticleSystem != null)
+
+            Color previousColor = objectRenderer.material.color;
+
+            if (keyParticleSystem != null)
             {
-                var main = _keyParticleSystem.main;
+                var main = keyParticleSystem.main;
                 main.startColor = previousColor;
-                _keyParticleSystem.Play();
+                keyParticleSystem.Play();
             }
-            
-            _objectRenderer.material.color = Color.white;
-            yield return new WaitForSeconds(_secondsToWait);
-            if (_objectRenderer != null)
-            {
-                _objectRenderer.material.color = previousColor;
-            }
-            
-            yield return new WaitForSeconds(_secondsToWait);
-            if (_objectRenderer != null)
-            {
-                _objectRenderer.material.color = Color.white;
-            }
-            
+
+            objectRenderer.material.color = Color.white;
+            yield return new WaitForSeconds(secondsToWait);
+
+            objectRenderer.material.color = previousColor;
+            yield return new WaitForSeconds(secondsToWait);
+
+            objectRenderer.material.color = Color.white;
+
             Destroy(gameObject);
         }
-        
-     
+
         private void UnlockMarker(StoryMarkerUnlockedEvent e)
         {
-            if (e == null || e.Marker == null)
-            {
-                Debug.LogError($"Key '{keyName}': Received invalid StoryMarkerUnlockedEvent");
+            if (e?.Marker == null)
                 return;
-            }
+
             if (RequiredMarkers.Contains(e.Marker))
-            {
                 RequiredMarkers.Remove(e.Marker);
-                Debug.Log($"Key '{keyName}' now has marker '{e.Marker.name}'. Remaining requirements: {RequiredMarkers.Count}");
-                
-                if (RequiredMarkers.Count == 0)
-                {
-                    Debug.Log($"Key '{keyName}' is now unlocked!");
-                }
-            }
-        }
-        
-        public void OnInteract()
-        {
-            OnInteracted();
         }
     }
 }
