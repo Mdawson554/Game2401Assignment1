@@ -18,11 +18,11 @@ MonoBehaviour:
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 0, g: 0.019607844, b: 0.25882354, a: 1}
   - Dialogue: you taking care of yourself buddy?
     Type: 0
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 0, g: 0.019607844, b: 0.25882354, a: 1}
   assignedType: 1

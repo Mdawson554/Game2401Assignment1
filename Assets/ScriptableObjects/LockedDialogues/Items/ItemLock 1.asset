@@ -18,5 +18,5 @@ MonoBehaviour:
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 0.91823894, g: 0.054863155, b: 0.054863155, a: 1}
   assignedType: 0

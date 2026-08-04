@@ -13,16 +13,10 @@ MonoBehaviour:
   m_Name: LockedDialogue 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
-  - Dialogue: sorry for bothering you
-    Type: 0
-    DialogueSprite: {fileID: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
   - Dialogue: i'll be back
     Type: 0
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 0
