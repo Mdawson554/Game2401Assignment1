@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using EventSystem;
 using UnityEngine;
@@ -39,4 +39,4 @@ namespace Story
         }
         public bool HasRequirements => UnlockedDialogue.hasrequirements;
     }
-}
+}*/
