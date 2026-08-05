@@ -19,6 +19,7 @@ namespace Gameplay
         public bool hasrequirements;
         public bool requirementFufilled;
         public StoryMarker StoryMarkerRequirement;
+        public StoryMarker StoryMarkerProduced;
     }
 
     public enum NPCType

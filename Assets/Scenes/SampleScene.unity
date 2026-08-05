@@ -251,7 +251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!135 &11742850
 SphereCollider:
@@ -412,7 +411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &48240730
 SphereCollider:
@@ -904,15 +902,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages:
-  - LockedDialogue: {fileID: 11400000, guid: abda2984bdad68c47900d0e53da50a1f, type: 2}
-    UnlockedDialogue: {fileID: 11400000, guid: 508b45947d3b9e240814124e4b86a356, type: 2}
-    MarkersUnlocked:
-    - {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
-  - LockedDialogue: {fileID: 11400000, guid: 38264b02b8594ae459e07f0cc9b81499, type: 2}
-    UnlockedDialogue: {fileID: 11400000, guid: 53497b12e89eb3a4488a7e045824c49d, type: 2}
-    MarkersUnlocked:
-    - {fileID: 11400000, guid: 80c8882c0034101469167414454216b6, type: 2}
   npcType: 0
 --- !u!1001 &188966174
 PrefabInstance:
@@ -1046,7 +1035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!135 &188966179
 SphereCollider:
@@ -2628,6 +2616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.DialogueManager
   nextButton: {fileID: 0}
+  MarkersUnlocked: []
 --- !u!1 &557509325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74f55b3e40c400c4ab5b96b66f2c8f4d, type: 3}
@@ -2777,7 +2766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 3
 --- !u!135 &592631427
 SphereCollider:
@@ -3558,7 +3546,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &878466747
 SphereCollider:
@@ -3800,7 +3787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!135 &920443993
 SphereCollider:
@@ -4180,7 +4166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 0
 --- !u!136 &948653861
 CapsuleCollider:
@@ -4495,7 +4480,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!1001 &1013830793
 PrefabInstance:
@@ -4810,7 +4794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &1043456215
 SphereCollider:
@@ -5049,16 +5032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 0}
-  stages:
-  - LockedDialogue: {fileID: 11400000, guid: 7c35ee8cd48766a47b6d3d5a28334eb1, type: 2}
-    UnlockedDialogue: {fileID: 11400000, guid: 10415f389fe36c9468205432be588741, type: 2}
-    MarkersUnlocked:
-    - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-  - LockedDialogue: {fileID: 11400000, guid: b1f56b5fb48f32e4795bac3bac35206c, type: 2}
-    UnlockedDialogue: {fileID: 11400000, guid: 513cf725a924c164592c5e268760447a, type: 2}
-    MarkersUnlocked:
-    - {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
+  Dialogue: {fileID: 11400000, guid: 10415f389fe36c9468205432be588741, type: 2}
   npcType: 0
 --- !u!1 &1093279443 stripped
 GameObject:
@@ -5910,7 +5884,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!1 &1350225729 stripped
 GameObject:
@@ -6049,7 +6022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &1369065917
 SphereCollider:
@@ -6346,7 +6318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!135 &1408876188
 SphereCollider:
@@ -6474,7 +6445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &1424208875
 SphereCollider:
@@ -7788,7 +7758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &1656081904
 SphereCollider:
@@ -8032,7 +8001,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!135 &1676251652
 SphereCollider:
@@ -8073,7 +8041,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 3
 --- !u!135 &1698823307
 SphereCollider:
@@ -8816,7 +8783,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 3
 --- !u!135 &1799081104
 SphereCollider:
@@ -9443,7 +9409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &1867838129
 SphereCollider:
@@ -10010,7 +9975,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 2
 --- !u!135 &2007615659
 SphereCollider:
@@ -10205,7 +10169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
-  stages: []
   npcType: 1
 --- !u!1 &2031300138
 GameObject:

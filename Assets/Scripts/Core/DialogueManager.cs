@@ -146,13 +146,15 @@ namespace Core
             UIManager.Instance.DisplayClueHUD(d);
         }
         
-        public void OnDialogueFinished()
+        private void OnDialogueFinished()
         {
-            if ( !StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement))
+            if (_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
             {
-                EventManager.instance.Publish(new StoryMarkerUnlockedEvent(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement));
+                if ( !StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement ) && _currentDialogueSo.DialogueArray[_dialogueIndex].requirementFufilled)
+                {
+                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerProduced));
+                }
             }
-            
             _isTransitioning = true;
             _hasActiveDialogue = false;
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);

@@ -12,11 +12,16 @@ public class NPCs : MonoBehaviour, IInteractable
     public DialogueSO Dialogue;
     public NPCType npcType;
     private bool _isInteracting;
+    public List<DialogueStruct> structs = new List<DialogueStruct>();
     
     private void Start()
     {
         EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(OnMarkerUnlocked);
     }
+    // bellow in marker unlocked event
+    //npc must listen for story marker events then loop through the array of dialog structs in the assigned public Dialogue variable
+    //for each dialog struct in array check if it has a requirement, if has requirement check if assigned requirement matches that of the event 
+    // if it matches set the requirement met bool in the specific dialogue struct in the array.
 
     private void OnDestroy()
     {
@@ -41,12 +46,31 @@ public class NPCs : MonoBehaviour, IInteractable
         DeliverDialogue();
     }
 
-    private void OnMarkerUnlocked(StoryMarkerUnlockedEvent e)
+    public void Init()
     {
-        // StoryManager owns progression
+        foreach (var dialogueStruct in Dialogue.DialogueArray)
+        {
+            DialogueStruct stru = new DialogueStruct();
+            stru = dialogueStruct;
+            structs.Add(stru);
+        }
     }
 
-    public void OnDialogueFinished(DialogueFinishedEvent e)
+    private void OnMarkerUnlocked(StoryMarkerUnlockedEvent e)
+    {
+        for(int i = 0; i <= structs.Count; i++)
+        {
+            if (structs[i].hasrequirements)
+            {
+                if (e.Marker == structs[i].StoryMarkerRequirement)
+                {
+                    //structs[i].requirementFufilled = true;
+                }
+            }
+        }
+    }
+
+    private void OnDialogueFinished(DialogueFinishedEvent e)
     {
         EventManager.instance.Unsubscribe<DialogueFinishedEvent>(OnDialogueFinished);
         _isInteracting = false;
@@ -79,6 +103,7 @@ public class NPCs : MonoBehaviour, IInteractable
                 break;
 
             case NPCType.EssentialNPC:
+                Debug.Log("DeathToAll");
                 DialogueManager.Instance.SetSequentialDialogue(Dialogue);
                 GameManager.Instance.playerStateMachine.changeState(
                     GameManager.Instance.playerStateMachine.dialoguestate);
