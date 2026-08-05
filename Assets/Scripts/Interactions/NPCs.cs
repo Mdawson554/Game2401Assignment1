@@ -50,7 +50,7 @@ public class NPCs : MonoBehaviour, IInteractable
     {
         foreach (var dialogueStruct in Dialogue.DialogueArray)
         {
-            DialogueStruct stru = new DialogueStruct();
+            DialogueStruct stru = new DialogueStruct(){requirementFufilled = false};
             stru = dialogueStruct;
             structs.Add(stru);
         }
@@ -64,7 +64,7 @@ public class NPCs : MonoBehaviour, IInteractable
             {
                 if (e.Marker == structs[i].StoryMarkerRequirement)
                 {
-                    //structs[i].requirementFufilled = true;
+                    structs[i] = new DialogueStruct(){requirementFufilled = true};
                 }
             }
         }

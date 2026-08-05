@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!135 &11742850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -412,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &48240730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -901,8 +903,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 0}
+  Dialogue: {fileID: 11400000, guid: 508b45947d3b9e240814124e4b86a356, type: 2}
   npcType: 0
+  structs: []
 --- !u!1001 &188966174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1036,6 +1039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!135 &188966179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2767,6 +2771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 3
+  structs: []
 --- !u!135 &592631427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3547,6 +3552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &878466747
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3788,6 +3794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!135 &920443993
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4167,6 +4174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 0
+  structs: []
 --- !u!136 &948653861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4481,6 +4489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!1001 &1013830793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4795,6 +4804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &1043456215
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5034,6 +5044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 11400000, guid: 10415f389fe36c9468205432be588741, type: 2}
   npcType: 0
+  structs: []
 --- !u!1 &1093279443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9ffb8aa15f5d37f4eb859b9cbdef5748, type: 3}
@@ -5885,6 +5896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!1 &1350225729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 463eb1f8e56f8704b838e920be8a1abe, type: 3}
@@ -6023,6 +6035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &1369065917
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6319,6 +6332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!135 &1408876188
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6446,6 +6460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &1424208875
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7759,6 +7774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &1656081904
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8002,6 +8018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!135 &1676251652
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8042,6 +8059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 3
+  structs: []
 --- !u!135 &1698823307
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8784,6 +8802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 3
+  structs: []
 --- !u!135 &1799081104
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9410,6 +9429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &1867838129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9976,6 +9996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 2
+  structs: []
 --- !u!135 &2007615659
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10170,6 +10191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   npcType: 1
+  structs: []
 --- !u!1 &2031300138
 GameObject:
   m_ObjectHideFlags: 0
