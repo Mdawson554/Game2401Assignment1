@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 
 namespace EventSystem
 {
-    public class EventManager : MonoBehaviour
+    public class EventManager : Singleton<EventManager>
     {
         public static EventManager instance;
         private readonly Dictionary<Type, Delegate> _subscribers = new Dictionary<Type, Delegate>();

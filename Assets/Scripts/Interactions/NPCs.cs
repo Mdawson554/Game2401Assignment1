@@ -23,6 +23,11 @@ public class NPCs : MonoBehaviour, IInteractable
     private void Start()
     {
         EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(OnMarkerUnlocked);
+        foreach (var stage in stages)
+        {
+            if (stage == null) continue;
+            stage.Init();
+        }
     }
 
     private void OnDestroy()
@@ -97,7 +102,8 @@ public class NPCs : MonoBehaviour, IInteractable
 
         foreach (var stage in stages)
         {
-            bool requirementsMet = stage.IsUnlocked(HasMarker);
+            if(stage == null) continue;
+            bool requirementsMet = stage.IsUnlocked();
             bool isLocked = stage.HasRequirements && !requirementsMet;
 
             // If stage is locked, return it (player sees locked dialogue)
@@ -138,14 +144,14 @@ public class NPCs : MonoBehaviour, IInteractable
             return;
         }
 
-        bool requirementsMet = stage.IsUnlocked(HasMarker);
+        bool requirementsMet = stage.IsUnlocked();
         bool isLocked = stage.HasRequirements && !requirementsMet;
 
         if (isLocked)
         {
-            _activeStage = null;
+            _activeStage = stage;
 
-            if (stage.HasValidLocked)
+            if (stage.LockedDialogue)
             {
                 PlayDialogueSO(stage.LockedDialogue);
             }
@@ -158,11 +164,11 @@ public class NPCs : MonoBehaviour, IInteractable
 
         _activeStage = stage;
 
-        if (stage.HasValidUnlocked)
+        if (stage.UnlockedDialogue)
         {
             PlayDialogueSO(stage.UnlockedDialogue);
         }
-        else if (stage.HasValidLocked)
+        else if (stage.LockedDialogue)
         {
             PlayDialogueSO(stage.LockedDialogue);
         }

@@ -3,7 +3,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 namespace Core
 {
     public class GameManager : Singleton<GameManager>
@@ -31,20 +30,12 @@ namespace Core
             playerStateMachine = FindFirstObjectByType<PlayerStateMachine>();
         }
         
-        private void OnEnable()
-        {
-            resumeButton.onClick.AddListener(OnResume);
-            continueButton.onClick.AddListener(OnContinue);
-            quitButton.onClick.AddListener(OnQuit);
-        }
-
         private void OnDisable()
         {
             resumeButton.onClick.RemoveListener(OnResume);
-            continueButton.onClick.AddListener(OnContinue);
+            continueButton.onClick.RemoveListener(OnContinue);
             quitButton.onClick.RemoveListener(OnQuit);
         }
-
         public void OnAllCluesCollected()
         {
             Debug.Log("YOU WIN THE GAME!");
@@ -52,7 +43,6 @@ namespace Core
             UIManager.Instance.ShowPauseMenu(false);
             UIManager.Instance.ShowWinMenu(true);
         }
-
         private void ShowMouse(bool value)
         {
             Cursor.visible = value;
@@ -66,7 +56,6 @@ namespace Core
             Time.timeScale = 0;
             UIManager.Instance.ShowPauseMenu(true);
         }
-
         private void OnResume()
         {
             ShowMouse(false);
@@ -79,7 +68,6 @@ namespace Core
         {
             SceneManager.LoadScene(SceneName);
         }
-
         private void OnQuit()
         {
 #if UNITY_EDITOR

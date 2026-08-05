@@ -905,16 +905,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   stages:
-  - Requirements:
-    - {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
-    - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
-    LockedDialogue: {fileID: 11400000, guid: abda2984bdad68c47900d0e53da50a1f, type: 2}
+  - LockedDialogue: {fileID: 11400000, guid: abda2984bdad68c47900d0e53da50a1f, type: 2}
     UnlockedDialogue: {fileID: 11400000, guid: 508b45947d3b9e240814124e4b86a356, type: 2}
     MarkersUnlocked:
     - {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
-  - Requirements:
-    - {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
-    LockedDialogue: {fileID: 11400000, guid: 38264b02b8594ae459e07f0cc9b81499, type: 2}
+  - LockedDialogue: {fileID: 11400000, guid: 38264b02b8594ae459e07f0cc9b81499, type: 2}
     UnlockedDialogue: {fileID: 11400000, guid: 53497b12e89eb3a4488a7e045824c49d, type: 2}
     MarkersUnlocked:
     - {fileID: 11400000, guid: 80c8882c0034101469167414454216b6, type: 2}
@@ -1160,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
     - target: {fileID: 6550006069886898776, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.11
+      value: 9.78
       objectReference: {fileID: 0}
     - target: {fileID: 6550006069886898776, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1168,7 +1163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6550006069886898776, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.2400002
+      value: -4.99
       objectReference: {fileID: 0}
     - target: {fileID: 6550006069886898776, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2633,8 +2628,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.DialogueManager
   nextButton: {fileID: 0}
-  dialogueIndex: 0
-  currentDialogueSo: {fileID: 0}
 --- !u!1 &557509325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74f55b3e40c400c4ab5b96b66f2c8f4d, type: 3}
@@ -5058,16 +5051,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
   Dialogue: {fileID: 0}
   stages:
-  - Requirements: []
-    LockedDialogue: {fileID: 11400000, guid: 7c35ee8cd48766a47b6d3d5a28334eb1, type: 2}
+  - LockedDialogue: {fileID: 11400000, guid: 7c35ee8cd48766a47b6d3d5a28334eb1, type: 2}
     UnlockedDialogue: {fileID: 11400000, guid: 10415f389fe36c9468205432be588741, type: 2}
     MarkersUnlocked:
     - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-  - Requirements:
-    - {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
-    - {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
-    - {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-    LockedDialogue: {fileID: 11400000, guid: b1f56b5fb48f32e4795bac3bac35206c, type: 2}
+  - LockedDialogue: {fileID: 11400000, guid: b1f56b5fb48f32e4795bac3bac35206c, type: 2}
     UnlockedDialogue: {fileID: 11400000, guid: 513cf725a924c164592c5e268760447a, type: 2}
     MarkersUnlocked:
     - {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
@@ -5420,7 +5408,6 @@ GameObject:
   - component: {fileID: 1303443270}
   - component: {fileID: 1303443269}
   - component: {fileID: 1303443274}
-  - component: {fileID: 1303443273}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -5437,7 +5424,7 @@ Transform:
   m_GameObject: {fileID: 1303443267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12.13}
+  m_LocalPosition: {x: 16.75, y: 0, z: -8.65}
   m_LocalScale: {x: 0.40176, y: 3.1209, z: 1.8162}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5543,27 +5530,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303443267}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &1303443273
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303443267}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1303443274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10920,9 +10886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9912684c9b5c65d4a9becc4552ad82a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.InventoryManager
-  TotalClues: 3
-  ClueCount: 0
-  EquippedItem: {fileID: 0}
+  totalClues: 0
 --- !u!1001 &3132446198286599966
 PrefabInstance:
   m_ObjectHideFlags: 0

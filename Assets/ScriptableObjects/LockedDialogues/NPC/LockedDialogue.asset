@@ -20,3 +20,5 @@ MonoBehaviour:
     DialogueFont: {fileID: 0}
     DialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 0
+  requirements:
+  - {fileID: 0}

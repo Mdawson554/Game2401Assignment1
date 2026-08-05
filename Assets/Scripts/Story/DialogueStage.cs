@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using EventSystem;
 using UnityEngine;
 
 namespace Story
@@ -7,9 +8,6 @@ namespace Story
     [Serializable]
     public class DialogueStage
     {
-        [Header("Markers required to unlock this stage")]
-        public List<StoryMarker> Requirements = new List<StoryMarker>();
-        
         [Header("Locked Dialogue (DialogueSO)")]
         public DialogueSO LockedDialogue;
         
@@ -18,25 +16,27 @@ namespace Story
         
         [Header("Markers unlocked AFTER this stage finishes")]
         public List<StoryMarker> MarkersUnlocked = new List<StoryMarker>();
-        public bool IsUnlocked(Func<StoryMarker, bool> hasMarker)
+
+        private void UnlockMarker(StoryMarkerUnlockedEvent e)
         {
-            if (Requirements.Count == 0)
+            MarkersUnlocked.Add(e.Marker);
+        }
+
+        public void Init()
+        {
+            EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
+        }
+        public bool IsUnlocked()
+        {
+            if (!UnlockedDialogue.hasrequirements)
                 return true;
-            foreach (var req in Requirements)
+            foreach (var req in UnlockedDialogue.requirements)
             {
-                if (req != null && !hasMarker(req))
+                if (MarkersUnlocked.Contains(req))
                     return false;
             }
             return true;
         }
-        public bool HasRequirements => Requirements.Count > 0;
-
-        public bool HasValidLocked =>
-            LockedDialogue != null && LockedDialogue.DialogueArray != null &&
-            LockedDialogue.DialogueArray.Length > 0;
-
-        public bool HasValidUnlocked =>
-            UnlockedDialogue != null && UnlockedDialogue.DialogueArray != null &&
-            UnlockedDialogue.DialogueArray.Length > 0;
+        public bool HasRequirements => UnlockedDialogue.hasrequirements;
     }
 }

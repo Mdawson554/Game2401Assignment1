@@ -1,7 +1,6 @@
 using States;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 namespace Core
 {
     public class InputManager : MonoBehaviour
@@ -9,18 +8,15 @@ namespace Core
         private PlayerStateMachine _playerStateMachine;
         private PlayerController _playerController;
         private PlayerInputActions _playerInputActions;
-
         private void Awake()
         {
             _playerInputActions = new PlayerInputActions();
         }
-
         private void Start()
         {
             _playerStateMachine = GameManager.Instance.playerStateMachine;
             _playerController = GetComponent<PlayerController>();
         }
-
         private void OnEnable()
         {
             _playerInputActions.Enable();
@@ -32,7 +28,6 @@ namespace Core
             _playerInputActions.Player.Interact.performed += Interact;
             _playerInputActions.Player.Next.performed += OnNext;
         }
-
         private void OnDisable()
         {
             _playerInputActions.Player.Move.performed -= OnMove;
@@ -42,7 +37,6 @@ namespace Core
             _playerInputActions.Player.Pause.performed -= OnPause;
             _playerInputActions.Player.Interact.performed -= Interact;
             _playerInputActions.Player.Next.performed -= OnNext;
-
             _playerInputActions.Disable();
         }
         
@@ -58,31 +52,29 @@ namespace Core
                 _playerController.SetMoveInput(Vector2.zero);
             }
         }
-
         private void OnMove(InputAction.CallbackContext context)
         {
             _playerController.SetMoveInput(context.ReadValue<Vector2>());
         }
-
         private void OnLook(InputAction.CallbackContext context)
         {
             _playerController.SetLookInput(context.ReadValue<Vector2>());
         }
-
         private void OnPause(InputAction.CallbackContext context)
         {
             _playerStateMachine.Pause();
         }
-
         private void OnNext(InputAction.CallbackContext context)
         {
             DialogueManager.Instance.NextDialogue();
         }
-
         private void Interact(InputAction.CallbackContext context)
         {
-            UIManager.Instance.HideToastPrompt();
-
+            if (_playerStateMachine.currentState != _playerStateMachine.dialoguestate)
+            {
+                UIManager.Instance.HideToastPrompt();
+            }
+            
             _playerStateMachine.playerInteractor.CurrentInteractable?.OnInteract();
             _playerStateMachine.playerInteractor.CurrentInteractable = null;
         }

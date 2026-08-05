@@ -6,14 +6,20 @@ namespace Core
 {
     public class InventoryManager : Singleton<InventoryManager>
     {
-        [Header("Clues")] 
-        public int TotalClues;
-        public int ClueCount = 0;
-        public GameObject EquippedItem;
-        
+        [Header("Clues")]
+        [SerializeField] private int totalClues;
+        private int _clueCount = 0;
+        private GameObject _equippedItem;
+        public int TotalClues => totalClues;
+        public int ClueCount => _clueCount;
+        public GameObject EquippedItem
+        {
+            get => _equippedItem;
+            set => _equippedItem = value;
+        }
         private Dictionary<CollectibleTypes, InventoryUIItem> items = new Dictionary<CollectibleTypes, InventoryUIItem>();
         private Dictionary<CollectibleTypes, BaseItem>  BaseItems = new Dictionary<CollectibleTypes, BaseItem>();
-        public Dictionary<BaseItem, int> Keys = new Dictionary<BaseItem, int>();
+        public Dictionary<BaseItem, int> Keys { get; private set; } = new Dictionary<BaseItem, int>();
         
         private void OnEnable()
         {
@@ -27,7 +33,7 @@ namespace Core
         
         private void AddKey(BaseItem item)
         {
-            Debug.Log("ahhhhhhh");
+            Debug.Log("added key");
             if (item.assignedCollectibleType == CollectibleTypes.Keys)
             {
                 Keys.TryAdd(item, item.KeyValue);
@@ -56,13 +62,13 @@ namespace Core
         
         public void IncrementClueCount()
         {
-            ClueCount++;
+            _clueCount++;
             CheckClueAmount();
         }
         
         private void CheckClueAmount()
         {
-            if (ClueCount == TotalClues)
+            if (_clueCount == totalClues)
             {
                 GameManager.Instance.OnAllCluesCollected();
             }
