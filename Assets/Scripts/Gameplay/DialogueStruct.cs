@@ -16,8 +16,7 @@ namespace Gameplay
         public Font DialogueFont;
         public Color DialogueColor;
 
-        public bool hasrequirements;
-        public bool requirementFufilled { get; set; }
+        public bool hasrequirements => StoryMarkerRequirement != null;
         public StoryMarker StoryMarkerRequirement;
         public StoryMarker StoryMarkerProduced;
     }

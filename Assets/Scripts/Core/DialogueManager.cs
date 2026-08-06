@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using EventSystem;
+using Gameplay;
 using Story;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,31 +11,26 @@ namespace Core
 {
     public class DialogueManager : Singleton<DialogueManager>
     {
-        [SerializeField] private Button nextButton;
         private int _dialogueIndex;
-        private DialogueSO _currentDialogueSo;
-        public int DialogueIndex => _dialogueIndex;
-        public DialogueSO CurrentDialogueSo => _currentDialogueSo;
-        
         private bool _isTransitioning;
         private bool _hasActiveDialogue;
-        public List<StoryMarker> MarkersUnlocked = new List<StoryMarker>();
+        private DialogueSO _currentDialogueSo;
+        
+        public DialogueStruct dialogueStruct;
 
         private void IncrementDialogue()
         {
-            if (!_hasActiveDialogue || _currentDialogueSo == null)
-                return;
-
-            if (_currentDialogueSo.DialogueArray == null || _currentDialogueSo.DialogueArray.Length == 0)
+            CheckDialogue();
+            if(!StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement) && _currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
             {
-                OnDialogueFinished();
-                return;
+                _isTransitioning = true;
+                _hasActiveDialogue = false;
+                GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
+                _isTransitioning = false;
             }
-
-            if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1)
+            if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1 || !_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements )
             {
                 _dialogueIndex++;
-                DisplayDialogue();
             }
             else
             {
@@ -53,6 +49,8 @@ namespace Core
                 return;
             }
 
+            Debug.Log("incr");
+
             if (_currentDialogueSo.assignedType == DialogueType.SequentialDialogue)
             {
                 IncrementDialogue();
@@ -61,12 +59,29 @@ namespace Core
             {
                 OnDialogueFinished();
             }
+        }
+
+
+        private void CheckDialogue()
+        {
+            if (_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
+            {
+                if (StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement))
+                {
+                    Debug.Log("Unlocked");
+                    dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex ];
+                }
+                else
+                {
+                    Debug.Log("locked");
+                    dialogueStruct =  _currentDialogueSo.LockedDialogue;
+                }
+            }
             else
             {
-                GameManager.Instance.playerStateMachine.changeState(
-                    GameManager.Instance.playerStateMachine.idlestate);
-                _hasActiveDialogue = false;
+                dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex ];
             }
+            DisplayDialogue();
         }
 
         public void SetSequentialDialogue(DialogueSO dialogueSo)
@@ -79,14 +94,9 @@ namespace Core
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
             _dialogueIndex = 0;
-            DisplayDialogue();
+            CheckDialogue();
         }
-
-        public void ContinueDialogue()
-        {
-            _hasActiveDialogue = true;
-        }
-
+        
         public void SetRandomDialogue(DialogueSO dialogueSo)
         {
             if (dialogueSo == null)
@@ -97,18 +107,7 @@ namespace Core
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
             _dialogueIndex = Random.Range(0, _currentDialogueSo.DialogueArray.Length);
-            DisplayDialogue();
-        }
-
-        private void DisplayLockedDialogue()
-        {
-            if (_currentDialogueSo == null)
-            {
-                return;
-            }
-            _hasActiveDialogue = true;
-            var d = _currentDialogueSo.LockedDialogue;
-            UIManager.Instance.DisplayToast(d);
+            CheckDialogue();
         }
 
         private void DisplayDialogue()
@@ -120,18 +119,13 @@ namespace Core
                 _hasActiveDialogue = false;
                 return;
             }
-            if (!_currentDialogueSo.DialogueArray[_dialogueIndex].requirementFufilled)
-            {
-                DisplayLockedDialogue();
-                return;
-            }
             if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
             {
                 DisplayClueSequential();
                 return;
             }
             _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
-            var d = _currentDialogueSo.DialogueArray[_dialogueIndex];
+            var d = dialogueStruct;
             UIManager.Instance.DisplayToast(d);
         }
 
@@ -142,7 +136,7 @@ namespace Core
             else
                 _dialogueIndex = 0;
             _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
-            var d = _currentDialogueSo.DialogueArray[_dialogueIndex];
+            var d = dialogueStruct;
             UIManager.Instance.DisplayClueHUD(d);
         }
         
@@ -150,11 +144,12 @@ namespace Core
         {
             if (_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
             {
-                if ( !StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement ) && _currentDialogueSo.DialogueArray[_dialogueIndex].requirementFufilled)
+                if ( !StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement ))
                 {
                     EventManager.instance.Publish(new StoryMarkerUnlockedEvent(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerProduced));
                 }
             }
+            
             _isTransitioning = true;
             _hasActiveDialogue = false;
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);

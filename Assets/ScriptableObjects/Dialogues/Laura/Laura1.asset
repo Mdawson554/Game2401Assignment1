@@ -19,10 +19,16 @@ MonoBehaviour:
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
     DialogueColor: {r: 0, g: 0.015858755, b: 0.2578616, a: 1}
-    hasrequirements: 1
-    requirementFufilled: 0
     StoryMarkerRequirement: {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
     StoryMarkerProduced: {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
+  - Dialogue: I hate you
+    Type: 0
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 0}
+    DialogueColor: {r: 0, g: 0.015858755, b: 0.2578616, a: 1}
+    StoryMarkerRequirement: {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
+    StoryMarkerProduced: {fileID: 11400000, guid: 80c8882c0034101469167414454216b6, type: 2}
   LockedDialogue:
     Dialogue: lock:(
     Type: 0
@@ -30,8 +36,6 @@ MonoBehaviour:
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
     DialogueColor: {r: 1, g: 0, b: 0, a: 1}
-    hasrequirements: 0
-    requirementFufilled: 0
     StoryMarkerRequirement: {fileID: 0}
     StoryMarkerProduced: {fileID: 0}
   assignedType: 1

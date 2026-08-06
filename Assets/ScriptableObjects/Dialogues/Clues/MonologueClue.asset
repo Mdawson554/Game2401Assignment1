@@ -10,19 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
-  m_Name: Laura2
+  m_Name: MonologueClue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
-  - Dialogue: how's it hanging?
+  - Dialogue: This is sooo important
     Type: 0
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0.019607844, b: 0.25882354, a: 1}
-  - Dialogue: you taking care of yourself buddy?
+    DialogueColor: {r: 0.31446534, g: 0.1987658, b: 0.1987658, a: 1}
+    StoryMarkerRequirement: {fileID: 0}
+    StoryMarkerProduced: {fileID: 0}
+  LockedDialogue:
+    Dialogue: nuh uh
     Type: 0
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0.019607844, b: 0.25882354, a: 1}
-  assignedType: 1
+    DialogueColor: {r: 1, g: 0, b: 0, a: 1}
+    StoryMarkerRequirement: {fileID: 0}
+    StoryMarkerProduced: {fileID: 0}
+  assignedType: 0

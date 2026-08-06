@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Core;
 using EventSystem;
@@ -7,7 +8,7 @@ namespace Story
 {
     public class StoryManager : Singleton<StoryManager>
     {
-        private HashSet<StoryMarker> _unlockedMarkers = new HashSet<StoryMarker>();
+        private List<StoryMarker> _discoveredMarkers = new List<StoryMarker>();
 
         private void OnEnable()
         {
@@ -23,33 +24,14 @@ namespace Story
         {
             if (markerEvent.Marker != null)
             {
-                _unlockedMarkers.Add(markerEvent.Marker);
-                Debug.Log($"[StoryManager] Marker Unlocked: {markerEvent.Marker.name}. Total Unlocked: {_unlockedMarkers.Count}");
+                _discoveredMarkers.Add(markerEvent.Marker);
+                Debug.Log($"[StoryManager] Marker Unlocked: {markerEvent.Marker.name}. Total Unlocked: {_discoveredMarkers.Count}");
             }
         }
 
         public bool HasMarker(StoryMarker marker)
         {
-            return _unlockedMarkers.Contains(marker);
-        }
-
-        public IReadOnlyCollection<StoryMarker> GetUnlockedMarkers()
-        {
-            return _unlockedMarkers;
-        }
-
-        public void UnlockMarker(StoryMarker marker)
-        {
-            if (marker != null && _unlockedMarkers.Add(marker))
-            {
-                Debug.Log($"[StoryManager] Manually Unlocked: {marker.name}");
-            }
-        }
-
-        public void ResetAllMarkers()
-        {
-            _unlockedMarkers.Clear();
-            Debug.Log("[StoryManager] All markers reset");
+            return _discoveredMarkers.Contains(marker);
         }
     }
 }

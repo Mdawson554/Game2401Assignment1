@@ -19,29 +19,39 @@ MonoBehaviour:
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
     DialogueColor: {r: 0.2830189, g: 0, b: 0, a: 1}
-    hasrequirements: 0
-    requirementFufilled: 0
+    StoryMarkerRequirement: {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
+    StoryMarkerProduced: {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
+  - Dialogue: nice to met you
+    Type: 0
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 0}
+    DialogueColor: {r: 0.2830189, g: 0, b: 0, a: 1}
     StoryMarkerRequirement: {fileID: 0}
     StoryMarkerProduced: {fileID: 0}
-  - Dialogue: you're cool
+  - Dialogue: okay bye now
     Type: 0
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0.28235295, g: 0, b: 0, a: 1}
-    hasrequirements: 0
-    requirementFufilled: 0
+    DialogueColor: {r: 0.2830189, g: 0, b: 0, a: 1}
     StoryMarkerRequirement: {fileID: 0}
-    StoryMarkerProduced: {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
-  LockedDialogue:
-    Dialogue: 
+    StoryMarkerProduced: {fileID: 0}
+  - Dialogue: good to see you again
     Type: 0
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
-    hasrequirements: 0
-    requirementFufilled: 0
+    DialogueColor: {r: 0.2830189, g: 0, b: 0, a: 1}
+    StoryMarkerRequirement: {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
+    StoryMarkerProduced: {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
+  LockedDialogue:
+    Dialogue: leave me alone
+    Type: 0
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 0}
+    DialogueColor: {r: 1, g: 0, b: 0, a: 1}
     StoryMarkerRequirement: {fileID: 0}
     StoryMarkerProduced: {fileID: 0}
   assignedType: 1
