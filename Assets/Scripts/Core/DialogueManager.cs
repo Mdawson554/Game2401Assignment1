@@ -20,21 +20,25 @@ namespace Core
 
         private void IncrementDialogue()
         {
-            CheckDialogue();
-            if(!StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement) && _currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
+            var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
+
+            // If the current line had a requirement that wasn't met, the player is currently 
+            // viewing the LockedDialogue. Pressing 'Next' should close it, not advance.
+            if (currentLine.hasrequirements && !StoryManager.Instance.HasMarker(currentLine.StoryMarkerRequirement))
             {
-                _isTransitioning = true;
-                _hasActiveDialogue = false;
-                GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
-                _isTransitioning = false;
+                OnDialogueFinished(false); 
+                return;
             }
-            if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1 || !_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements )
+
+            // Normal progression: increment FIRST, then check and display
+            if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1)
             {
                 _dialogueIndex++;
+                CheckDialogue();
             }
             else
             {
-                OnDialogueFinished();
+                OnDialogueFinished(true);
             }
         }
 
@@ -57,10 +61,9 @@ namespace Core
             }
             else if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
             {
-                OnDialogueFinished();
+                OnDialogueFinished(true);
             }
         }
-
 
         private void CheckDialogue()
         {
@@ -69,7 +72,7 @@ namespace Core
                 if (StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement))
                 {
                     Debug.Log("Unlocked");
-                    dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex ];
+                    dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
                 }
                 else
                 {
@@ -79,7 +82,7 @@ namespace Core
             }
             else
             {
-                dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex ];
+                dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
             }
             DisplayDialogue();
         }
@@ -140,13 +143,17 @@ namespace Core
             UIManager.Instance.DisplayClueHUD(d);
         }
         
-        private void OnDialogueFinished()
+        private void OnDialogueFinished(bool success = true)
         {
-            if (_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
+            var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
+
+            // Only produce a marker if the player successfully completed the dialogue requirements
+            // AND we ensure they don't already have the produced marker
+            if (success && currentLine.hasrequirements && currentLine.StoryMarkerProduced != null)
             {
-                if ( !StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement ))
+                if (!StoryManager.Instance.HasMarker(currentLine.StoryMarkerProduced))
                 {
-                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerProduced));
+                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(currentLine.StoryMarkerProduced));
                 }
             }
             

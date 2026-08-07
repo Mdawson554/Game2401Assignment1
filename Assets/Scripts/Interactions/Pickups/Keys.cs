@@ -37,14 +37,6 @@ namespace Pickups
 
             if (objectRenderer == null)
                 Debug.LogError($"Key '{keyName}': Renderer not assigned!");
-
-            EventManager.instance.Subscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
-        }
-
-        private void OnDestroy()
-        {
-            if (EventManager.instance != null)
-                EventManager.instance.Unsubscribe<StoryMarkerUnlockedEvent>(UnlockMarker);
         }
 
         public void OnInteract()
@@ -57,8 +49,22 @@ namespace Pickups
             if (alreadyCollected)
                 return;
 
+            // DYNAMIC REQUIREMENT CHECK
+            bool requirementsMet = true;
+            if (HasRequirement)
+            {
+                foreach (var marker in RequiredMarkers)
+                {
+                    if (marker != null && !StoryManager.Instance.HasMarker(marker))
+                    {
+                        requirementsMet = false;
+                        break;
+                    }
+                }
+            }
+
             // LOCKED PATH
-            if (HasRequirement && RequiredMarkers.Count > 0)
+            if (!requirementsMet)
             {
                 PlayLockedDialogue();
                 return;
@@ -128,15 +134,6 @@ namespace Pickups
             objectRenderer.material.color = Color.white;
 
             Destroy(gameObject);
-        }
-
-        private void UnlockMarker(StoryMarkerUnlockedEvent e)
-        {
-            if (e?.Marker == null)
-                return;
-
-            if (RequiredMarkers.Contains(e.Marker))
-                RequiredMarkers.Remove(e.Marker);
         }
     }
 }
