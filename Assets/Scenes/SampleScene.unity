@@ -1090,6 +1090,10 @@ PrefabInstance:
       value: This is too heavy!
       objectReference: {fileID: 0}
     - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
+      propertyPath: keyDialogueSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 3198dd5b2aebc7148bd48f8069954adb, type: 2}
+    - target: {fileID: 4916051644078136558, guid: a94a9fb62c2509546a802c6479c60236, type: 3}
       propertyPath: HasRequirement
       value: 1
       objectReference: {fileID: 0}
@@ -2622,8 +2626,10 @@ MonoBehaviour:
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
     DialogueColor: {r: 0, g: 0, b: 0, a: 0}
-    StoryMarkerRequirement: {fileID: 0}
-    StoryMarkerProduced: {fileID: 0}
+    RequiredMarkers: []
+    ProducedMarkers: []
+    LockedDialogue: 
+    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &557509325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74f55b3e40c400c4ab5b96b66f2c8f4d, type: 3}

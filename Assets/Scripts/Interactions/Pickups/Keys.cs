@@ -11,7 +11,7 @@ namespace Pickups
     public class Keys : BaseItem, IInteractable, ICollectible
     {
         [Header("Dialogue")]
-        [SerializeField] private DialogueSO lockedDialogueSO;   // shown when requirements not met
+        [SerializeField] private DialogueSO keyDialogueSo;   
 
         [Header("Visuals")]
         [SerializeField] private Renderer objectRenderer;
@@ -19,13 +19,6 @@ namespace Pickups
         [SerializeField] private float secondsToWait = 0.2f;
         [SerializeField] private string keyName;
         [SerializeField] private AudioClip pickupSound;
-
-        [Header("Requirements")]
-        public bool HasRequirement;
-        public List<StoryMarker> RequiredMarkers;
-
-        [Header("Unlocks")]
-        public List<StoryMarker> MarkersUnlocked;
 
         private bool alreadyCollected = false;
 
@@ -48,55 +41,24 @@ namespace Pickups
         {
             if (alreadyCollected)
                 return;
+            var firstLine = keyDialogueSo.DialogueArray[0];
 
-            // DYNAMIC REQUIREMENT CHECK
-            bool requirementsMet = true;
-            if (HasRequirement)
-            {
-                foreach (var marker in RequiredMarkers)
-                {
-                    if (marker != null && !StoryManager.Instance.HasMarker(marker))
-                    {
-                        requirementsMet = false;
-                        break;
-                    }
-                }
-            }
+            bool requirementsMet = !firstLine.HasRequirements ||
+                                   DialogueManager.Instance.RequirementsMet(firstLine);
 
-            // LOCKED PATH
             if (!requirementsMet)
             {
-                PlayLockedDialogue();
+                DialogueManager.Instance.SetSequentialDialogue(keyDialogueSo);
                 return;
             }
-
-            // UNLOCKED PATH
             alreadyCollected = true;
-
             EventManager.instance.Publish(new PickupEvent(this));
             InventoryManager.Instance.EquippedItem = gameObject;
 
             if (AudioManager.Instance != null && pickupSound != null)
                 AudioManager.Instance.PlaySound(pickupSound);
-
             OnCollectEffect();
-
-            foreach (var marker in MarkersUnlocked)
-            {
-                if (marker != null && !StoryManager.Instance.HasMarker(marker))
-                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
-            }
-        }
-
-        private void PlayLockedDialogue()
-        {
-            if (lockedDialogueSO == null)
-            {
-                Debug.LogWarning($"Key '{keyName}': LockedDialogueSO not assigned!");
-                return;
-            }
-
-            DialogueManager.Instance.SetSequentialDialogue(lockedDialogueSO);
+            DialogueManager.Instance.ProduceMarkers(firstLine, true);
         }
 
         public override string GetItemName()
@@ -127,12 +89,9 @@ namespace Pickups
 
             objectRenderer.material.color = Color.white;
             yield return new WaitForSeconds(secondsToWait);
-
             objectRenderer.material.color = previousColor;
             yield return new WaitForSeconds(secondsToWait);
-
             objectRenderer.material.color = Color.white;
-
             Destroy(gameObject);
         }
     }

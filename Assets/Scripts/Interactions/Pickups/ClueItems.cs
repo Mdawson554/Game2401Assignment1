@@ -11,8 +11,7 @@ namespace Interactions.Pickups
     public class ClueItems : BaseItem, ICollectible, IInteractable
     {
         [Header("Dialogue")]
-        [SerializeField] private DialogueSO clueDialogueSO;      // shown when picked up
-        [SerializeField] private DialogueSO lockedDialogueSO;    // shown when requirements not met
+        [SerializeField] private DialogueSO clueDialogueSO;   
 
         [Header("Visuals")]
         [SerializeField] private string keyName;
@@ -20,13 +19,6 @@ namespace Interactions.Pickups
         [SerializeField] private ParticleSystem clueParticleSystem;
         [SerializeField] private float secondsToWait = 0.2f;
         [SerializeField] private AudioClip pickupSound;
-
-        [Header("Requirements")]
-        public bool HasRequirement;
-        public List<StoryMarker> RequiredMarkers;
-
-        [Header("Unlocks")]
-        public List<StoryMarker> MarkersUnlocked;
 
         private Coroutine currentRoutine;
         private bool alreadyCollected = false;
@@ -50,59 +42,24 @@ namespace Interactions.Pickups
         {
             if (alreadyCollected)
                 return;
+            var firstLine = clueDialogueSO.DialogueArray[0];
 
-            // DYNAMIC REQUIREMENT CHECK
-            bool requirementsMet = true;
-            if (HasRequirement)
-            {
-                foreach (var marker in RequiredMarkers)
-                {
-                    if (marker != null && !StoryManager.Instance.HasMarker(marker))
-                    {
-                        requirementsMet = false;
-                        break;
-                    }
-                }
-            }
+            bool requirementsMet = !firstLine.HasRequirements ||
+                                   DialogueManager.Instance.RequirementsMet(firstLine);
 
-            // LOCKED PATH
             if (!requirementsMet)
             {
-                PlayLockedDialogue();
+                DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);
                 return;
             }
-
-            // UNLOCKED PATH
             alreadyCollected = true;
-
             EventManager.instance.Publish(new PickupEvent(this));
-
-            if (clueDialogueSO != null)
-                DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);
-
+            DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);
             if (AudioManager.Instance != null && pickupSound != null)
                 AudioManager.Instance.PlaySound(pickupSound);
-
             InventoryManager.Instance?.IncrementClueCount();
-
             OnCollectEffect();
-
-            foreach (var marker in MarkersUnlocked)
-            {
-                if (marker != null && !StoryManager.Instance.HasMarker(marker))
-                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
-            }
-        }
-
-        private void PlayLockedDialogue()
-        {
-            if (lockedDialogueSO == null)
-            {
-                Debug.LogWarning($"Clue '{keyName}': LockedDialogueSO not assigned!");
-                return;
-            }
-
-            DialogueManager.Instance.SetSequentialDialogue(lockedDialogueSO);
+            DialogueManager.Instance.ProduceMarkers(firstLine, true);
         }
 
         public Sprite Icon { get; set; }

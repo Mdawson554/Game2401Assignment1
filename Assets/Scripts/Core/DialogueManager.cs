@@ -14,30 +14,51 @@ namespace Core
         private bool _isTransitioning;
         private bool _hasActiveDialogue;
         private DialogueSO _currentDialogueSo;
-        
-        // MEMORY: This remembers the player's place in the conversation for each DialogueSO
+
         private Dictionary<DialogueSO, int> _dialogueProgress = new Dictionary<DialogueSO, int>();
-        
+
         public DialogueStruct dialogueStruct;
+        
+        public bool RequirementsMet(DialogueStruct line)
+        {
+            if (!line.HasRequirements)
+                return true;
+
+            foreach (var marker in line.RequiredMarkers)
+            {
+                if (marker != null && !StoryManager.Instance.HasMarker(marker))
+                    return false;
+            }
+
+            return true;
+        }
+
+        public void ProduceMarkers(DialogueStruct line, bool success)
+        {
+            if (!success || line.ProducedMarkers == null)
+                return;
+
+            foreach (var marker in line.ProducedMarkers)
+            {
+                if (marker != null && !StoryManager.Instance.HasMarker(marker))
+                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
+            }
+        }
 
         private void IncrementDialogue()
         {
             var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
 
-            // If the current line had a requirement that wasn't met, the player is currently 
-            // viewing the LockedDialogue. Pressing 'Next' closes it.
-            // Notice we DO NOT increment here, so next time they talk, they resume exactly here!
-            if (currentLine.hasrequirements && !StoryManager.Instance.HasMarker(currentLine.StoryMarkerRequirement))
+            if (currentLine.HasRequirements && !RequirementsMet(currentLine))
             {
-                OnDialogueFinished(false); 
+                OnDialogueFinished(false);
                 return;
             }
 
-            // Normal progression: increment FIRST, then save the progress, then check and display
             if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1)
             {
                 _dialogueIndex++;
-                _dialogueProgress[_currentDialogueSo] = _dialogueIndex; // <--- SAVE PROGRESS
+                _dialogueProgress[_currentDialogueSo] = _dialogueIndex;
                 CheckDialogue();
             }
             else
@@ -58,32 +79,39 @@ namespace Core
             }
 
             if (_currentDialogueSo.assignedType == DialogueType.SequentialDialogue)
-            {
                 IncrementDialogue();
-            }
             else if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
-            {
                 OnDialogueFinished(true);
-            }
         }
 
         private void CheckDialogue()
         {
-            if (_currentDialogueSo.DialogueArray[_dialogueIndex].hasrequirements)
+            var line = _currentDialogueSo.DialogueArray[_dialogueIndex];
+
+            if (line.HasRequirements)
             {
-                if (StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement))
+                if (RequirementsMet(line))
                 {
-                    dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
+                    dialogueStruct = line;
                 }
                 else
                 {
-                    dialogueStruct =  _currentDialogueSo.LockedDialogue;
+                    dialogueStruct = new DialogueStruct
+                    {
+                        Dialogue = line.LockedDialogue,
+                        DialogueColor = line.LockedDialogueColor,
+                        DialogueSprite = line.DialogueSprite,
+                        DialogueFont = line.DialogueFont,
+                        DialogueText = line.DialogueText,
+                        Type = line.Type
+                    };
                 }
             }
             else
             {
-                dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
+                dialogueStruct = line;
             }
+
             DisplayDialogue();
         }
 
@@ -94,25 +122,21 @@ namespace Core
                 _hasActiveDialogue = false;
                 return;
             }
-            
+
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
-            
-            // LOAD PROGRESS: Check if we've talked to this NPC before
+
             if (_dialogueProgress.TryGetValue(dialogueSo, out int savedIndex))
-            {
                 _dialogueIndex = savedIndex;
-            }
             else
             {
-                // First time talking to this NPC
                 _dialogueIndex = 0;
                 _dialogueProgress[dialogueSo] = 0;
             }
 
             CheckDialogue();
         }
-        
+
         public void SetRandomDialogue(DialogueSO dialogueSo)
         {
             if (dialogueSo == null)
@@ -120,6 +144,7 @@ namespace Core
                 _hasActiveDialogue = false;
                 return;
             }
+
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
             _dialogueIndex = Random.Range(0, _currentDialogueSo.DialogueArray.Length);
@@ -135,14 +160,15 @@ namespace Core
                 _hasActiveDialogue = false;
                 return;
             }
+
             if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
             {
                 DisplayClueSequential();
                 return;
             }
+
             _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
-            var d = dialogueStruct;
-            UIManager.Instance.DisplayToast(d);
+            UIManager.Instance.DisplayToast(dialogueStruct);
         }
 
         private void DisplayClueSequential()
@@ -151,26 +177,15 @@ namespace Core
                 _dialogueIndex++;
             else
                 _dialogueIndex = 0;
-            
+
             _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
-            var d = dialogueStruct;
-            UIManager.Instance.DisplayClueHUD(d);
+            UIManager.Instance.DisplayClueHUD(dialogueStruct);
         }
-        
+
         private void OnDialogueFinished(bool success = true)
         {
             var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
-
-            // Only produce a marker if the player successfully completed the dialogue requirements
-            // AND we ensure they don't already have the produced marker
-            if (success && currentLine.hasrequirements && currentLine.StoryMarkerProduced != null)
-            {
-                if (!StoryManager.Instance.HasMarker(currentLine.StoryMarkerProduced))
-                {
-                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(currentLine.StoryMarkerProduced));
-                }
-            }
-            
+            ProduceMarkers(currentLine, success);
             _isTransitioning = true;
             _hasActiveDialogue = false;
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);

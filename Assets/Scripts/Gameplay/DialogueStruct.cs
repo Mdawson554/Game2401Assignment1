@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Gameplay
 {
     [Serializable]
-    public struct DialogueStruct
+    public class DialogueStruct
     {
         public string Dialogue;
         public NPCType Type;
@@ -16,20 +16,23 @@ namespace Gameplay
         public Font DialogueFont;
         public Color DialogueColor;
 
-        public bool hasrequirements => StoryMarkerRequirement != null;
-        public StoryMarker StoryMarkerRequirement;
-        public StoryMarker StoryMarkerProduced;
+        public List<StoryMarker> RequiredMarkers;
+
+        public List<StoryMarker> ProducedMarkers;
+
+        // Simple per-line locked dialogue
+        public string LockedDialogue;
+        public Color LockedDialogueColor;
+        
+        public bool HasRequirements =>
+            RequiredMarkers != null && RequiredMarkers.Count > 0;
     }
 
     public enum NPCType
     {
         EssentialNPC,
-        
         CommonNPC,
-        
         DrunkNPC,
-        
         BouncerNPC,
     }
-    
 }
