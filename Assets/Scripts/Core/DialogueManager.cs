@@ -148,6 +148,7 @@ namespace Core
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
             _dialogueIndex = Random.Range(0, _currentDialogueSo.DialogueArray.Length);
+            SetDialogueStruct();
             CheckDialogue();
         }
 

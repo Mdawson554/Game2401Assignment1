@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 41fabd6d7ca3c6d4686b6c4c253f639d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 41fabd6d7ca3c6d4686b6c4c253f639d, type: 3}
       propertyPath: m_Avatar
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 0}
+  Dialogue: {fileID: 11400000, guid: 9cb38ebb2cc90e5408e9c83608573490, type: 2}
   npcType: 1
 --- !u!135 &11742850
 SphereCollider:
@@ -973,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 967ceaa8fa135154eb5bafb724ee14a8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 967ceaa8fa135154eb5bafb724ee14a8, type: 3}
       propertyPath: m_Avatar
@@ -2751,7 +2751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &586881045
 Transform:
   m_ObjectHideFlags: 0
@@ -3751,7 +3751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b1aa0fdea7f0a994c970857d5e426ed4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: b1aa0fdea7f0a994c970857d5e426ed4, type: 3}
       propertyPath: m_Controller
@@ -4161,7 +4161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &948653859
 Transform:
   m_ObjectHideFlags: 0
@@ -4422,7 +4422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dba3c4b2b228fc34999c227a2c9dbea8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: dba3c4b2b228fc34999c227a2c9dbea8, type: 3}
       propertyPath: m_Controller
@@ -5267,7 +5267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1209337010
 Transform:
   m_ObjectHideFlags: 0
@@ -5830,7 +5830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 65b4a8d73bfc85f49b350feae58a236a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 65b4a8d73bfc85f49b350feae58a236a, type: 3}
       propertyPath: m_Controller
@@ -6285,7 +6285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e01de0d88f58b5141a50a73811edf678, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e01de0d88f58b5141a50a73811edf678, type: 3}
       propertyPath: m_Avatar
@@ -7798,7 +7798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 0}
+  Dialogue: {fileID: 11400000, guid: da370a6c564f67d4abd0e4b124a10706, type: 2}
   npcType: 2
 --- !u!135 &1656081904
 SphereCollider:
@@ -7985,7 +7985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6eeb3dc392cc51142b15f92fea0a9606, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 6eeb3dc392cc51142b15f92fea0a9606, type: 3}
       propertyPath: m_Controller
@@ -8827,7 +8827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cd23b76234eb545b305eef5d7214e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactions.NPCs
-  Dialogue: {fileID: 0}
+  Dialogue: {fileID: 11400000, guid: 4a3c3af8744879549acde8ee7ab1ec7d, type: 2}
   npcType: 3
 --- !u!135 &1799081104
 SphereCollider:
@@ -9039,7 +9039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1840972531
 Transform:
   m_ObjectHideFlags: 0
@@ -9547,7 +9547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1926989250
 Transform:
   m_ObjectHideFlags: 0
@@ -10131,7 +10131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d50f58d0909ef4c47b0923fe6a0070f7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d50f58d0909ef4c47b0923fe6a0070f7, type: 3}
       propertyPath: m_Controller
@@ -10528,7 +10528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2052039298
 Transform:
   m_ObjectHideFlags: 0
@@ -10953,7 +10953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926129550433625399, guid: be8fe64fea32f6c4cae5dc0389a83599, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2461090514398425793, guid: be8fe64fea32f6c4cae5dc0389a83599, type: 3}
@@ -11088,7 +11088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266123643651442052, guid: bf7a126eb8229244fb0e92274f8a103c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
