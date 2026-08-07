@@ -4,7 +4,6 @@ using EventSystem;
 using Gameplay;
 using Story;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Core
@@ -16,6 +15,9 @@ namespace Core
         private bool _hasActiveDialogue;
         private DialogueSO _currentDialogueSo;
         
+        // MEMORY: This remembers the player's place in the conversation for each DialogueSO
+        private Dictionary<DialogueSO, int> _dialogueProgress = new Dictionary<DialogueSO, int>();
+        
         public DialogueStruct dialogueStruct;
 
         private void IncrementDialogue()
@@ -23,17 +25,19 @@ namespace Core
             var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
 
             // If the current line had a requirement that wasn't met, the player is currently 
-            // viewing the LockedDialogue. Pressing 'Next' should close it, not advance.
+            // viewing the LockedDialogue. Pressing 'Next' closes it.
+            // Notice we DO NOT increment here, so next time they talk, they resume exactly here!
             if (currentLine.hasrequirements && !StoryManager.Instance.HasMarker(currentLine.StoryMarkerRequirement))
             {
                 OnDialogueFinished(false); 
                 return;
             }
 
-            // Normal progression: increment FIRST, then check and display
+            // Normal progression: increment FIRST, then save the progress, then check and display
             if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1)
             {
                 _dialogueIndex++;
+                _dialogueProgress[_currentDialogueSo] = _dialogueIndex; // <--- SAVE PROGRESS
                 CheckDialogue();
             }
             else
@@ -53,8 +57,6 @@ namespace Core
                 return;
             }
 
-            Debug.Log("incr");
-
             if (_currentDialogueSo.assignedType == DialogueType.SequentialDialogue)
             {
                 IncrementDialogue();
@@ -71,12 +73,10 @@ namespace Core
             {
                 if (StoryManager.Instance.HasMarker(_currentDialogueSo.DialogueArray[_dialogueIndex].StoryMarkerRequirement))
                 {
-                    Debug.Log("Unlocked");
                     dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
                 }
                 else
                 {
-                    Debug.Log("locked");
                     dialogueStruct =  _currentDialogueSo.LockedDialogue;
                 }
             }
@@ -94,9 +94,22 @@ namespace Core
                 _hasActiveDialogue = false;
                 return;
             }
+            
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
-            _dialogueIndex = 0;
+            
+            // LOAD PROGRESS: Check if we've talked to this NPC before
+            if (_dialogueProgress.TryGetValue(dialogueSo, out int savedIndex))
+            {
+                _dialogueIndex = savedIndex;
+            }
+            else
+            {
+                // First time talking to this NPC
+                _dialogueIndex = 0;
+                _dialogueProgress[dialogueSo] = 0;
+            }
+
             CheckDialogue();
         }
         
@@ -138,6 +151,7 @@ namespace Core
                 _dialogueIndex++;
             else
                 _dialogueIndex = 0;
+            
             _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
             var d = dialogueStruct;
             UIManager.Instance.DisplayClueHUD(d);
