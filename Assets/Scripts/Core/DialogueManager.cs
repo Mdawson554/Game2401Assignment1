@@ -46,7 +46,6 @@ namespace Core
                 if (!dialogueStruct.HasRequirements || (StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers)))
                 {
                     _dialogueIndex++;
-                    _dialogueProgress.TryAdd(dialogueStruct, _dialogueIndex);
                     TryProduceMarker();
                     SetDialogueStruct();
                     CheckDialogue();
@@ -112,20 +111,21 @@ namespace Core
                 _hasActiveDialogue = false;
                 return;
             }
-
+            _dialogueIndex = 0;
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
 
 
             if (_dialogueSoSavedIndexs.TryGetValue(dialogueSo, out int savedIndexValue))
             {
+               
                 _dialogueIndex = savedIndexValue;
+                Debug.Log(savedIndexValue);
                 SetDialogueStruct();
             }
             else
             {
-                _dialogueIndex = 0;
-                _dialogueSoSavedIndexs.TryAdd(dialogueSo, _dialogueIndex);
+                Debug.Log(_dialogueSoSavedIndexs);
                 SetDialogueStruct();
             }
             CheckDialogue();
@@ -134,7 +134,6 @@ namespace Core
 
         private void SetDialogueStruct()
         {
-            
             dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
         }
 
