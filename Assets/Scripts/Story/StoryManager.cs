@@ -31,7 +31,11 @@ namespace Story
 
         public bool HasMarker(StoryMarker marker)
         {
-            return _discoveredMarkers.Contains(marker);
+            if (_discoveredMarkers.Contains(marker)) return true;
+            else
+            {
+                return false;
+            }
         }
     }
 }

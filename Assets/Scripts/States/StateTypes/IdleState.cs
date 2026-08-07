@@ -13,6 +13,7 @@ namespace States.StateTypes
 
         public void EnterState()
         {
+            Debug.Log("idle");
             playerStateMachine.inputManager.EnableMoveInput(true);
         }
 

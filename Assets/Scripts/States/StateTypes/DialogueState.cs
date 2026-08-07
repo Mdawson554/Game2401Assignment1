@@ -14,6 +14,7 @@ namespace States.StateTypes
         public void EnterState()
         {
             // Disable movement while talking
+            Debug.Log("dialogue");
             playerStateMachine.inputManager.EnableMoveInput(false);
 
             // Keep mouse hidden so the player can still look around

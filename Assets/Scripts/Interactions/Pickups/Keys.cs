@@ -58,7 +58,7 @@ namespace Pickups
             if (AudioManager.Instance != null && pickupSound != null)
                 AudioManager.Instance.PlaySound(pickupSound);
             OnCollectEffect();
-            DialogueManager.Instance.ProduceMarkers(firstLine, true);
+            DialogueManager.Instance?.ProduceMarkers(firstLine);
         }
 
         public override string GetItemName()

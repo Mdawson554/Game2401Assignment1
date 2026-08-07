@@ -59,7 +59,7 @@ namespace Interactions.Pickups
                 AudioManager.Instance.PlaySound(pickupSound);
             InventoryManager.Instance?.IncrementClueCount();
             OnCollectEffect();
-            DialogueManager.Instance.ProduceMarkers(firstLine, true);
+            DialogueManager.Instance?.ProduceMarkers(firstLine);
         }
 
         public Sprite Icon { get; set; }

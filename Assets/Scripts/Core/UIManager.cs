@@ -36,6 +36,15 @@ namespace Core
             toastText.color = dialogue.DialogueColor;
             Debug.Log("[PLAYER HINT] Press ENTER to advance dialogue");
         }
+
+        public void DisplayLockedToast(DialogueStruct dialogueStruct)
+        {
+            Debug.Log("locked");
+            toast.SetActive(true);
+            toastText.text = dialogueStruct.LockedDialogue;
+            toastText.color = dialogueStruct.LockedDialogueColor;
+            
+        }
         
         public void DisplayClueHUD(DialogueStruct dialogue)
         {

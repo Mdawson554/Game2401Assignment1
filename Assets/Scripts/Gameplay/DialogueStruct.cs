@@ -16,16 +16,16 @@ namespace Gameplay
         public Font DialogueFont;
         public Color DialogueColor;
 
-        public List<StoryMarker> RequiredMarkers;
+        public StoryMarker RequiredMarkers;
 
-        public List<StoryMarker> ProducedMarkers;
+        public StoryMarker ProducedMarkers;
 
         // Simple per-line locked dialogue
         public string LockedDialogue;
         public Color LockedDialogueColor;
-        
+
         public bool HasRequirements =>
-            RequiredMarkers != null && RequiredMarkers.Count > 0;
+            RequiredMarkers != null;
     }
 
     public enum NPCType

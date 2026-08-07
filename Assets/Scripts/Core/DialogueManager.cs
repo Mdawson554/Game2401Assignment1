@@ -15,7 +15,8 @@ namespace Core
         private bool _hasActiveDialogue;
         private DialogueSO _currentDialogueSo;
 
-        private Dictionary<DialogueSO, int> _dialogueProgress = new Dictionary<DialogueSO, int>();
+        private Dictionary<DialogueStruct, int> _dialogueProgress = new Dictionary<DialogueStruct, int>();
+        private Dictionary<DialogueSO, int> _dialogueSoSavedIndexs = new Dictionary<DialogueSO, int>();
 
         public DialogueStruct dialogueStruct;
         
@@ -23,47 +24,44 @@ namespace Core
         {
             if (!line.HasRequirements)
                 return true;
-
-            foreach (var marker in line.RequiredMarkers)
-            {
-                if (marker != null && !StoryManager.Instance.HasMarker(marker))
-                    return false;
-            }
-
+            
+            if (dialogueStruct.RequiredMarkers != null && !StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers))
+                return false;
+            
             return true;
         }
 
-        public void ProduceMarkers(DialogueStruct line, bool success)
+        public void ProduceMarkers(DialogueStruct line)
         {
-            if (!success || line.ProducedMarkers == null)
+            if (line.ProducedMarkers == null)
                 return;
-
-            foreach (var marker in line.ProducedMarkers)
-            {
-                if (marker != null && !StoryManager.Instance.HasMarker(marker))
-                    EventManager.instance.Publish(new StoryMarkerUnlockedEvent(marker));
-            }
+            if (!StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers))
+                EventManager.instance.Publish(new StoryMarkerUnlockedEvent(dialogueStruct.ProducedMarkers));
         }
 
         private void IncrementDialogue()
         {
-            var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
-
-            if (currentLine.HasRequirements && !RequirementsMet(currentLine))
-            {
-                OnDialogueFinished(false);
-                return;
-            }
-
             if (_dialogueIndex < _currentDialogueSo.DialogueArray.Length - 1)
             {
-                _dialogueIndex++;
-                _dialogueProgress[_currentDialogueSo] = _dialogueIndex;
-                CheckDialogue();
+                if (!dialogueStruct.HasRequirements || (StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers)))
+                {
+                    _dialogueIndex++;
+                    _dialogueProgress.TryAdd(dialogueStruct, _dialogueIndex);
+                    TryProduceMarker();
+                    SetDialogueStruct();
+                    CheckDialogue();
+                }
+                else
+                {
+                   CheckDialogue();
+                   SetDialogueStruct();
+                    OnDialogueFinished();
+                    return;
+                }
             }
             else
             {
-                OnDialogueFinished(true);
+                OnDialogueFinished();
             }
         }
 
@@ -81,38 +79,30 @@ namespace Core
             if (_currentDialogueSo.assignedType == DialogueType.SequentialDialogue)
                 IncrementDialogue();
             else if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
-                OnDialogueFinished(true);
+                OnDialogueFinished();
         }
 
         private void CheckDialogue()
         {
-            var line = _currentDialogueSo.DialogueArray[_dialogueIndex];
-
-            if (line.HasRequirements)
+            if (dialogueStruct.HasRequirements)
             {
-                if (RequirementsMet(line))
+                if (StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers))
                 {
-                    dialogueStruct = line;
+                    Debug.Log("requirementMet");
+                    UIManager.Instance.DisplayToast(dialogueStruct);
                 }
                 else
                 {
-                    dialogueStruct = new DialogueStruct
-                    {
-                        Dialogue = line.LockedDialogue,
-                        DialogueColor = line.LockedDialogueColor,
-                        DialogueSprite = line.DialogueSprite,
-                        DialogueFont = line.DialogueFont,
-                        DialogueText = line.DialogueText,
-                        Type = line.Type
-                    };
+                    Debug.Log("requirements not met");
+                    UIManager.Instance.DisplayLockedToast(dialogueStruct);
                 }
             }
-            else
+            else if (!dialogueStruct.HasRequirements)
             {
-                dialogueStruct = line;
+                Debug.Log("no requirment");
+                UIManager.Instance.DisplayToast(dialogueStruct);
             }
-
-            DisplayDialogue();
+            
         }
 
         public void SetSequentialDialogue(DialogueSO dialogueSo)
@@ -126,15 +116,26 @@ namespace Core
             _currentDialogueSo = dialogueSo;
             _hasActiveDialogue = true;
 
-            if (_dialogueProgress.TryGetValue(dialogueSo, out int savedIndex))
-                _dialogueIndex = savedIndex;
+
+            if (_dialogueSoSavedIndexs.TryGetValue(dialogueSo, out int savedIndexValue))
+            {
+                _dialogueIndex = savedIndexValue;
+                SetDialogueStruct();
+            }
             else
             {
                 _dialogueIndex = 0;
-                _dialogueProgress[dialogueSo] = 0;
+                _dialogueSoSavedIndexs.TryAdd(dialogueSo, _dialogueIndex);
+                SetDialogueStruct();
             }
-
             CheckDialogue();
+            
+        }
+
+        private void SetDialogueStruct()
+        {
+            
+            dialogueStruct = _currentDialogueSo.DialogueArray[_dialogueIndex];
         }
 
         public void SetRandomDialogue(DialogueSO dialogueSo)
@@ -151,25 +152,23 @@ namespace Core
             CheckDialogue();
         }
 
-        private void DisplayDialogue()
-        {
-            if (_currentDialogueSo == null ||
-                _currentDialogueSo.DialogueArray == null ||
-                _currentDialogueSo.DialogueArray.Length == 0)
-            {
-                _hasActiveDialogue = false;
-                return;
-            }
-
-            if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
-            {
-                DisplayClueSequential();
-                return;
-            }
-
-            _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
-            UIManager.Instance.DisplayToast(dialogueStruct);
-        }
+        // private void DisplayDialogue()
+        // {
+        //     if (_currentDialogueSo == null ||
+        //         _currentDialogueSo.DialogueArray == null ||
+        //         _currentDialogueSo.DialogueArray.Length == 0)
+        //     {
+        //         _hasActiveDialogue = false;
+        //         return;
+        //     }
+        //     if (_currentDialogueSo.assignedType == DialogueType.ItemDialogue)
+        //     {
+        //         DisplayClueSequential();
+        //         return;
+        //     }
+        //     // _dialogueIndex = Mathf.Clamp(_dialogueIndex, 0, _currentDialogueSo.DialogueArray.Length - 1);
+        //     //UIManager.Instance.DisplayToast(dialogueStruct);
+        // }
 
         private void DisplayClueSequential()
         {
@@ -182,15 +181,23 @@ namespace Core
             UIManager.Instance.DisplayClueHUD(dialogueStruct);
         }
 
-        private void OnDialogueFinished(bool success = true)
+        private void TryProduceMarker()
         {
-            var currentLine = _currentDialogueSo.DialogueArray[_dialogueIndex];
-            ProduceMarkers(currentLine, success);
+            if (StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers))
+            {
+                EventManager.instance.Publish(new StoryMarkerUnlockedEvent(dialogueStruct.ProducedMarkers));
+            }
+        }
+
+        private void OnDialogueFinished()
+        {
+            _dialogueSoSavedIndexs.TryAdd(_currentDialogueSo, _dialogueIndex);
             _isTransitioning = true;
             _hasActiveDialogue = false;
             GameManager.Instance.playerStateMachine.changeState(GameManager.Instance.playerStateMachine.idlestate);
             _isTransitioning = false;
             EventManager.instance.Publish(new DialogueFinishedEvent());
+            TryProduceMarker();
         }
     }
 }

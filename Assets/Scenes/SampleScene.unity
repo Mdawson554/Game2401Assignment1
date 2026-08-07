@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Female_13
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41fabd6d7ca3c6d4686b6c4c253f639d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 41fabd6d7ca3c6d4686b6c4c253f639d, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -966,6 +970,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 967ceaa8fa135154eb5bafb724ee14a8, type: 3}
       propertyPath: m_Name
       value: Character_Female_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 967ceaa8fa135154eb5bafb724ee14a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 967ceaa8fa135154eb5bafb724ee14a8, type: 3}
       propertyPath: m_Avatar
@@ -2626,8 +2634,8 @@ MonoBehaviour:
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
     DialogueColor: {r: 0, g: 0, b: 0, a: 0}
-    RequiredMarkers: []
-    ProducedMarkers: []
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &557509325 stripped
@@ -2743,7 +2751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &586881045
 Transform:
   m_ObjectHideFlags: 0
@@ -3741,6 +3749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_08
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1aa0fdea7f0a994c970857d5e426ed4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: b1aa0fdea7f0a994c970857d5e426ed4, type: 3}
       propertyPath: m_Controller
       value: 
@@ -4149,7 +4161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &948653859
 Transform:
   m_ObjectHideFlags: 0
@@ -4407,6 +4419,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dba3c4b2b228fc34999c227a2c9dbea8, type: 3}
       propertyPath: m_Name
       value: Character_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dba3c4b2b228fc34999c227a2c9dbea8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: dba3c4b2b228fc34999c227a2c9dbea8, type: 3}
       propertyPath: m_Controller
@@ -5251,7 +5267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1209337010
 Transform:
   m_ObjectHideFlags: 0
@@ -5812,6 +5828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_06
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65b4a8d73bfc85f49b350feae58a236a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 65b4a8d73bfc85f49b350feae58a236a, type: 3}
       propertyPath: m_Controller
       value: 
@@ -6262,6 +6282,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e01de0d88f58b5141a50a73811edf678, type: 3}
       propertyPath: m_Name
       value: Character_Female_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e01de0d88f58b5141a50a73811edf678, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e01de0d88f58b5141a50a73811edf678, type: 3}
       propertyPath: m_Avatar
@@ -7959,6 +7983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eeb3dc392cc51142b15f92fea0a9606, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 6eeb3dc392cc51142b15f92fea0a9606, type: 3}
       propertyPath: m_Controller
       value: 
@@ -9011,7 +9039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1840972531
 Transform:
   m_ObjectHideFlags: 0
@@ -9519,7 +9547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1926989250
 Transform:
   m_ObjectHideFlags: 0
@@ -10101,6 +10129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_07
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d50f58d0909ef4c47b0923fe6a0070f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d50f58d0909ef4c47b0923fe6a0070f7, type: 3}
       propertyPath: m_Controller
       value: 
@@ -10496,7 +10528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2052039298
 Transform:
   m_ObjectHideFlags: 0
@@ -10919,6 +10951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_common
       objectReference: {fileID: 0}
+    - target: {fileID: 1926129550433625399, guid: be8fe64fea32f6c4cae5dc0389a83599, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2461090514398425793, guid: be8fe64fea32f6c4cae5dc0389a83599, type: 3}
     m_RemovedGameObjects: []
@@ -10986,6 +11022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_essential
       objectReference: {fileID: 0}
+    - target: {fileID: 9158419398534810640, guid: 05dbbd8df3ef8124098d771bf50b9674, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11045,6 +11085,10 @@ PrefabInstance:
     - target: {fileID: 8266123643651442052, guid: bf7a126eb8229244fb0e92274f8a103c, type: 3}
       propertyPath: m_Name
       value: NPC_drunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266123643651442052, guid: bf7a126eb8229244fb0e92274f8a103c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
