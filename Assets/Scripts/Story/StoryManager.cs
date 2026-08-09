@@ -25,7 +25,12 @@ namespace Story
             if (markerEvent.Marker != null)
             {
                 _discoveredMarkers.Add(markerEvent.Marker);
-                Debug.Log($"[StoryManager] Marker Unlocked: {markerEvent.Marker.name}. Total Unlocked: {_discoveredMarkers.Count}");
+
+                Debug.Log(
+                    $"[StoryManager] Marker Unlocked: " +
+                    $"{markerEvent.Marker.name}. " +
+                    $"Total Unlocked: {_discoveredMarkers.Count}"
+                );
             }
         }
 

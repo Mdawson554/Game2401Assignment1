@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using EventSystem;
+using Gameplay;
 using Interactions;
 using Story;
 using UnityEngine;
@@ -41,24 +42,33 @@ namespace Pickups
         {
             if (alreadyCollected)
                 return;
-            var firstLine = keyDialogueSo.DialogueArray[0];
 
-            bool requirementsMet = !firstLine.HasRequirements ||
-                                   DialogueManager.Instance.RequirementsMet(firstLine);
+            DialogueStruct firstLine = keyDialogueSo.DialogueArray[0];
+
+            bool requirementsMet =
+                DialogueManager.Instance.RequirementsMet(firstLine);
 
             if (!requirementsMet)
             {
+                Debug.Log("[KEY] Requirement not met. Key remains uncollected.");
+
                 DialogueManager.Instance.SetSequentialDialogue(keyDialogueSo);
                 return;
             }
+
+            Debug.Log("[KEY] Requirement met. Collecting key.");
+
             alreadyCollected = true;
+
             EventManager.instance.Publish(new PickupEvent(this));
+
             InventoryManager.Instance.EquippedItem = gameObject;
 
             if (AudioManager.Instance != null && pickupSound != null)
                 AudioManager.Instance.PlaySound(pickupSound);
             OnCollectEffect();
-            DialogueManager.Instance?.ProduceMarkers(firstLine);
+            DialogueManager.Instance.SetSequentialDialogue(keyDialogueSo);
+            DialogueManager.Instance.ProduceMarkers(firstLine);
         }
 
         public override string GetItemName()
@@ -86,7 +96,6 @@ namespace Pickups
                 main.startColor = previousColor;
                 keyParticleSystem.Play();
             }
-
             objectRenderer.material.color = Color.white;
             yield return new WaitForSeconds(secondsToWait);
             objectRenderer.material.color = previousColor;

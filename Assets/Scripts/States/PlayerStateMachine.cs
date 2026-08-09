@@ -19,7 +19,6 @@ namespace States
             public string current;
             
             public PlayerInteractor playerInteractor;
-        
                 
             public PlayerStateMachine(PlayerStateMachine playerStateMachine)
             {
@@ -55,7 +54,6 @@ namespace States
             {
                 changeState(stateChangeEvent.assignedState);
             }
-            
             
             public void Start()
             {

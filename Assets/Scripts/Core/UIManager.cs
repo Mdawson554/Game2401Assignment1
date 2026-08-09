@@ -34,7 +34,6 @@ namespace Core
             toast.SetActive(true);
             toastText.text = dialogue.Dialogue;
             toastText.color = dialogue.DialogueColor;
-            Debug.Log("[PLAYER HINT] Press ENTER to advance dialogue");
         }
 
         public void DisplayLockedToast(DialogueStruct dialogueStruct)
@@ -54,6 +53,17 @@ namespace Core
             clueText.color = dialogue.DialogueColor;
             StartCoroutine(HideClueAfterDelay());
         }
+        
+        public void DisplayLockedClueHUD(DialogueStruct dialogueStruct)
+        {
+            Debug.Log("clue locked");
+            StopAllCoroutines();
+            clueHUD.SetActive(true);
+            clueText.text = dialogueStruct.LockedDialogue;
+            clueText.color = dialogueStruct.LockedDialogueColor;
+            StartCoroutine(HideClueAfterDelay());
+        }
+        
         private IEnumerator HideClueAfterDelay()
         {
             yield return new WaitForSeconds(itemCollectedDisplaytime);

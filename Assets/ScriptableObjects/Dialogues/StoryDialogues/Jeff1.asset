@@ -42,7 +42,7 @@ MonoBehaviour:
     RequiredMarkers: {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
-    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 1}
   - Dialogue: good to see you again
     Type: 0
     DialogueSprite: {fileID: 0}

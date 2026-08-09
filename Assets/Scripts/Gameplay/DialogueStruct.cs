@@ -17,10 +17,8 @@ namespace Gameplay
         public Color DialogueColor;
 
         public StoryMarker RequiredMarkers;
-
         public StoryMarker ProducedMarkers;
 
-        // Simple per-line locked dialogue
         public string LockedDialogue;
         public Color LockedDialogueColor;
 

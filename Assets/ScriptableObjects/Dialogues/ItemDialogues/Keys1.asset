@@ -18,9 +18,9 @@ MonoBehaviour:
     DialogueSprite: {fileID: 0}
     DialogueText: {fileID: 0}
     DialogueFont: {fileID: 0}
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 38f39eba9649e8e4cae57967b7a29430, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 361ef03aabed5b944b173f62d8d4530a, type: 2}
     LockedDialogue: nuh uh!
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  assignedType: 1
+  assignedType: 2

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using EventSystem;
+using Gameplay;
 using Interactions;
 using Story;
 using UnityEngine;
@@ -42,16 +43,17 @@ namespace Interactions.Pickups
         {
             if (alreadyCollected)
                 return;
-            var firstLine = clueDialogueSO.DialogueArray[0];
-
-            bool requirementsMet = !firstLine.HasRequirements ||
-                                   DialogueManager.Instance.RequirementsMet(firstLine);
-
+            DialogueStruct firstLine = clueDialogueSO.DialogueArray[0];
+            bool requirementsMet =
+                DialogueManager.Instance.RequirementsMet(firstLine);
             if (!requirementsMet)
             {
+                Debug.Log("[CLUE] Requirement not met. Clue remains uncollected.");
+
                 DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);
                 return;
             }
+            Debug.Log("[CLUE] Requirement met. Collecting clue.");
             alreadyCollected = true;
             EventManager.instance.Publish(new PickupEvent(this));
             DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);
@@ -59,7 +61,7 @@ namespace Interactions.Pickups
                 AudioManager.Instance.PlaySound(pickupSound);
             InventoryManager.Instance?.IncrementClueCount();
             OnCollectEffect();
-            DialogueManager.Instance?.ProduceMarkers(firstLine);
+            DialogueManager.Instance.ProduceMarkers(firstLine);
         }
 
         public Sprite Icon { get; set; }
@@ -90,15 +92,11 @@ namespace Interactions.Pickups
                 main.startColor = previousColor;
                 clueParticleSystem.Play();
             }
-
             objectRenderer.material.color = Color.black;
             yield return new WaitForSeconds(secondsToWait);
-
             objectRenderer.material.color = previousColor;
             yield return new WaitForSeconds(secondsToWait);
-
             objectRenderer.material.color = Color.black;
-
             Destroy(gameObject);
         }
     }

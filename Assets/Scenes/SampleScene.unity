@@ -4630,8 +4630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee315cc89de7c2d459c5eb0d46f5b8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.UIManager
-  itemCollectedDisplaytime: 0
-  dialogueDisplaytime: 0
+  itemCollectedDisplaytime: 4
+  dialogueDisplaytime: 10
   toastText: {fileID: 622140677}
   clueText: {fileID: 1505430079}
   pauseMenu: {fileID: 1407314452}
@@ -6754,7 +6754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
-  mouseSensitivity: 20
+  mouseSensitivity: 18
 --- !u!114 &1489182946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6840,7 +6840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to interact
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9297,7 +9297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1864380884
 RectTransform:
   m_ObjectHideFlags: 0
