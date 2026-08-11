@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
+  m_Name: Laura1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  DialogueArray:
+  - Dialogue: Hello HIII
+    Type: 0
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 0}
+    DialogueColor: {r: 0, g: 0.015858755, b: 0.2578616, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: b70c6c4ac64b218438f834e60209d8ac, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: aa99ef07d2a7cf3498d220a4d904a5be, type: 2}
+    LockedDialogue: go away
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: i'm your friend now
+    Type: 0
+    DialogueSprite: {fileID: 0}
+    DialogueText: {fileID: 0}
+    DialogueFont: {fileID: 0}
+    DialogueColor: {r: 0, g: 0.015858755, b: 0.2578616, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: d73f65bbcea79f64f83ed1493d22f798, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 80c8882c0034101469167414454216b6, type: 2}
+    LockedDialogue: come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  assignedType: 1
