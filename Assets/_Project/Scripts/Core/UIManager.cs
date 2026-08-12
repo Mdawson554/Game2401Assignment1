@@ -1,8 +1,9 @@
 using System.Collections;
-using Gameplay;
+using _Project.Scripts.Gameplay;
 using TMPro;
 using UnityEngine;
-namespace Core
+
+namespace _Project.Scripts.Core
 {
     public class UIManager : Singleton<UIManager>
     {

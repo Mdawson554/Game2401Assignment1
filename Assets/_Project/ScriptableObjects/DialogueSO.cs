@@ -1,7 +1,7 @@
-using Gameplay;
+using _Project.Scripts.Gameplay;
 using UnityEngine;
 
-namespace Story
+namespace _Project.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "DialogueSO", menuName = "Scriptable Objects/DialogueSO")]
     public class DialogueSO : ScriptableObject

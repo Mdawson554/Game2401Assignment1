@@ -1,9 +1,10 @@
-using States;
+using _Project.Scripts.States;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-namespace Core
+
+namespace _Project.Scripts.Core
 {
     public class GameManager : Singleton<GameManager>
     {

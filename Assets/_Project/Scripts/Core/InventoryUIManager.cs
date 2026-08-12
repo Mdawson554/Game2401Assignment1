@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Interactions;
+using _Project.Scripts.Interactions;
 using UnityEngine;
 
-namespace Core
+namespace _Project.Scripts.Core
 {
    public class InventoryUIManager :  Singleton<InventoryUIManager>
    {

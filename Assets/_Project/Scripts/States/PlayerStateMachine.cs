@@ -1,11 +1,11 @@
 using System;
-using Core;
-using EventSystem;
-using Gameplay;
-using States.StateTypes;
+using _Project.Scripts.Core;
+using _Project.Scripts.EventSystem;
+using _Project.Scripts.Gameplay;
+using _Project.Scripts.States.StateTypes;
 using UnityEngine;
 
-namespace States
+namespace _Project.Scripts.States
 {
     [Serializable]
     public class PlayerStateMachine : BaseStateMachine
@@ -66,6 +66,21 @@ namespace States
                 changeState(idlestate);
                 EventManager.instance.Subscribe<StateChangeEvent>(HandleStateChange);
             }
-        
+            
+            [ContextMenu("Print Player State")]
+            private void PrintPlayerState()
+            {
+                Debug.Log(
+                    $"[PlayerState]\n" +
+                    $"Current State: {currentState?.GetType().Name}\n" +
+                    $"Idle: {idlestate?.GetType().Name}\n" +
+                    $"Walk: {walkstate?.GetType().Name}\n" +
+                    $"Dialogue: {dialoguestate?.GetType().Name}\n" +
+                    $"Pause: {PauseState?.GetType().Name}\n" +
+                    $"Controller: {playerController}\n" +
+                    $"Input: {inputManager}\n" +
+                    $"Interactor: {playerInteractor}"
+                );
+            }
     }
 }

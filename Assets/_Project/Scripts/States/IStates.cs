@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace States
+namespace _Project.Scripts.States
 {
     public interface IStates
     {

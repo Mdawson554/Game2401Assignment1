@@ -1,27 +1,28 @@
-using Core;
-using Interactions;
-using States;
+using _Project.Scripts.Core;
+using _Project.Scripts.Interactions;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.WSA;
 
-public class PlayerInteractor : MonoBehaviour
+namespace _Project.Scripts.Gameplay
 {
-    private Toast _toast;
-    public IInteractable CurrentInteractable;
-
-    private void OnTriggerEnter(Collider other)
+    public class PlayerInteractor : MonoBehaviour
     {
-        var interactableinterface = other.TryGetComponent(out IInteractable interactable);
-        if (interactableinterface)
+        private Toast _toast;
+        public IInteractable CurrentInteractable;
+
+        private void OnTriggerEnter(Collider other)
         {
-            CurrentInteractable = interactable;
-            UIManager.Instance.ShowToastPrompt();
+            var interactableinterface = other.TryGetComponent(out IInteractable interactable);
+            if (interactableinterface)
+            {
+                CurrentInteractable = interactable;
+                UIManager.Instance.ShowToastPrompt();
+            }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        UIManager.Instance.HideToastPrompt();
+        private void OnTriggerExit(Collider other)
+        {
+            UIManager.Instance.HideToastPrompt();
+        }
     }
 }

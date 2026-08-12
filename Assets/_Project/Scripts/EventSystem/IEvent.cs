@@ -1,4 +1,4 @@
-namespace EventSystem
+namespace _Project.Scripts.EventSystem
 {
     public interface IEvent 
     { 

@@ -1,6 +1,9 @@
-using EventSystem;
+using _Project.Scripts.EventSystem;
 
-public class DialogueFinishedEvent : IEvent
+namespace _Project.Scripts.Interactions
 {
+    public class DialogueFinishedEvent : IEvent
+    {
     
+    }
 }

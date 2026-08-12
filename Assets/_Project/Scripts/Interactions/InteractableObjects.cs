@@ -1,7 +1,6 @@
-using Core;
 using UnityEngine;
 
-namespace Interactions
+namespace _Project.Scripts.Interactions
 {
     /// <summary>
     /// Classs that covers all interactable objects such as NPCs , items/Clues, keys/puzzle items  and rooms

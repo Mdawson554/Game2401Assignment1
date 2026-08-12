@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace States.StateTypes
+namespace _Project.Scripts.States.StateTypes
 {
     public class WalkingState : IStates
     {

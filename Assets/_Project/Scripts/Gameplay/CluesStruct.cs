@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace Gameplay
+namespace _Project.Scripts.Gameplay
 {
     [Serializable]
     public struct CluesStruct

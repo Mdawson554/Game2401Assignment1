@@ -1,6 +1,6 @@
-using EventSystem;
+using _Project.Scripts.EventSystem;
 
-namespace Story
+namespace _Project.Scripts.Story
 {
     public class StoryMarkerUnlockedEvent : IEvent
     {

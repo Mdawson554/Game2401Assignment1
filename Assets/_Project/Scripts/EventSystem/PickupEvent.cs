@@ -1,4 +1,6 @@
-namespace EventSystem
+using _Project.Scripts.Interactions;
+
+namespace _Project.Scripts.EventSystem
 {
     public class PickupEvent : IEvent
     {

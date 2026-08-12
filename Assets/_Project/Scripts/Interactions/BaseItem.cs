@@ -1,14 +1,16 @@
-using Interactions;
 using UnityEngine;
 
-public class BaseItem : MonoBehaviour
+namespace _Project.Scripts.Interactions
 {
-    public CollectibleTypes assignedCollectibleType;
-    public InventoryUIItem assignedinventoryUIItem;
-    public int KeyValue;
-    
-    public virtual string GetItemName()
+    public class BaseItem : MonoBehaviour
     {
-        return "Item";
+        public CollectibleTypes assignedCollectibleType;
+        public InventoryUIItem assignedinventoryUIItem;
+        public int KeyValue;
+    
+        public virtual string GetItemName()
+        {
+            return "Item";
+        }
     }
 }

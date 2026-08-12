@@ -1,12 +1,13 @@
-using System;
 using System.Collections.Generic;
-using EventSystem;
-using Gameplay;
-using Story;
+using _Project.ScriptableObjects;
+using _Project.Scripts.EventSystem;
+using _Project.Scripts.Gameplay;
+using _Project.Scripts.Interactions;
+using _Project.Scripts.Story;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Core
+namespace _Project.Scripts.Core
 {
     public class DialogueManager : Singleton<DialogueManager>
     {
@@ -193,5 +194,21 @@ namespace Core
             EventManager.instance.Publish(new DialogueFinishedEvent());
             TryProduceMarker();
         }
+        
+        [ContextMenu("Print Dialogue State")]
+        private void PrintDialogueState()
+        {
+            Debug.Log(
+                $"[Dialogue State]\n" +
+                $"Active Dialogue SO: {_currentDialogueSo}\n" +
+                $"Dialogue Index: {_dialogueIndex}\n" +
+                $"Has Active Dialogue: {_hasActiveDialogue}\n" +
+                $"Is Transitioning: {_isTransitioning}\n" +
+                $"Current Line: {(dialogueStruct != null ? dialogueStruct.Dialogue : "null")}\n" +
+                $"Requirements Met: {RequirementsMet(dialogueStruct)}\n" +
+                $"Produced Marker: {(dialogueStruct?.ProducedMarkers ? dialogueStruct.ProducedMarkers.name : "none")}"
+            );
+        }
+
     }
 }
