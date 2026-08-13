@@ -16,43 +16,43 @@ MonoBehaviour:
   - Dialogue: 'DRUNKARD: Hey. You looking for somebody?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
-    RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    RequiredMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Yes, actually-'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'DRUNKARD: Ohh, well I''m sure I can help ya out!'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: I''m looking for a Joshua Grey.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Ah, it''s a pleasure to meet you then. What''s your name?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: My name is Melissa.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Melissa. That''s a pretty name. Well, how can I help you,
@@ -60,49 +60,49 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: I''m looking for Jimmy Franklin.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Oh. Right. Jimmy. You knew him?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Knew him? Um. I''m trying to find out what happened to him.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: What are you.. a cop?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Actually, yes.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Oh, shoot. I''m the one who put in the tip the other day.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Yes, I know. It wasn''t anonymous, or did you forget that?
@@ -110,7 +110,7 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Yeah, I forgot about that. Sometimes it''s hard to keep track
@@ -118,35 +118,35 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Sorry to disappoint you.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: "JOSHUA: No, that's\u2014sorry. I'm just a little drunk."
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: I noticed.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Right. Um. How can I help you?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Start with what you noticed before he disappeared. Anything
@@ -154,7 +154,7 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Jimmy was having money problems. Bad ones. He''d give things
@@ -163,7 +163,7 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: Jimmy was scared, and once he stopped trusting everyone, you
@@ -172,14 +172,14 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Was there anyone he still trusted? And who is Ray?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    ProducedMarkers: {fileID: 0}
     LockedDialogue: I should try to find Joshua
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JOSHUA: I can''t tell you more about Ray, but people here know about
