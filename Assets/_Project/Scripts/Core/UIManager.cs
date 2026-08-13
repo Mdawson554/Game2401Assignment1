@@ -89,6 +89,14 @@ namespace _Project.Scripts.Core
             c.a = 1f;
             toastText.color = c;
         }
+        
+        public void DisplayLockedMessage(string text, Color color)
+        {
+            toast.SetActive(true);
+            toastText.text = text;
+            toastText.color = color;
+        }
+
         public void ShowPauseMenu(bool show)
         {
             pauseMenu.SetActive(show);
