@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
+  m_Name: Ray
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
+  DialogueArray:
+  - Dialogue: 'RAY: You shouldn''t be here.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Everyone keeps telling me that. I''m here because I want
+      to understand what happened last friday night.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: Then you already know I fought Jimmy.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I know you hurt him. I also know he came back afterward and
+      tried to get inside again.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: He came back?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You didn''t know?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: No. I left him outside after the fight. If he came back, I never
+      saw him.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You took his cufflinks because he owed you money. His blood
+      was on your coat. From where I''m standing, you have plenty to answer for.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: I''m not denying any of that. I beat him. I took what he owed
+      me. But I didn''t make him disappear, and I never took his watch.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: His father''s watch?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: Yeah. I know about it. Jimmy was desperate to give it up, but
+      I never saw who took it.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Then where did Jimmy go?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: I don''t know.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Someone is trying very hard to make you look responsible.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: I don''t know.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Someone is trying very hard to make you look responsible.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: I know.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Who?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: Mercer.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Who is Mercer?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: My boss. He knew Jimmy was in trouble, and he knows exactly what
+      people think of me. If Jimmy disappears after I beat him, I''m the easiest
+      person in the building to blame.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Why tell me that?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: Because I''m not taking the fall for him. I''m not going to come
+      out of this unscathed, but I won''t be blamed for this'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: Melissa. I''m not stupid enough to disappear someone and then
+      leave my own blood all over the place and make some janitor clean it up.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Where can I find Mercer?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Where can I find Mercer?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Where can I find Mercer?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: He wants control; he intimidates staff to do his bidding. He
+      likes to sit somewhere exclusive, but where he can watch everything. '
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'RAY: Anywhere you''ve been is where he wanted you to be. If you want
+      to know who benefits from me taking the blame, start from the beginning: wherever
+      you went, you orchestrated this whole thing. '
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    LockedDialogue: I shouldn't talk to him yet
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  assignedType: 1

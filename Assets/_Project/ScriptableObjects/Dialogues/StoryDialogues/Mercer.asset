@@ -82,4 +82,300 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
     LockedDialogue: I should pay for my entry fee
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: You came back?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Yes, it''s been an awfully long night chasing around what
+      happened last Friday.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON:  I was beginning to wonder whether Ray had finally managed
+      to scare you away.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Ray told me to find you.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: Did he?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: He thinks you''re trying to make him take the blame for what
+      happened.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Maybe. But I''ve spent the night following the trail, and
+      every time I thought I was getting somewhere, I found another reason to look
+      at Ray. '
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: A bloody coat, a fight, weapons, a bouncer who was terrified
+      of telling me what he saw.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: And you think that was all arranged?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: That''s quite a conclusion.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: It''s an observation. When I first met you, you warned me
+      about Ray before I even knew his name. '
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You knew enough about the club to tell me where to look,
+      and you talked about Jimmy like he was already gone.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: People speak carelessly.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Maybe. But I don''t think you''re careless.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: You''re very confident.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I''m not confident. I''m suspicious. There''s a difference.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: And what exactly are you suspicious of?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: That someone wanted me looking at Ray while they stayed somewhere
+      I wouldn''t think to look.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: You think that''s me?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I think Ray does. I think the bouncer is afraid of whoever
+      gave him orders. I think the staff have been threatened into keeping quiet,
+      and I think you knew things about Jimmy before I told you enough to know them
+      yourself.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: None of that proves anything.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: No. But it does make you worth asking questions.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: Fine. I knew Jimmy was in trouble. I knew Ray had been dealing
+      with him, and I knew that after their fight people would naturally look at
+      Ray. I made sure people kept their heads down.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You helped make Ray look guilty.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: I never told anyone to kill Jimmy.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I didn''t ask if you killed him. I asked what you did.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: I kept my business quiet.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: That''s not all.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: No. It isn''t.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: The watch.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: What about it?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Jimmy''s father''s watch. You knew he was selling it, and
+      Ray says he never had it. Where is it?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: I got it from Jimmy. He needed money, and I gave him some.
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: And then you kept it.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Where is it? Somewhere nearby? Where?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: On one of the tables. I don''t remember which.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You don''t remember where you put the one thing that could
+      connect you to Jimmy?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MERCER: I didn''t think you''d get this far.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: That''s the first honest thing you''ve said to me.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think this person can help me now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: Take the damn thing. it's over by the table near the fireplace.
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: ee8337a932d1c544fb5c9d8cae914c5c, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 78433ba4ea63aa84ab3fae25b98f8b04, type: 2}
+    LockedDialogue: 'I should take the watch. '
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1
