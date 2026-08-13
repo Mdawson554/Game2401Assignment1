@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
+  m_Name: CoatCheck
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
+  DialogueArray:
+  - Dialogue: 'MELISSA: Hey, how are you doing?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Ah, it''s going. You know how it is.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: How much is the cover?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Five dollars.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Thanks. I''m looking for Joshua Gray. Do you know him?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Everyone knows Joshua. Try the fireplace; that''s
+      usually where he ends up.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Best of luck. He can be a handful sometimes.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  assignedType: 1

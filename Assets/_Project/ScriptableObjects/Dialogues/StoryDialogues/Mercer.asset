@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
+  m_Name: Mercer
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
+  DialogueArray:
+  - Dialogue: 'MELISSA: Excuse me. Have you seen Joshua Gray?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: Joshua? I saw him earlier. He was drinking by the fireplace,
+      unless he''s wandered over to the smaller dance floor again.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: That''s one way of putting it. Joshua knows everyone here,
+      and everyone seems to know him. He''s usually drinking, talking, or doing both
+      badly.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Sounds like the kind of person who hears a lot.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: He does. Yes. But be careful around him; he stirs up a lot
+      of trouble.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Really, what sort of trouble?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: There''s gossip of some bad people around here; Joshua is
+      the type to make a real mess of things for people. I won''t say much else;
+      just be careful around here, please.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Fair enough. I appreciate the help.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'PATRON: Of course. Just be careful upstairs.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
+    LockedDialogue: I should pay for my entry fee
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  assignedType: 1
