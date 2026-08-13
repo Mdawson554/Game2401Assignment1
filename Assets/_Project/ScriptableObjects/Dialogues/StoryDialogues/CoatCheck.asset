@@ -63,4 +63,118 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
     LockedDialogue: 
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Best of luck. He can be a handful sometimes.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
+    LockedDialogue: I should leave now
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: The janitor sent me here. I''m trying to figure out what
+      was left behind after the fight upstairs; nobody has to know about this conversation.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You seem very uncomfortable with me being here.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: i''m uncomfortable with anyone asking questions.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Why?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Because we''ve been warned. Someone told us
+      that people might start asking questions and that we were supposed to cooperate,
+      send people where we were told, and keep our mouths shut.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Who?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: "COAT CHECK ATTENDANT: It's not safe enough to say. I was never given
+      a name\u2014just instructions. We've worked here long enough to know when something
+      is wrong, and we've been trying to keep our heads down."
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You don''t have to put yourselves in danger for me. Is there
+      anyone else who might know what happened?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: There''s only one person who was able to move
+      in and out of VIP that night, someone who was close with Ray. I can''t say
+      much else.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: You should probably see what was left in the
+      back.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Ray''s coat?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Yes.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: A mess?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'COAT CHECK ATTENDANT: Yes.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I don't think I should talk to them anymore.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1

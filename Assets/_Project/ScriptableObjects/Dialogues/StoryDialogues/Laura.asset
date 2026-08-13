@@ -181,6 +181,7 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
-    LockedDialogue: I should find my lead.
+    LockedDialogue: 'I should try to figure oit what happened when jimmy got beaten
+      up! '
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1

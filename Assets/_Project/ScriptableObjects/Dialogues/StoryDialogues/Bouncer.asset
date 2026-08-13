@@ -100,6 +100,6 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
     ProducedMarkers: {fileID: 0}
-    LockedDialogue: I should come back later. They don't want to talk to me.
+    LockedDialogue: I'll look into what "mess" was made first
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1

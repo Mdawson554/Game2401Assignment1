@@ -190,6 +190,6 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 504df0e40d3b44e46aa7d13a53885ea2, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
-    LockedDialogue: I should try to find Joshua
+    LockedDialogue: I should find the other person Jimmy trusts.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1

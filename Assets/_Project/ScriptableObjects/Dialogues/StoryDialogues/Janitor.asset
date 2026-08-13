@@ -19,7 +19,7 @@ MonoBehaviour:
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
-    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: I''m looking into what happened upstairs. Someone made quite
       the mess in here. You were the one who cleaned that up?'
     Type: 0
@@ -27,14 +27,14 @@ MonoBehaviour:
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
-    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JANITOR: Who''s asking?'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
-    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Someone who can help you get out of this situation.'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
@@ -91,8 +91,8 @@ MonoBehaviour:
   - Dialogue: 'JANITOR: I''d start with the place where you'
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
-    RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
+    RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 11400000, guid: 78d0220345689d949963c514691375cb, type: 2}
-    LockedDialogue: I can't talk to this person yet.
+    LockedDialogue: I think I should leave now.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
   assignedType: 1
