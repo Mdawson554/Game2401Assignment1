@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
-  m_Name: Gun
+  m_Name: SecurityKey
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
-  - Dialogue: Someone went to a lot of trouble to hide this
+  - Dialogue: ecurity room. Maybe the cameras saw something or there's something
+      hiding in there.
     Type: 0
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
-    RequiredMarkers: {fileID: 11400000, guid: 78d0220345689d949963c514691375cb, type: 2}
-    ProducedMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
-    LockedDialogue: I should talk to the janitor about this
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: a205629ed304bc442b1e5701e291542e, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 19d67ab1abaea55448607aa18537f5c9, type: 2}
+    LockedDialogue: I can't take this!
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 2

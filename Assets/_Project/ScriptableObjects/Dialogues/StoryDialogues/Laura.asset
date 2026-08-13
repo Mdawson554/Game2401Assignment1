@@ -181,7 +181,113 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
-    LockedDialogue: 'I should try to figure oit what happened when jimmy got beaten
+    LockedDialogue: 'I should try to figure out what happened when jimmy got beaten
       up! '
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: You came back.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I found Ray''s coat. There''s blood on it.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: I figured there would be.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You knew?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: I knew there had been a fight. I didn''t know how badly
+      someone was hurt.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: The staff downstairs are scared. They won''t tell me who''s
+      giving them orders.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Why are you still talking to me?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Because I''m tired of watching people come in here, get
+      hurt, and then pretending I didn''t see anything. I don''t want to be the next
+      person who gets punished for noticing.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: What''s your name?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Laura.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Thank you, Laura. I''m not asking you to be brave for me.
+      I need you to tell me what you think I should know.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'LAURA: There''s a manager''s office downstairs. I think there''s a
+      key in there for the security room upstairs. They keep the CCTV in there.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You think there could be something that might show what happened?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'LAURA: Maybe. And when you have enough to confront that bouncer, do
+      it. He''s strong, but he''s scared underneath all that noise. If he thinks
+      you can prove he lied, he''ll fold.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: a205629ed304bc442b1e5701e291542e, type: 2}
+    LockedDialogue: I should move on now.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1

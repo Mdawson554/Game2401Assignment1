@@ -99,7 +99,168 @@ MonoBehaviour:
     Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 8a3fab6564a18f746ab83637020cdfa0, type: 2}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Nothing. I''ll take a look.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 8a3fab6564a18f746ab83637020cdfa0, type: 2}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: We need to talk again.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
     ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: I already told you what happened.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You told me there was nothing downstairs. I found a gun.
+      Then I found a knife in security. You also told me everyone went home, but
+      that doesn''t seem to be true either.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I didn''t say you did. I''m trying to figure out why you''re
+      lying for someone who isn''t even here.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: I''m not lying'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Then tell me what happened after the fight. This looks really
+      bad for you. From what it sounds like, you had this cleaned up, and you knew
+      about the weapon. You also saw Jimmy last.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: Jimmy fought Ray. We broke it up and threw him outside. He
+      was alive, and he could walk.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: And then?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: That''s it. '
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: No. You told me there was nothing downstairs because you
+      were afraid I''d look. Now you''re telling me there was nothing after the fight.
+      Which one is the lie?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You don''t have to be afraid of me. You have to be afraid
+      of whoever made you think hiding this was safer.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: Jimmy came back. Later. He tried to get inside again because
+      he wanted another fight with Ray, but I wouldn''t let him through.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: So Jimmy was alive after the fight.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: Yes'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Did Ray see him? BOUNCER: Not that I know of. I kept him
+      away from the door.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: And the knife?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: I found it in security and hid it. I thought if somebody
+      found it, they''d blame me for whatever happened.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You were afraid Laura would tell me.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: She talks too much.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I'll look into what "mess" was made first
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: There''s a key to VIP somewhere in the security office; I''m
+      going to pretend I won''t see you go in. Just talk to Ray and leave me out
+      of this.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 8399f75411f8b3f46855f9f1760abaf2, type: 2}
     LockedDialogue: I'll look into what "mess" was made first
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1
