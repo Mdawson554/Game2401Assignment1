@@ -18,6 +18,6 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 78433ba4ea63aa84ab3fae25b98f8b04, type: 2}
     ProducedMarkers: {fileID: 0}
-    LockedDialogue: 
-    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    LockedDialogue: This is someones personal property
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 2
