@@ -75,8 +75,8 @@ namespace _Project.Scripts.Gameplay
 
         public void CalculateMouseAndCam()
         {
-            yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
-            pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
+            yaw += lookInput.x * mouseSensitivity;
+            pitch -= lookInput.y * mouseSensitivity;
             pitch = Mathf.Clamp(pitch, -80f, 80f);
             transform.rotation = Quaternion.Euler(0f, yaw, 0f);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
@@ -84,8 +84,8 @@ namespace _Project.Scripts.Gameplay
         
         public void CalculateMouseAndCamDialogue()
         {
-            yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
-            pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
+            yaw += lookInput.x * mouseSensitivity;
+            pitch -= lookInput.y * mouseSensitivity;
             pitch = Mathf.Clamp(pitch, -80f, 80f);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
