@@ -1,7 +1,9 @@
-using States;
+using _Project.Scripts.Gameplay;
+using _Project.Scripts.States;
 using UnityEngine;
 using UnityEngine.InputSystem;
-namespace Core
+
+namespace _Project.Scripts.Core
 {
     public class InputManager : MonoBehaviour
     {

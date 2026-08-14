@@ -11,4 +11,4 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c4a56ec0b1976448b410992f0fd4cdb, type: 3}
   m_Name: PickedUpKnife
-  m_EditorClassIdentifier: Assembly-CSharp::Story.StoryMarker
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Scripts.Story.StoryMarker

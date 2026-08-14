@@ -1,7 +1,7 @@
-using Core;
+using _Project.Scripts.Core;
 using UnityEngine;
 
-namespace States.StateTypes
+namespace _Project.Scripts.States.StateTypes
 {
     public class PauseState : IStates
     {

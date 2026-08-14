@@ -1,8 +1,6 @@
-using States;
-using Unity.VisualScripting;
-using UnityEngine;
+using _Project.Scripts.States;
 
-namespace EventSystem
+namespace _Project.Scripts.EventSystem
 {
     public class StateChangeEvent : IEvent
     {

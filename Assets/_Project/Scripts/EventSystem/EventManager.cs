@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Core;
-using UnityEngine;
+using _Project.Scripts.Core;
 
-namespace EventSystem
+namespace _Project.Scripts.EventSystem
 {
     public class EventManager : Singleton<EventManager>
     {

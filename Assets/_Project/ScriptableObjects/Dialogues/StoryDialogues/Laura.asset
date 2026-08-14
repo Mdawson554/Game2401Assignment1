@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
+  m_Name: Laura
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
+  DialogueArray:
+  - Dialogue: 'MELISSA: Hi. Are you the bottle girl who works this section?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Yes, can I get you anything?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Not right now. How''s your shift going so far?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Not too bad. It''s quieter today, so it''s good to breathe.
+      Sometimes it''s hard to catch a break around here.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I understand. I just got back from talking to a regular here,
+      Joshua. Do you know him?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Oh yes, he''s got quite the mouth. What did he say today?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: That''s probably why I''m still employed. And I''m not
+      interested in changing things now.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You don''t have to tell me anything you don''t want to. I
+      need to know whether I should be looking upstairs. I''ve been hearing some
+      strange rumours.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Upstairs is complicated, especially in VIP, especially
+      with my customers in there.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I can see that. There''s a name that''s been making everyone
+      uncomfortable around here-'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Ray.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I didn''t say his name.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: You were going to.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I was. What is it about him?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: He comes in regularly. I have to serve him, smile at
+      him, listen to him talk down to people, and pretend I don''t hate every second
+      of it. That''s what it''s about.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You look like you''ve had enough of pretending. Help me understand
+      one thing. Was there something unusual upstairs that night?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: There was an argument. I heard it, but I didn''t see
+      how it started. The bouncer was at the door, though. If anyone knows who came
+      through, it''s him.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: He''ll talk. That doesn''t mean he''ll tell you the truth.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Staff hide things when management doesn''t want them
+      sitting around, especially when we have certain people intimidating us to clean
+      up their mess. Keys, supplies, whatever they don''t want customers seeing-
+      it''s always tucked far away in our utility closet sometimes.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: That''s useful.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: I didn''t tell you that.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should find my lead.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Last I saw Jimmy was when he was getting dragged out
+      by the bouncers; I''d start there.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
+    LockedDialogue: 'I should try to figure out what happened when jimmy got beaten
+      up! '
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: You came back.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: I found Ray''s coat. There''s blood on it.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: I figured there would be.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You knew?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: I knew there had been a fight. I didn''t know how badly
+      someone was hurt.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: The staff downstairs are scared. They won''t tell me who''s
+      giving them orders.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Why are you still talking to me?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Because I''m tired of watching people come in here, get
+      hurt, and then pretending I didn''t see anything. I don''t want to be the next
+      person who gets punished for noticing.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: What''s your name?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOTTLE GIRL: Laura.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Thank you, Laura. I''m not asking you to be brave for me.
+      I need you to tell me what you think I should know.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'LAURA: There''s a manager''s office downstairs. I think there''s a
+      key in there for the security room upstairs. They keep the CCTV in there.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: You think there could be something that might show what happened?'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'LAURA: Maybe. And when you have enough to confront that bouncer, do
+      it. He''s strong, but he''s scared underneath all that noise. If he thinks
+      you can prove he lied, he''ll fold.'
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: a205629ed304bc442b1e5701e291542e, type: 2}
+    LockedDialogue: I should move on now.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  assignedType: 1

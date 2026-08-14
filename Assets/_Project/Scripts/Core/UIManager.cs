@@ -1,8 +1,9 @@
 using System.Collections;
-using Gameplay;
+using _Project.Scripts.Gameplay;
 using TMPro;
 using UnityEngine;
-namespace Core
+
+namespace _Project.Scripts.Core
 {
     public class UIManager : Singleton<UIManager>
     {
@@ -88,6 +89,14 @@ namespace Core
             c.a = 1f;
             toastText.color = c;
         }
+        
+        public void DisplayLockedMessage(string text, Color color)
+        {
+            toast.SetActive(true);
+            toastText.text = text;
+            toastText.color = color;
+        }
+
         public void ShowPauseMenu(bool show)
         {
             pauseMenu.SetActive(show);

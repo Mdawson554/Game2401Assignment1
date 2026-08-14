@@ -1,76 +1,73 @@
+using _Project.Scripts.Core;
+using _Project.Scripts.Interactions.Pickups;
 using UnityEngine;
-using Interactions;
-using Core;
-using Pickups;
 
-public class LockedDoor : MonoBehaviour, IConditional, IInteractable
+namespace _Project.Scripts.Interactions
 {
-    [SerializeField] private Animator anim;
-    [SerializeField] private Keys requiredKey;
-    [SerializeField] private AudioClip doorLocked;
-    [SerializeField] private AudioClip doorOpen;
-    [SerializeField] private AudioClip doorClose;
-    
-    private int isOpenHash;
-    private bool _isOpen = false;
-    
-    private void Awake()
+    public class LockedDoor : MonoBehaviour, IConditional, IInteractable
     {
-        isOpenHash = Animator.StringToHash("isOpen");
-    }
-    
-    public void OnKeyNotPickedUp()
-    {
-        AudioManager.Instance.PlaySound(doorLocked);
-    }
-    
-    public void OnTryOpen()
-    {
-        var items = InventoryManager.Instance.Keys;
-        if (items.ContainsValue(requiredKey.KeyValue))
+        [Header("Door Settings")]
+        [SerializeField] private Animator anim;
+        [SerializeField] private Keys requiredKey;
+        [SerializeField] private AudioClip doorLocked;
+        [SerializeField] private AudioClip doorOpen;
+        [SerializeField] private AudioClip doorClose;
+
+        [Header("Locked Message")]
+        [SerializeField] private string lockedText = "The door is locked.";
+        [SerializeField] private Color lockedTextColor = Color.red;
+
+        private int isOpenHash;
+        private bool _isOpen = false;
+
+        private void Awake()
         {
-            AudioManager.Instance.PlaySound(doorOpen);
-            OnDoorOpen();
+            isOpenHash = Animator.StringToHash("isOpen");
         }
-        else
+
+        public void OnKeyNotPickedUp()
         {
             AudioManager.Instance.PlaySound(doorLocked);
-            Debug.Log("Player doesn't have the key");
+            UIManager.Instance.DisplayLockedMessage(lockedText, lockedTextColor);
         }
-    }
-    
-    public void OnDoorOpen()
-    {
-        if (_isOpen)
+
+        public void OnTryOpen()
         {
-            _isOpen = false;
-            if (anim != null)
+            var items = InventoryManager.Instance.Keys;
+
+            if (items.ContainsValue(requiredKey.KeyValue))
             {
-                anim.SetBool(isOpenHash, false);
+                AudioManager.Instance.PlaySound(doorOpen);
+                OnDoorOpen();
             }
-            return;
+            else
+            {
+                AudioManager.Instance.PlaySound(doorLocked);
+                UIManager.Instance.DisplayLockedMessage(lockedText, lockedTextColor);
+            }
         }
-        
-        // Open the door
-        _isOpen = true;
-        Debug.Log("door open");
-        if (anim != null)
+
+        public void OnDoorOpen()
         {
-            anim.SetBool(isOpenHash, true);
+            if (_isOpen)
+            {
+                _isOpen = false;
+                anim?.SetBool(isOpenHash, false);
+                return;
+            }
+            _isOpen = true;
+            if (anim != null)
+                anim.SetBool(isOpenHash, true);
         }
-        else
+
+        private void OnInteracted()
         {
-            Debug.LogError("Animator is not assigned to LockedDoor!");
+            OnTryOpen();
         }
-    }
-    
-    private void OnInteracted()
-    {
-        OnTryOpen();
-    }
-    
-    public void OnInteract()
-    {
-        OnInteracted();
+
+        public void OnInteract()
+        {
+            OnInteracted();
+        }
     }
 }

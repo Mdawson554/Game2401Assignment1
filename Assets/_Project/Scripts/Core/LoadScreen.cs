@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Core
+namespace _Project.Scripts.Core
 {
     public class LoadScreen : MonoBehaviour
     {

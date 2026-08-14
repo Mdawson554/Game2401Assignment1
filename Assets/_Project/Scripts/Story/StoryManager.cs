@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
-using Core;
-using EventSystem;
+using _Project.Scripts.Core;
+using _Project.Scripts.EventSystem;
 using UnityEngine;
 
-namespace Story
+namespace _Project.Scripts.Story
 {
     public class StoryManager : Singleton<StoryManager>
     {

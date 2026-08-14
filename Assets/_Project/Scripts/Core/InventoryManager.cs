@@ -1,8 +1,9 @@
 using System.Collections.Generic;
-using EventSystem;
-using Interactions;
+using _Project.Scripts.EventSystem;
+using _Project.Scripts.Interactions;
 using UnityEngine;
-namespace Core
+
+namespace _Project.Scripts.Core
 {
     public class InventoryManager : Singleton<InventoryManager>
     {
@@ -72,6 +73,22 @@ namespace Core
             {
                 GameManager.Instance.OnAllCluesCollected();
             }
+        }
+        
+        [ContextMenu("Print Clue Collection State")]
+        private void PrintClueCollectionState()
+        {
+            int remaining = totalClues - _clueCount;
+
+            Debug.Log(
+                $"[Clue Collection State]\n" +
+                $"Total Clues Required: {totalClues}\n" +
+                $"Clues Collected: {_clueCount}\n" +
+                $"Clues Remaining: {remaining}\n" +
+                $"Win Condition Met: {_clueCount >= totalClues}\n" +
+                $"Collected Keys: {Keys.Count}\n" +
+                $"Collected Key Names: {string.Join(", ", Keys.Keys)}"
+            );
         }
     }
 }

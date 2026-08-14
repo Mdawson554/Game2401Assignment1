@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
-namespace Core
+
+namespace _Project.Scripts.Core
 {
     public class AudioManager : Singleton<AudioManager>
     {

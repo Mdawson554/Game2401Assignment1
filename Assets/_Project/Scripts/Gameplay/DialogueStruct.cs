@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using Story;
-using TMPro;
+using _Project.Scripts.Story;
 using UnityEngine;
 
-namespace Gameplay
+namespace _Project.Scripts.Gameplay
 {
     [Serializable]
     public class DialogueStruct

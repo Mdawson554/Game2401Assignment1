@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696fefaadd2962c4bb250caf4415b9af, type: 3}
+  m_Name: BathroomKey
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
+  DialogueArray:
+  - Dialogue: A janitor's key, That should open the bathroom
+    Type: 0
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 8a3fab6564a18f746ab83637020cdfa0, type: 2}
+    ProducedMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
+    LockedDialogue: I shouldn't steal this.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  assignedType: 2

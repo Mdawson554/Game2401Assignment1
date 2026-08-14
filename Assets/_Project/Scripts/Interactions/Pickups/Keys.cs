@@ -1,13 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using Core;
-using EventSystem;
-using Gameplay;
-using Interactions;
-using Story;
+using _Project.ScriptableObjects;
+using _Project.Scripts.Core;
+using _Project.Scripts.EventSystem;
+using _Project.Scripts.Gameplay;
 using UnityEngine;
 
-namespace Pickups
+namespace _Project.Scripts.Interactions.Pickups
 {
     public class Keys : BaseItem, IInteractable, ICollectible
     {
