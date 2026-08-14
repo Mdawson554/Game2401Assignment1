@@ -54,7 +54,6 @@ namespace _Project.Scripts.Gameplay
 
             if (isMoving)
             {
-                // Accelerate toward moveSpeed
                 currentSpeed = Mathf.MoveTowards(
                     currentSpeed,
                     moveSpeed,
@@ -63,7 +62,6 @@ namespace _Project.Scripts.Gameplay
             }
             else
             {
-                // Reset speed when stopping
                 currentSpeed = startSpeed;
             }
 
@@ -89,7 +87,7 @@ namespace _Project.Scripts.Gameplay
             yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
             pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
             pitch = Mathf.Clamp(pitch, -80f, 80f);
-            playerCamera.transform.localRotation = Quaternion.Euler(pitch, yaw, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
     }
 }    

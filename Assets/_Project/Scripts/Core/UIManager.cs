@@ -39,7 +39,6 @@ namespace _Project.Scripts.Core
 
         public void DisplayLockedToast(DialogueStruct dialogueStruct)
         {
-            Debug.Log("locked");
             toast.SetActive(true);
             toastText.text = dialogueStruct.LockedDialogue;
             toastText.color = dialogueStruct.LockedDialogueColor;
@@ -56,7 +55,6 @@ namespace _Project.Scripts.Core
         
         public void DisplayLockedClueHUD(DialogueStruct dialogueStruct)
         {
-            Debug.Log("clue locked");
             StopAllCoroutines();
             clueHUD.SetActive(true);
             clueText.text = dialogueStruct.LockedDialogue;
