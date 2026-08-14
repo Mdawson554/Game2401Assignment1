@@ -44,7 +44,6 @@ namespace _Project.Scripts.Interactions
             {
                 AudioManager.Instance.PlaySound(doorLocked);
                 UIManager.Instance.DisplayLockedMessage(lockedText, lockedTextColor);
-                Debug.Log("Player doesn't have the key");
             }
         }
 
@@ -56,14 +55,9 @@ namespace _Project.Scripts.Interactions
                 anim?.SetBool(isOpenHash, false);
                 return;
             }
-
             _isOpen = true;
-            Debug.Log("door open");
-
             if (anim != null)
                 anim.SetBool(isOpenHash, true);
-            else
-                Debug.LogError("Animator is not assigned to LockedDoor!");
         }
 
         private void OnInteracted()

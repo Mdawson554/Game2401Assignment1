@@ -28,10 +28,8 @@ namespace _Project.Scripts.Gameplay
         {
             rb = GetComponent<Rigidbody>();
             playerCamera = GetComponentInChildren<Camera>();
-
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
             currentSpeed = startSpeed;
         }
 
@@ -80,9 +78,7 @@ namespace _Project.Scripts.Gameplay
         {
             yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
             pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
-
             pitch = Mathf.Clamp(pitch, -80f, 80f);
-
             transform.rotation = Quaternion.Euler(0f, yaw, 0f);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
