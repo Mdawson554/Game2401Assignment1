@@ -43,7 +43,6 @@ namespace _Project.Scripts.Core
             toast.SetActive(true);
             toastText.text = dialogueStruct.LockedDialogue;
             toastText.color = dialogueStruct.LockedDialogueColor;
-            
         }
         
         public void DisplayClueHUD(DialogueStruct dialogue)
