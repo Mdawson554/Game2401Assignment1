@@ -12,6 +12,7 @@ namespace _Project.Scripts.Gameplay
 
         [Header("Mouse Look")]
         [SerializeField] private float mouseSensitivity = 2f;
+        
 
         private Rigidbody rb;
         private Camera playerCamera;
@@ -81,6 +82,14 @@ namespace _Project.Scripts.Gameplay
             pitch = Mathf.Clamp(pitch, -80f, 80f);
             transform.rotation = Quaternion.Euler(0f, yaw, 0f);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+        }
+        
+        public void CalculateMouseAndCamDialogue()
+        {
+            yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
+            pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
+            pitch = Mathf.Clamp(pitch, -80f, 80f);
+            playerCamera.transform.localRotation = Quaternion.Euler(pitch, yaw, 0f);
         }
     }
 }    
