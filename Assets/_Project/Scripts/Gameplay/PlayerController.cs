@@ -12,7 +12,9 @@ namespace _Project.Scripts.Gameplay
 
         [Header("Mouse Look")]
         [SerializeField] private float mouseSensitivity = 2f;
-        
+
+        [SerializeField] private float DialogueClampMin;
+        [SerializeField] private float DialogueClamMax;
 
         private Rigidbody rb;
         private Camera playerCamera;
@@ -82,11 +84,11 @@ namespace _Project.Scripts.Gameplay
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
         
-        public void CalculateMouseAndCamDialogue()
+        public void CalculateMouseAndCamDialogue() ///guard to prevent moving the player interactor on me during dialogue
         {
             yaw += lookInput.x * mouseSensitivity;
             pitch -= lookInput.y * mouseSensitivity;
-            pitch = Mathf.Clamp(pitch, -80f, 80f);
+            pitch = Mathf.Clamp(pitch, DialogueClampMin, DialogueClamMax);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
     }
