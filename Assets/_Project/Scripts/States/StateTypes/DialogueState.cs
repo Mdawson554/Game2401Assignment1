@@ -35,8 +35,7 @@ namespace _Project.Scripts.States.StateTypes
 
         public void Update()
         {
-            // Allow the player to keep looking around
-            playerStateMachine.playerController.CalculateMouseAndCam();
+            playerStateMachine.playerController.CalculateMouseAndCamDialogue();
         }
     }
 }

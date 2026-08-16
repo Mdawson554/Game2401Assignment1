@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
   - Dialogue: 'JANITOR: What are you doing in here? How did you get in?'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
@@ -22,35 +21,30 @@ MonoBehaviour:
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: I''m looking into what happened upstairs. Someone made quite
       the mess in here. You were the one who cleaned that up?'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'JANITOR: Who''s asking?'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'MELISSA: Someone who can help you get out of this situation.'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
   - Dialogue: 'JANITOR: No. I saw the aftermath.'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
   - Dialogue: 'MELISSA: What did you find?'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
@@ -59,14 +53,12 @@ MonoBehaviour:
   - Dialogue: 'JANITOR: A gun in the toilet tank. I was told to lock things up last
       week and leave it alone;  then I was told to scrub the place down this week
       to make sure nobody found it. That''s about as much as I know.'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
   - Dialogue: 'MELISSA: You don''t sound like you want to be involved.'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
@@ -74,7 +66,6 @@ MonoBehaviour:
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
   - Dialogue: 'JANITOR: I don''t. I clean bathrooms. I don''t get paid enough to
       know whose problems I''m cleaning up.'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
@@ -82,17 +73,22 @@ MonoBehaviour:
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
   - Dialogue: 'MELISSA: Then help me without getting yourself involved. Is there
       anything else I should look at?'
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I can't talk to this person yet.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
-  - Dialogue: 'JANITOR: I''d start with the place where you'
-    Type: 0
+  - Dialogue: 'I''d start with the place where someone could get the first look of
+      anyone who comes in this place. '
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 11400000, guid: 78d0220345689d949963c514691375cb, type: 2}
     LockedDialogue: I think I should leave now.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 0}
+  - Dialogue: StoryOver
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: f6388b813dbbd0848be677f542c0b537, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: They can't help me anymore.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 1

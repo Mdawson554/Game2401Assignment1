@@ -66,7 +66,6 @@ namespace _Project.Scripts.Interactions
                     break;
 
                 case NPCType.EssentialNPC:
-                    Debug.Log("DeathToAll");
                     DialogueManager.Instance.SetSequentialDialogue(Dialogue);
                     GameManager.Instance.playerStateMachine.changeState(
                         GameManager.Instance.playerStateMachine.dialoguestate);

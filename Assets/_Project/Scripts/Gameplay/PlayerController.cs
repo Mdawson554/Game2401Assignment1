@@ -12,6 +12,7 @@ namespace _Project.Scripts.Gameplay
 
         [Header("Mouse Look")]
         [SerializeField] private float mouseSensitivity = 2f;
+        
 
         private Rigidbody rb;
         private Camera playerCamera;
@@ -53,7 +54,6 @@ namespace _Project.Scripts.Gameplay
 
             if (isMoving)
             {
-                // Accelerate toward moveSpeed
                 currentSpeed = Mathf.MoveTowards(
                     currentSpeed,
                     moveSpeed,
@@ -62,7 +62,6 @@ namespace _Project.Scripts.Gameplay
             }
             else
             {
-                // Reset speed when stopping
                 currentSpeed = startSpeed;
             }
 
@@ -76,10 +75,18 @@ namespace _Project.Scripts.Gameplay
 
         public void CalculateMouseAndCam()
         {
-            yaw += lookInput.x * mouseSensitivity * Time.deltaTime;
-            pitch -= lookInput.y * mouseSensitivity * Time.deltaTime;
+            yaw += lookInput.x * mouseSensitivity;
+            pitch -= lookInput.y * mouseSensitivity;
             pitch = Mathf.Clamp(pitch, -80f, 80f);
             transform.rotation = Quaternion.Euler(0f, yaw, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+        }
+        
+        public void CalculateMouseAndCamDialogue()
+        {
+            yaw += lookInput.x * mouseSensitivity;
+            pitch -= lookInput.y * mouseSensitivity;
+            pitch = Mathf.Clamp(pitch, -80f, 80f);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
     }

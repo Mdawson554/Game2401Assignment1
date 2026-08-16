@@ -8,7 +8,6 @@ namespace _Project.Scripts.Gameplay
     public class DialogueStruct
     {
         public string Dialogue;
-        public NPCType Type;
         public Color DialogueColor;
 
         public StoryMarker RequiredMarkers;

@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
   - Dialogue: 'Finally. '
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 78433ba4ea63aa84ab3fae25b98f8b04, type: 2}
-    ProducedMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 11400000, guid: f6388b813dbbd0848be677f542c0b537, type: 2}
     LockedDialogue: This is someones personal property
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 2
