@@ -53,8 +53,22 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I should come back later. They don't want to talk to me.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'BOUNCER: Look around if you want; nothing but a bunch of drunks and
-      overworked janitors cleaning up everyone''s mess after a long night. '
+  - Dialogue: 'MELISSA: Everyone? Are you sure about that?'
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later. They don't want to talk to me.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'BOUNCER: It''s not my job to babysit everyone. Especially if they''re
+      out of my section downstairs, besides, nothing is going on down there. Look
+      around if you want; nothing but a bunch of drunks and overworked janitors cleaning
+      up everyone''s mess after a long night. '
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
+    RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: I should come back later. They don't want to talk to me.
+    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
+  - Dialogue: 'MELISSA: Mess? Interesting. So the Janitors have seen plenty, then?'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
     ProducedMarkers: {fileID: 0}
@@ -72,25 +86,13 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I should come back later. They don't want to talk to me.
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'BOUNCER: No....'
-    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
-    RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
-    ProducedMarkers: {fileID: 0}
-    LockedDialogue: I should come back later. They don't want to talk to me.
-    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'BOUNCER: What?'
-    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
-    RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
-    ProducedMarkers: {fileID: 0}
-    LockedDialogue: I should come back later. They don't want to talk to me.
-    LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'MELISSA: Nothing. I''ll take a look.'
+  - Dialogue: 'BOUNCER: No...'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 8a3fab6564a18f746ab83637020cdfa0, type: 2}
     LockedDialogue: I'll look into what "mess" was made first
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'MELISSA: Nothing. I''ll take a look.'
+  - Dialogue: 'MELISSA: I''m bacl.'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
     ProducedMarkers: {fileID: 0}
