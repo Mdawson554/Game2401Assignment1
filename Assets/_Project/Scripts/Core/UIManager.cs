@@ -21,7 +21,11 @@ namespace _Project.Scripts.Core
         [SerializeField] private GameObject clueHUD;
         [SerializeField] private GameObject toast;
         
+        [Header("Dialogue Progression Indicator")]
+        [SerializeField] private GameObject nectIcon;
+        
         private string _defaultToastText;
+        
         private void Start()
         {
             _defaultToastText = toastText.text;
@@ -29,12 +33,21 @@ namespace _Project.Scripts.Core
             _defaultToastColor = toastText.color;
             _defaultToastFont = toastText.font;
             _defaultToastMaterial = toastText.fontMaterial;
+            
+            // Ensure indicator starts inactive
+            if (nectIcon != null)
+                nectIcon.SetActive(false);
         }
-        public void DisplayToast(DialogueStruct dialogue)
+        
+        public void DisplayToast(DialogueStruct dialogue, bool isSequentialDialogue = false)
         {
             toast.SetActive(true);
             toastText.text = dialogue.Dialogue;
             toastText.color = dialogue.DialogueColor;
+            
+            // Show indicator only for sequential dialogue
+            if (nectIcon != null)
+                nectIcon.SetActive(isSequentialDialogue);
         }
 
         public void DisplayLockedToast(DialogueStruct dialogueStruct)
@@ -42,6 +55,10 @@ namespace _Project.Scripts.Core
             toast.SetActive(true);
             toastText.text = dialogueStruct.LockedDialogue;
             toastText.color = dialogueStruct.LockedDialogueColor;
+            
+            // Hide indicator for locked dialogue
+            if (nectIcon != null)
+                nectIcon.SetActive(false);
         }
         
         public void DisplayClueHUD(DialogueStruct dialogue)
@@ -50,6 +67,11 @@ namespace _Project.Scripts.Core
             clueHUD.SetActive(true);
             clueText.text = dialogue.Dialogue;
             clueText.color = dialogue.DialogueColor;
+            
+            // Hide indicator for item dialogue
+            if (nectIcon != null)
+                nectIcon.SetActive(false);
+            
             StartCoroutine(HideClueAfterDelay());
         }
         
@@ -59,6 +81,11 @@ namespace _Project.Scripts.Core
             clueHUD.SetActive(true);
             clueText.text = dialogueStruct.LockedDialogue;
             clueText.color = dialogueStruct.LockedDialogueColor;
+            
+            // Hide indicator for locked item dialogue
+            if (nectIcon != null)
+                nectIcon.SetActive(false);
+            
             StartCoroutine(HideClueAfterDelay());
         }
         
@@ -67,15 +94,23 @@ namespace _Project.Scripts.Core
             yield return new WaitForSeconds(itemCollectedDisplaytime);
             clueHUD.SetActive(false);
         }
+        
         public void ShowToastPrompt()
         {
             toast.SetActive(true);
         }
+        
         public void HideToastPrompt()
         {
             toast.SetActive(false);
+            
+            // Hide indicator when toast is hidden
+            if (nectIcon != null)
+                nectIcon.SetActive(false);
+            
             ResetToastText();
         }
+        
         private void ResetToastText()
         {
             toastText.text = _defaultToastText;
@@ -92,12 +127,17 @@ namespace _Project.Scripts.Core
             toast.SetActive(true);
             toastText.text = text;
             toastText.color = color;
+            
+            // Hide indicator for locked messages
+            if (nectIcon != null)
+                nectIcon.SetActive(false);
         }
 
         public void ShowPauseMenu(bool show)
         {
             pauseMenu.SetActive(show);
         }
+        
         public void ShowWinMenu(bool show)
         {
             winMenu.SetActive(show);

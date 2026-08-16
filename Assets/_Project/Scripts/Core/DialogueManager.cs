@@ -106,6 +106,7 @@ namespace _Project.Scripts.Core
         private void CheckDialogue()
         {
             bool isItemDialogue = _currentDialogueSo != null && _currentDialogueSo.assignedType == DialogueType.ItemDialogue;
+            bool isSequentialDialogue = _currentDialogueSo != null && _currentDialogueSo.assignedType == DialogueType.SequentialDialogue;
 
             if (dialogueStruct.HasRequirements)
             {
@@ -113,26 +114,38 @@ namespace _Project.Scripts.Core
                 {
                     Debug.Log("requirementMet");
                     if (isItemDialogue)
+                    {
                         UIManager.Instance.DisplayClueHUD(dialogueStruct);
+                    }
                     else
-                        UIManager.Instance.DisplayToast(dialogueStruct);
+                    {
+                        UIManager.Instance.DisplayToast(dialogueStruct, isSequentialDialogue);
+                    }
                 }
                 else
                 {
                     Debug.Log("requirements not met");
                     if (isItemDialogue)
+                    {
                         UIManager.Instance.DisplayLockedClueHUD(dialogueStruct);
+                    }
                     else
+                    {
                         UIManager.Instance.DisplayLockedToast(dialogueStruct);
+                    }
                 }
             }
             else if (!dialogueStruct.HasRequirements)
             {
                 Debug.Log("no requirement");
                 if (isItemDialogue)
+                {
                     UIManager.Instance.DisplayClueHUD(dialogueStruct);
+                }
                 else
-                    UIManager.Instance.DisplayToast(dialogueStruct);
+                {
+                    UIManager.Instance.DisplayToast(dialogueStruct, isSequentialDialogue);
+                }
             }
         }
 
