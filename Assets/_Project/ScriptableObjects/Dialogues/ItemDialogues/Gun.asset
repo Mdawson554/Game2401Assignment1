@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
   - Dialogue: Someone went to a lot of trouble to hide this
-    Type: 0
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 78d0220345689d949963c514691375cb, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 857af2219300ea54abc70e344f6d3449, type: 2}
     LockedDialogue: I should talk to the janitor about this

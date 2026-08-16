@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
   - Dialogue: A janitor's key, That should open the bathroom
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 8a3fab6564a18f746ab83637020cdfa0, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 5edeafd153cf485459adf85d0157c0cb, type: 2}

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
   - Dialogue: Blood. Proof. Ray was definitely involved in the fight.
-    Type: 0
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: d302df14d08fe6c4d9837ec8067546fb, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}

@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.DialogueSO
   DialogueArray:
   - Dialogue: Another weapon. Someone was covering something up.
-    Type: 0
-    DialogueColor: {r: 0, g: 0, b: 0, a: 0}
+    DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 19d67ab1abaea55448607aa18537f5c9, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
     LockedDialogue: I don't think I should touch this
