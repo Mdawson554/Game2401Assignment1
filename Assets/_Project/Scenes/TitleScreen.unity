@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd9739af8005fd4e97803e7e6a86b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadScreen
-  sceneName: SampleScene
+  sceneName: GameLevel
   playGameButton: {fileID: 1530780787}
   quitButton: {fileID: 1209697095}
 --- !u!4 &290603777
