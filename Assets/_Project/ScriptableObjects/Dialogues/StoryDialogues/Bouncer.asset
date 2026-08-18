@@ -92,7 +92,7 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 11400000, guid: 8a3fab6564a18f746ab83637020cdfa0, type: 2}
     LockedDialogue: I'll look into what "mess" was made first
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'MELISSA: I''m bacl.'
+  - Dialogue: 'MELISSA: I''m back.'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
     ProducedMarkers: {fileID: 0}
@@ -192,8 +192,7 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I'll look into what "mess" was made first
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'MELISSA: Did Ray see him? BOUNCER: Not that I know of. I kept him
-      away from the door.'
+  - Dialogue: 'MELISSA: Did Ray see him? '
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 9741f872af3c907419c8e59d2e5513c2, type: 2}
     ProducedMarkers: {fileID: 0}
