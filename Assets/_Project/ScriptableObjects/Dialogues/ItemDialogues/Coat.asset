@@ -17,6 +17,6 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: d302df14d08fe6c4d9837ec8067546fb, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 8ad02a098ced9ec4dacfc9e123e39e39, type: 2}
-    LockedDialogue: I can't steal this!
+    LockedDialogue: This area is staff only!
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   assignedType: 2
