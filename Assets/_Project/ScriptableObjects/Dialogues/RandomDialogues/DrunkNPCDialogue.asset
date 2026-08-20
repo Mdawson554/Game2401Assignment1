@@ -14,60 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
   - Dialogue: ILOove YoU MaAn
-    Type: 2
-    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 1}
+    DialogueColor: {r: 0.07396224, g: 0.30817598, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: You wanna go bro?
-    Type: 2
-    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    DialogueColor: {r: 0.07450981, g: 0.30980393, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
+  - Dialogue: I LooVEee ThIis CluuUb
+    DialogueColor: {r: 0.07450981, g: 0.30980393, b: 0, a: 1}
+    RequiredMarkers: {fileID: 0}
+    ProducedMarkers: {fileID: 0}
+    LockedDialogue: 
+    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
+  - Dialogue: My WiiFEe JuSt left me LasT WeEkEnd.
     DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
-  - Dialogue: You wanna go bro?
-    Type: 2
-    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 1}
-    RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 0}
-    LockedDialogue: 
-    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
-  - Dialogue: My wife just left me last weekend.
-    Type: 2
-    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 1}
-    RequiredMarkers: {fileID: 0}
-    ProducedMarkers: {fileID: 0}
-    LockedDialogue: 
-    LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
-  - Dialogue: I miss my childhood dog sparky?
-    Type: 2
-    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  - Dialogue: HeEEeeYyy DudEeeEE
     DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: HeEeeeY YouU WAanna Come HoMe WIIith Me Toniiight
-    Type: 2
-    DialogueSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    DialogueText: {fileID: 0}
-    DialogueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     DialogueColor: {r: 0.118081816, g: 0.49056602, b: 0, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}

@@ -18,8 +18,6 @@ namespace _Project.Scripts.Core
                     {
                         GameObject go = new GameObject(typeof(T).Name + " (Singleton)");
                         _instance = go.AddComponent<T>();
-
-                        Debug.Log($"[Singleton] Auto-created {typeof(T).Name}");
                     }
                 }
 

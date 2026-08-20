@@ -14,9 +14,7 @@ namespace _Project.Scripts.States.StateTypes
         public void EnterState()
         {
             // Disable movement while talking
-            Debug.Log("dialogue");
             playerStateMachine.inputManager.EnableMoveInput(false);
-
             // Keep mouse hidden so the player can still look around
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -29,9 +27,11 @@ namespace _Project.Scripts.States.StateTypes
 
         public void ExitState()
         {
-            // Restore movement once dialogue ends
+            playerStateMachine.playerController.SyncIdleToCurrentCamera();
+            playerStateMachine.playerController.SetSkipNextIdleCameraFrame(true);
             playerStateMachine.inputManager.EnableMoveInput(true);
         }
+        
 
         public void Update()
         {

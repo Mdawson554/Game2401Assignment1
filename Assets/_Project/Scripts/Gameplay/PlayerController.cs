@@ -16,6 +16,7 @@ namespace _Project.Scripts.Gameplay
         [SerializeField] private float DialogueClampMin;
         [SerializeField] private float DialogueClamMax;
 
+        private bool skipNextIdleCameraFrame = false;
         private Rigidbody rb;
         private Camera playerCamera;
 
@@ -77,19 +78,46 @@ namespace _Project.Scripts.Gameplay
 
         public void CalculateMouseAndCam()
         {
+            if (skipNextIdleCameraFrame)
+            {
+                skipNextIdleCameraFrame = false;
+                return; 
+            }
             yaw += lookInput.x * mouseSensitivity;
             pitch -= lookInput.y * mouseSensitivity;
             pitch = Mathf.Clamp(pitch, -80f, 80f);
             transform.rotation = Quaternion.Euler(0f, yaw, 0f);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
+
         
-        public void CalculateMouseAndCamDialogue() ///guard to prevent moving the player interactor on me during dialogue
+        public void CalculateMouseAndCamDialogue() //so that way the interactor edge case is less likely to happen.
         {
             yaw += lookInput.x * mouseSensitivity;
             pitch -= lookInput.y * mouseSensitivity;
             pitch = Mathf.Clamp(pitch, DialogueClampMin, DialogueClamMax);
             playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         }
+
+        private float NormalizeAngle(float angle)
+        {
+            if (angle > 180f)
+                angle -= 360f;
+            return angle;
+        }
+        
+        public void SyncIdleToCurrentCamera()
+        {
+            var camRot = playerCamera.transform.rotation.eulerAngles;
+            yaw = camRot.y;
+            pitch = NormalizeAngle(camRot.x); 
+            transform.rotation = Quaternion.Euler(0f, yaw, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+        }
+
+        public void SetSkipNextIdleCameraFrame(bool skip)
+        {
+            skipNextIdleCameraFrame = skip;
+        }
     }
-}    
+}

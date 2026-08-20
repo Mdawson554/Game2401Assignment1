@@ -48,20 +48,12 @@ namespace _Project.Scripts.Interactions.Pickups
 
             if (!requirementsMet)
             {
-                Debug.Log("[KEY] Requirement not met. Key remains uncollected.");
-
                 DialogueManager.Instance.SetSequentialDialogue(keyDialogueSo);
                 return;
             }
-
-            Debug.Log("[KEY] Requirement met. Collecting key.");
-
             alreadyCollected = true;
-
             EventManager.instance.Publish(new PickupEvent(this));
-
             InventoryManager.Instance.EquippedItem = gameObject;
-
             if (AudioManager.Instance != null && pickupSound != null)
                 AudioManager.Instance.PlaySound(pickupSound);
             OnCollectEffect();

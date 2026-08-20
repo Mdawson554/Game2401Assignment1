@@ -10,15 +10,9 @@ public class StrobeLightController : MonoBehaviour
     [SerializeField] private float minXRotation = -90f; // Minimum X rotation
     [SerializeField] private float maxXRotation = 120f; // Maximum X rotation
     [SerializeField] private AnimationCurve rotationPattern = AnimationCurve.EaseInOut(0, 0, 1, 1);
-
-    [Header("Strobe Intensity Settings")]
-    [SerializeField] private float strobeSpeed = 2f; // How fast the strobe pulses
-    [SerializeField] private float minIntensity = 0.3f; // Minimum light intensity
-    [SerializeField] private float maxIntensity = 1f; // Maximum light intensity
-    [SerializeField] private AnimationCurve strobePattern = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    
     
     private float _currentRotationTime = 0f;
-    private float _currentStrobeTime = 0f;
     private float _baseIntensity;
     private Vector3 _baseRotation;
     private float _stepInterval;
@@ -28,16 +22,9 @@ public class StrobeLightController : MonoBehaviour
         if (spotLight == null)
         {
             spotLight = GetComponent<Light>();
-            if (spotLight == null)
-            {
-                Debug.LogError("StrobeLightController: No Light component found!");
-                enabled = false;
-                return;
-            }
         }
         _baseIntensity = spotLight.intensity;
         _baseRotation = transform.eulerAngles;
-        
     }
 
     private void Update()

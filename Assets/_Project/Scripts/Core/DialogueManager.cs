@@ -37,7 +37,6 @@ namespace _Project.Scripts.Core
         {
             if (line.ProducedMarkers == null)
             {
-                Debug.Log("[STORY] No produced marker on this dialogue line.");
                 return;
             }
             StoryManager storyManager = StoryManager.Instance;
@@ -45,16 +44,8 @@ namespace _Project.Scripts.Core
             if (line.HasRequirements &&
                 !storyManager.HasMarker(line.RequiredMarkers))
             {
-                Debug.Log(
-                    $"[STORY] Cannot produce marker '{line.ProducedMarkers.name}' " +
-                    $"because requirement '{line.RequiredMarkers.name}' is not met."
-                );
-
                 return;
             }
-            Debug.Log(
-                $"[STORY] Producing marker: {line.ProducedMarkers.name}"
-            );
 
             EventManager.instance.Publish(
                 new StoryMarkerUnlockedEvent(line.ProducedMarkers)
@@ -112,7 +103,6 @@ namespace _Project.Scripts.Core
             {
                 if (StoryManager.Instance.HasMarker(dialogueStruct.RequiredMarkers))
                 {
-                    Debug.Log("requirementMet");
                     if (isItemDialogue)
                     {
                         UIManager.Instance.DisplayClueHUD(dialogueStruct);
@@ -124,7 +114,6 @@ namespace _Project.Scripts.Core
                 }
                 else
                 {
-                    Debug.Log("requirements not met");
                     if (isItemDialogue)
                     {
                         UIManager.Instance.DisplayLockedClueHUD(dialogueStruct);
@@ -137,7 +126,6 @@ namespace _Project.Scripts.Core
             }
             else if (!dialogueStruct.HasRequirements)
             {
-                Debug.Log("no requirement");
                 if (isItemDialogue)
                 {
                     UIManager.Instance.DisplayClueHUD(dialogueStruct);
@@ -161,12 +149,10 @@ namespace _Project.Scripts.Core
             if (_dialogueSoSavedIndexs.TryGetValue(dialogueSo, out int savedIndexValue))
             {
                 _dialogueIndex = savedIndexValue;
-                Debug.Log("Loaded saved dialogue index: " + savedIndexValue);
             }
             else
             {
                 _dialogueIndex = 0;
-                Debug.Log("No saved index found. Starting fresh at index 0.");
             }
             SetDialogueStruct();
             CheckDialogue();
