@@ -14,37 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   DialogueArray:
   - Dialogue: This is sooo cool
-    DialogueColor: {r: 0.0065265982, g: 0.3560899, b: 0.41509432, a: 1}
+    DialogueColor: {r: 0, g: 0.29411766, b: 0.34117648, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: Have anyone seen my friend Gavin?
-    DialogueColor: {r: 0.007843138, g: 0.35686275, b: 0.41568628, a: 1}
+    DialogueColor: {r: 0, g: 0.29411766, b: 0.34117648, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: God, i just want a vodka soda
-    DialogueColor: {r: 0.007843138, g: 0.35686275, b: 0.41568628, a: 1}
+    DialogueColor: {r: 0, g: 0.29411766, b: 0.34117648, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: You're Cute...
-    DialogueColor: {r: 0.007843138, g: 0.35686275, b: 0.41568628, a: 1}
+    DialogueColor: {r: 0, g: 0.29063857, b: 0.33962262, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: Who are you looking at?
-    DialogueColor: {r: 0.007843138, g: 0.35686275, b: 0.41568628, a: 1}
+    DialogueColor: {r: 0, g: 0.29411766, b: 0.34117648, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 
     LockedDialogueColor: {r: 0, g: 0, b: 0, a: 0}
   - Dialogue: This is the best!
-    DialogueColor: {r: 0.007843138, g: 0.35686275, b: 0.41568628, a: 1}
+    DialogueColor: {r: 0, g: 0.29411766, b: 0.34117648, a: 1}
     RequiredMarkers: {fileID: 0}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: 

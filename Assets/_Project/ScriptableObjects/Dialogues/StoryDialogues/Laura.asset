@@ -152,15 +152,15 @@ MonoBehaviour:
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
     ProducedMarkers: {fileID: 0}
-    LockedDialogue: I should find my lead.
+    LockedDialogue: 'I should figure out what happened in VIP when jimmy got beaten
+      up! '
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'BOTTLE GIRL: Last I saw Jimmy was when he was getting dragged out
       by the bouncers; I''d start there.'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: 3971da5ad863c1243946952ce214e1eb, type: 2}
     ProducedMarkers: {fileID: 11400000, guid: 38af66c52ed85a14a9ccabe51189db38, type: 2}
-    LockedDialogue: 'I should try to figure out what happened when jimmy got beaten
-      up! '
+    LockedDialogue: 
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
   - Dialogue: 'BOTTLE GIRL: You came back.'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}

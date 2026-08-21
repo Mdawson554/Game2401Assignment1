@@ -19,7 +19,7 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I should pay for my entry fee
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'PATRON: Joshua? I saw him earlier. He was drinking by the fireplace,
+  - Dialogue: 'PATRON: Joshua? I saw him earlier. He was drinking by this fireplace,
       unless he''s wandered over to the smaller dance floor again.'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: c1236a5d1ec5aa74981a7c5f758a6ac7, type: 2}
