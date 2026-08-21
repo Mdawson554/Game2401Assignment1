@@ -103,13 +103,13 @@ MonoBehaviour:
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I shouldn't talk to him yet
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'RAY: I don''t know.'
+  - Dialogue: 'RAY: yeah I figured as much. Such a snake...'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
     ProducedMarkers: {fileID: 0}
     LockedDialogue: I shouldn't talk to him yet
     LockedDialogueColor: {r: 1, g: 0, b: 0, a: 1}
-  - Dialogue: 'MELISSA: Someone is trying very hard to make you look responsible.'
+  - Dialogue: 'MELISSA: Who is behind all of this?'
     DialogueColor: {r: 0, g: 0, b: 0, a: 1}
     RequiredMarkers: {fileID: 11400000, guid: da2b7e8f76793e64db8adebfc957549d, type: 2}
     ProducedMarkers: {fileID: 0}

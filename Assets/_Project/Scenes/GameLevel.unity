@@ -21510,7 +21510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &560423850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30193,7 +30193,7 @@ RectTransform:
   m_GameObject: {fileID: 765441705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.1249, y: 5.3418, z: 1}
+  m_LocalScale: {x: 3.5241885, y: 2.2039685, z: 0.68766}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1952229285}
@@ -30201,7 +30201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10, y: -160}
+  m_AnchoredPosition: {x: 10, y: 5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765441707
@@ -77562,14 +77562,14 @@ RectTransform:
   m_GameObject: {fileID: 1952229284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2032729, y: 0.25002, z: 1}
+  m_LocalScale: {x: 0.2032729, y: 0.37502998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 765441706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 8.4}
+  m_AnchoredPosition: {x: 0, y: -10.8}
   m_SizeDelta: {x: 450, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952229286
@@ -86674,7 +86674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 938347730075282561, guid: 895d5214c5937054486066121db3c988, type: 3}
       propertyPath: m_Radius
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3329479724035403985, guid: 895d5214c5937054486066121db3c988, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86682,7 +86682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3329479724035403985, guid: 895d5214c5937054486066121db3c988, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.762
+      value: 0.535
       objectReference: {fileID: 0}
     - target: {fileID: 5755864706974687321, guid: 895d5214c5937054486066121db3c988, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87200,6 +87200,10 @@ PrefabInstance:
     - target: {fileID: 5308802683742041779, guid: 41eff070fdf1be74d863da2eeeb32414, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569629568282881187, guid: 41eff070fdf1be74d863da2eeeb32414, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 8569629568282881187, guid: 41eff070fdf1be74d863da2eeeb32414, type: 3}
       propertyPath: MaxDistance
