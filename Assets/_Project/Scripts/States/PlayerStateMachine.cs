@@ -3,6 +3,7 @@ using _Project.Scripts.Core;
 using _Project.Scripts.EventSystem;
 using _Project.Scripts.Gameplay;
 using _Project.Scripts.States.StateTypes;
+using _Project.Scripts.Tools;
 using UnityEngine;
 
 namespace _Project.Scripts.States
@@ -28,25 +29,25 @@ namespace _Project.Scripts.States
             public void Pause()
             {
                 changeState(PauseState);
-                Debug.Log("game paused");
+                DevLogger.Log("game paused");
             }
 
             public void Resume()
             {
                 changeState(idlestate);
-                Debug.Log("game resumed");
+                DevLogger.Log("game resumed");
             }
 
             public void Interact()
             {
                 changeState(dialoguestate);
-                Debug.Log("dialogue interacted");
+                DevLogger.Log("dialogue interacted");
             }
 
             public void InteractComplete()
             {
                 changeState(idlestate);
-                Debug.Log("dialogue complete");
+                DevLogger.Log("dialogue complete");
             }
 
 
@@ -70,7 +71,7 @@ namespace _Project.Scripts.States
             [ContextMenu("Print Player State")]
             private void PrintPlayerState()
             {
-                Debug.Log(
+                DevLogger.Log(
                     $"[PlayerState]\n" +
                     $"Current State: {currentState?.GetType().Name}\n" +
                     $"Idle: {idlestate?.GetType().Name}\n" +

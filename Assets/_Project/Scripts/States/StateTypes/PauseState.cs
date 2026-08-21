@@ -15,7 +15,7 @@ namespace _Project.Scripts.States.StateTypes
         public void EnterState()
         {
             GameManager.Instance.Pause();
-            Debug.Log("Pause");
+            DevLogger.Log("Pause");
             playerStateMachine.inputManager.EnableMoveInput(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

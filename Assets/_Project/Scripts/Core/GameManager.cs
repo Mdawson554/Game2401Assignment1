@@ -1,4 +1,5 @@
 using _Project.Scripts.States;
+using _Project.Scripts.Tools;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,7 +40,7 @@ namespace _Project.Scripts.Core
         }
         public void OnAllCluesCollected()
         {
-            Debug.Log("YOU WIN THE GAME!");
+            DevLogger.Log("YOU WIN THE GAME!");
             playerStateMachine.Pause();
             UIManager.Instance.ShowPauseMenu(false);
             UIManager.Instance.ShowWinMenu(true);
@@ -52,7 +53,7 @@ namespace _Project.Scripts.Core
         
         public void Pause()
         {
-            Debug.Log("Pause");
+            DevLogger.Log("Pause");
             ShowMouse(true);
             Time.timeScale = 0;
             UIManager.Instance.ShowPauseMenu(true);

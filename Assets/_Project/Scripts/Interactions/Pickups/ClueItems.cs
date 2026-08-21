@@ -3,6 +3,7 @@ using _Project.ScriptableObjects;
 using _Project.Scripts.Core;
 using _Project.Scripts.EventSystem;
 using _Project.Scripts.Gameplay;
+using _Project.Scripts.Tools;
 using UnityEngine;
 
 namespace _Project.Scripts.Interactions.Pickups
@@ -26,10 +27,10 @@ namespace _Project.Scripts.Interactions.Pickups
         {
             clueParticleSystem = GetComponentInChildren<ParticleSystem>();
             if (clueParticleSystem == null)
-                Debug.LogWarning($"Clue '{keyName}': ParticleSystem not found");
+                DevLogger.Log($"Clue '{keyName}': ParticleSystem not found");
 
             if (objectRenderer == null)
-                Debug.LogError($"Clue '{keyName}': Renderer not assigned!");
+                DevLogger.Log($"Clue '{keyName}': Renderer not assigned!");
         }
 
         public void OnInteract()
@@ -46,12 +47,12 @@ namespace _Project.Scripts.Interactions.Pickups
                 DialogueManager.Instance.RequirementsMet(firstLine);
             if (!requirementsMet)
             {
-                Debug.Log("[CLUE] Requirement not met. Clue remains uncollected.");
+                DevLogger.Log("[CLUE] Requirement not met. Clue remains uncollected.");
 
                 DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);
                 return;
             }
-            Debug.Log("[CLUE] Requirement met. Collecting clue.");
+            DevLogger.Log("[CLUE] Requirement met. Collecting clue.");
             alreadyCollected = true;
             EventManager.instance.Publish(new PickupEvent(this));
             DialogueManager.Instance.SetSequentialDialogue(clueDialogueSO);

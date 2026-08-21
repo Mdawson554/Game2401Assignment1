@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _Project.Scripts.EventSystem;
 using _Project.Scripts.Interactions;
+using _Project.Scripts.Tools;
 using UnityEngine;
 
 namespace _Project.Scripts.Core
@@ -34,7 +35,7 @@ namespace _Project.Scripts.Core
         
         private void AddKey(BaseItem item)
         {
-            Debug.Log("added key");
+            DevLogger.Log("added key");
             if (item.assignedCollectibleType == CollectibleTypes.Keys)
             {
                 Keys.TryAdd(item, item.KeyValue);

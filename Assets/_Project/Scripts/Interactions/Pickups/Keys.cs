@@ -3,6 +3,7 @@ using _Project.ScriptableObjects;
 using _Project.Scripts.Core;
 using _Project.Scripts.EventSystem;
 using _Project.Scripts.Gameplay;
+using _Project.Scripts.Tools;
 using UnityEngine;
 
 namespace _Project.Scripts.Interactions.Pickups
@@ -25,10 +26,9 @@ namespace _Project.Scripts.Interactions.Pickups
         {
             keyParticleSystem = GetComponentInChildren<ParticleSystem>();
             if (keyParticleSystem == null)
-                Debug.LogWarning($"Key '{keyName}': ParticleSystem not found");
-
+                DevLogger.Log($"Key '{keyName}': ParticleSystem not found");
             if (objectRenderer == null)
-                Debug.LogError($"Key '{keyName}': Renderer not assigned!");
+                DevLogger.Log($"Key '{keyName}': Renderer not assigned!");
         }
 
         public void OnInteract()

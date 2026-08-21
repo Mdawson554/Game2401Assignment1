@@ -1,3 +1,4 @@
+using _Project.Scripts.Tools;
 using UnityEngine;
 
 namespace _Project.Scripts.States
@@ -17,15 +18,15 @@ namespace _Project.Scripts.States
         
         void EnterState()
         {
-            Debug.Log("entering state");
+            DevLogger.Log("entering state");
         }
         void ExecuteState()
         {
-            Debug.Log("in state");
+            DevLogger.Log("in state");
         }
         void ExitState()
         {
-            Debug.Log("exiting state");
+            DevLogger.Log("exiting state");
         }
         
         
