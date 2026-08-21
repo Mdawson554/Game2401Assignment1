@@ -1,4 +1,5 @@
 using _Project.Scripts.Core;
+using _Project.Scripts.Tools;
 using UnityEngine;
 
 namespace _Project.Scripts.States.StateTypes
@@ -14,7 +15,7 @@ namespace _Project.Scripts.States.StateTypes
         public void EnterState()
         {
             GameManager.Instance.Pause();
-            Debug.Log("Pause");
+            DevLogger.Log("Pause");
             playerStateMachine.inputManager.EnableMoveInput(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
